@@ -1,0 +1,4 @@
+../Core/MyApp/Ports/buzzer.c:19:6:BUZZER_init	1
+../Core/MyApp/Ports/buzzer.c:24:6:BUZZER_set	2
+../Core/MyApp/Ports/buzzer.c:35:6:Buzzer_put	1
+../Core/MyApp/Ports/buzzer.c:43:6:BUZZER_put	4

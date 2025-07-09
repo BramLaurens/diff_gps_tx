@@ -1,0 +1,4 @@
+buzzer.c:19:6:BUZZER_init	4	static
+buzzer.c:24:6:BUZZER_set	16	static
+buzzer.c:35:6:Buzzer_put	16	static
+buzzer.c:43:6:BUZZER_put	24	static

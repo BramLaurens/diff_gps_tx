@@ -1,0 +1,10 @@
+../Core/MyApp/App/admin.c:114:6:DisplayVersion	120	static
+../Core/MyApp/App/admin.c:150:6:DisplayMenu	16	static
+../Core/MyApp/App/admin.c:190:6:error_HaltOS	16	static
+../Core/MyApp/App/admin.c:208:6:CreateHandles	24	static
+../Core/MyApp/App/admin.c:237:6:Timer1_Handler	8	static
+../Core/MyApp/App/admin.c:262:6:CreateTasks	16	static
+../Core/MyApp/App/admin.c:288:14:GetTaskhandle	24	static
+../Core/MyApp/App/admin.c:309:6:SetTaskPriority	24	static
+../Core/MyApp/App/admin.c:337:6:StartStopTask	64	static
+../Core/MyApp/App/admin.c:371:6:DisplayTaskData	64	static

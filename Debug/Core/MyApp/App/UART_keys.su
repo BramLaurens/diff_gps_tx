@@ -1,0 +1,3 @@
+../Core/MyApp/App/UART_keys.c:30:6:UART_keys_poll	32	static
+../Core/MyApp/App/UART_keys.c:61:6:UART_keys_IRQ	56	static
+../Core/MyApp/App/UART_keys.c:132:6:UART_menu	40	static

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_methods: Core/MyApp/App/handles.c Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_methods
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">handles.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="handles_8c.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;main.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;cmsis_os.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="my__app_8h.html">my_app.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// all handles, note: defined to &#39;extern&#39; in my_app.h</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>QueueHandle_t      hKey_Queue;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">   24</a></span>QueueHandle_t      <a class="code hl_variable" href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">   25</a></span>SemaphoreHandle_t  <a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">   26</a></span>EventGroupHandle_t <a class="code hl_variable" href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">   27</a></span>TimerHandle_t      <a class="code hl_variable" href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">   38</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="keywordtype">char</span> *msg)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    LCD_puts(msg);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    UART_puts(msg); UART_puts(<span class="stringliteral">&quot;. Application halted\r\n&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    BUZZER_put(1000);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    vTaskSuspendAll(); <span class="comment">// stop alle tasks</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="handles_8c.html#a183387e08a88262f831be8b883ce8754">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="handles_8c.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a> = xSemaphoreCreateMutex()))</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hLED_Sem&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a> = xQueueCreate(<a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>))))</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hUART_Q&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a> = xEventGroupCreate()))</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hLCD_Event&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a> = xTimerCreate(<span class="stringliteral">&quot;Timer_1&quot;</span>, pdMS_TO_TICKS(<a class="code hl_define" href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a>), pdTRUE, 0, <a class="code hl_function" href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a>)))</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hTimer1&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    UART_puts(<span class="stringliteral">&quot;\n\rAll handles created successfully.&quot;</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    UART_puts(<span class="stringliteral">&quot;\n\rTimer set to: &quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    UART_putint((<span class="keywordtype">int</span>)<a class="code hl_define" href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a>); <span class="comment">// (int)-cast is nodig!</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    xTimerStart(<a class="code hl_variable" href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a>, 0); <span class="comment">// start de timer...</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="ttc" id="ahandles_8c_html_a011b1349f4d8c02977b852c7587f0581"><div class="ttname"><a href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a></div><div class="ttdeci">SemaphoreHandle_t hLED_Sem</div><div class="ttdoc">handle voor LED-mutex</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00025">handles.c:25</a></div></div>
+<div class="ttc" id="ahandles_8c_html_a183387e08a88262f831be8b883ce8754"><div class="ttname"><a href="handles_8c.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a></div><div class="ttdeci">void CreateHandles(void)</div><div class="ttdoc">Creates alle handles voor deze applicatie.</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00056">handles.c:56</a></div></div>
+<div class="ttc" id="ahandles_8c_html_a1db415a0f7c5ecff145e4bb53cc54dbe"><div class="ttname"><a href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a></div><div class="ttdeci">QueueHandle_t hUART_Queue</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00024">handles.c:24</a></div></div>
+<div class="ttc" id="ahandles_8c_html_a34a9c5eb09cae80d85d5d13a348ee1e8"><div class="ttname"><a href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a></div><div class="ttdeci">void error_HaltOS(char *msg)</div><div class="ttdoc">Fatale OS-error opgetreden tijdens startup of runtime, doorgaan is zinloos. Het OS wordt tot stoppen ...</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00038">handles.c:38</a></div></div>
+<div class="ttc" id="ahandles_8c_html_ada55e3a3cc32b9d16e1bbc08d83431c9"><div class="ttname"><a href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a></div><div class="ttdeci">EventGroupHandle_t hKEY_Event</div><div class="ttdoc">handle voor ARM-keys-event</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00026">handles.c:26</a></div></div>
+<div class="ttc" id="ahandles_8c_html_af1a9410a47225cac12eb96a84b51b035"><div class="ttname"><a href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a></div><div class="ttdeci">TimerHandle_t hTimer1</div><div class="ttdoc">handle voor software timer</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00027">handles.c:27</a></div></div>
+<div class="ttc" id="amy__app_8h_html"><div class="ttname"><a href="my__app_8h.html">my_app.h</a></div><div class="ttdoc">Bevat de defines &amp; externals voor deze applicatie.</div></div>
+<div class="ttc" id="amy__app_8h_html_a13315792b47dcf5207ce4e06daeab518"><div class="ttname"><a href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a></div><div class="ttdeci">#define TIMER1_DELAY</div><div class="ttdoc">set software timer 500 msecs</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00027">my_app.h:27</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a18901836d92cf76a93826b9e1116292d"><div class="ttname"><a href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a></div><div class="ttdeci">#define QSIZE_UART</div><div class="ttdoc">set queue op 10 elementen</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00025">my_app.h:25</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a96c9e7d4608bbcbb1f89460ea7d8da6f"><div class="ttname"><a href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a></div><div class="ttdeci">void Timer1_Handler(void)</div><div class="ttdoc">Vangt de FreeRTOS software-interrupt op (zie handles.c), en toggelt een ledje.</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00022">timer.c:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

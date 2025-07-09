@@ -1,0 +1,1785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_methods: Core/MyApp/App/my_app.h Bestand Referentie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_methods
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functies</a> &#124;
+<a href="#var-members">Variabelen</a>  </div>
+  <div class="headertitle"><div class="title">my_app.h Bestand Referentie</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bevat de defines &amp; externals voor deze applicatie.  
+<a href="#details">Meer...</a></p>
+<div class="textblock"><code>#include &quot;freeRTOS.h&quot;</code><br />
+<code>#include &quot;event_groups.h&quot;</code><br />
+<code>#include &quot;queue.h&quot;</code><br />
+<code>#include &quot;task.h&quot;</code><br />
+<code>#include &quot;semphr.h&quot;</code><br />
+<code>#include &quot;stdio.h&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;stdlib.h&quot;</code><br />
+<code>#include &quot;ctype.h&quot;</code><br />
+</div>
+<p><a href="my__app_8h_source.html">Ga naar de broncode van dit bestand.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93f0eb578d23995850d61f7d61c55c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa93f0eb578d23995850d61f7d61c55c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18901836d92cf76a93826b9e1116292d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a18901836d92cf76a93826b9e1116292d"><td class="mdescLeft">&#160;</td><td class="mdescRight">set queue op 10 elementen  <a href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">Meer...</a><br /></td></tr>
+<tr class="separator:a18901836d92cf76a93826b9e1116292d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13315792b47dcf5207ce4e06daeab518"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a>&#160;&#160;&#160;500</td></tr>
+<tr class="memdesc:a13315792b47dcf5207ce4e06daeab518"><td class="mdescLeft">&#160;</td><td class="mdescRight">set software timer 500 msecs  <a href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">Meer...</a><br /></td></tr>
+<tr class="separator:a13315792b47dcf5207ce4e06daeab518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecec3b7ee8e67b05c23fe851e7115999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#aecec3b7ee8e67b05c23fe851e7115999">DEBUG_OUT_NONE</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:aecec3b7ee8e67b05c23fe851e7115999"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop alle test output  <a href="my__app_8h.html#aecec3b7ee8e67b05c23fe851e7115999">Meer...</a><br /></td></tr>
+<tr class="separator:aecec3b7ee8e67b05c23fe851e7115999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf61e71f815198fd487984a437f413fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#adf61e71f815198fd487984a437f413fe">DEBUG_OUT_ALL</a>&#160;&#160;&#160;0xff</td></tr>
+<tr class="memdesc:adf61e71f815198fd487984a437f413fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">genereer alle test output  <a href="my__app_8h.html#adf61e71f815198fd487984a437f413fe">Meer...</a><br /></td></tr>
+<tr class="separator:adf61e71f815198fd487984a437f413fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367617a9804f8aeeb1b5b09d17af0d1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:a367617a9804f8aeeb1b5b09d17af0d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit 1: toggles leds stuff output  <a href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">Meer...</a><br /></td></tr>
+<tr class="separator:a367617a9804f8aeeb1b5b09d17af0d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2de7e45f2168abc45779a2d5dce35e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">ARMKEYS_DEBUG_OUT</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:ae2de7e45f2168abc45779a2d5dce35e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit 2: toggles armkeys stuff output  <a href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">Meer...</a><br /></td></tr>
+<tr class="separator:ae2de7e45f2168abc45779a2d5dce35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb4ecb0210feec08883b3c4a1d401e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">UART_DEBUG_OUT</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:a4fb4ecb0210feec08883b3c4a1d401e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit 3: toggles uart stuff output  <a href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">Meer...</a><br /></td></tr>
+<tr class="separator:a4fb4ecb0210feec08883b3c4a1d401e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcd7c2c8ee6e408e84e96747933027c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">STUDENT_DEBUG_OUT</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:a6fcd7c2c8ee6e408e84e96747933027c"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit 4: toggles student stuff output  <a href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">Meer...</a><br /></td></tr>
+<tr class="separator:a6fcd7c2c8ee6e408e84e96747933027c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14091316fcd82711d980261b8897affd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a14091316fcd82711d980261b8897affd">RES1_DEBUG_OUT</a>&#160;&#160;&#160;0x10</td></tr>
+<tr class="memdesc:a14091316fcd82711d980261b8897affd"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit 5: toggles reserved1 output  <a href="my__app_8h.html#a14091316fcd82711d980261b8897affd">Meer...</a><br /></td></tr>
+<tr class="separator:a14091316fcd82711d980261b8897affd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391da0aead1bc9a483c1f96cc6b802eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a391da0aead1bc9a483c1f96cc6b802eb">RES2_DEBUG_OUT</a>&#160;&#160;&#160;0x24</td></tr>
+<tr class="memdesc:a391da0aead1bc9a483c1f96cc6b802eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit 6: toggles reserved2 output  <a href="my__app_8h.html#a391da0aead1bc9a483c1f96cc6b802eb">Meer...</a><br /></td></tr>
+<tr class="separator:a391da0aead1bc9a483c1f96cc6b802eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cd9ee80876b12602eb666a07b9cfe50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a5cd9ee80876b12602eb666a07b9cfe50">LEDGREEN</a>&#160;&#160;&#160;GPIO_PIN_12</td></tr>
+<tr class="separator:a5cd9ee80876b12602eb666a07b9cfe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a865d371e7fdede347031acef7248a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a4a865d371e7fdede347031acef7248a1">LEDRED</a>&#160;&#160;&#160;GPIO_PIN_13</td></tr>
+<tr class="memdesc:a4a865d371e7fdede347031acef7248a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">LD3_Pin.  <a href="my__app_8h.html#a4a865d371e7fdede347031acef7248a1">Meer...</a><br /></td></tr>
+<tr class="separator:a4a865d371e7fdede347031acef7248a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997de867fda1d8d8774cda7ef97c6f9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a997de867fda1d8d8774cda7ef97c6f9d">LEDORANGE</a>&#160;&#160;&#160;GPIO_PIN_14</td></tr>
+<tr class="memdesc:a997de867fda1d8d8774cda7ef97c6f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">LD5_Pin.  <a href="my__app_8h.html#a997de867fda1d8d8774cda7ef97c6f9d">Meer...</a><br /></td></tr>
+<tr class="separator:a997de867fda1d8d8774cda7ef97c6f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e14f0fe9bbd66b4bb5a86911b030043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">LEDBLUE</a>&#160;&#160;&#160;GPIO_PIN_15</td></tr>
+<tr class="memdesc:a4e14f0fe9bbd66b4bb5a86911b030043"><td class="mdescLeft">&#160;</td><td class="mdescRight">LD6_Pin.  <a href="my__app_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">Meer...</a><br /></td></tr>
+<tr class="separator:a4e14f0fe9bbd66b4bb5a86911b030043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:a9dec45875121142b6466b9475691b40a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a9dec45875121142b6466b9475691b40a">DisplayVersion</a> (void)</td></tr>
+<tr class="separator:a9dec45875121142b6466b9475691b40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93467475af28d4b75cafb508f95578bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a> (void)</td></tr>
+<tr class="separator:a93467475af28d4b75cafb508f95578bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a60a0c0a7a24b63849288395b81b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#ac7a60a0c0a7a24b63849288395b81b59">error_HaltOS</a> (char *)</td></tr>
+<tr class="memdesc:ac7a60a0c0a7a24b63849288395b81b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fatale OS-error opgetreden tijdens startup of runtime, doorgaan is zinloos. Het OS wordt tot stoppen gebracht, er wordt output gegenereerd waar mogelijk, dus op UART en LCD.  <a href="my__app_8h.html#ac7a60a0c0a7a24b63849288395b81b59">Meer...</a><br /></td></tr>
+<tr class="separator:ac7a60a0c0a7a24b63849288395b81b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d78f01ecc2ff5ebf5c8c6450b175671"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a> (void)</td></tr>
+<tr class="memdesc:a8d78f01ecc2ff5ebf5c8c6450b175671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays de stack-gegevens van alle taken op de UART.  <a href="my__app_8h.html#a8d78f01ecc2ff5ebf5c8c6450b175671">Meer...</a><br /></td></tr>
+<tr class="separator:a8d78f01ecc2ff5ebf5c8c6450b175671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f983159a50cdcaaad786c6c7a216cd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a7f983159a50cdcaaad786c6c7a216cd9">CreateTasks</a> (void)</td></tr>
+<tr class="memdesc:a7f983159a50cdcaaad786c6c7a216cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creëert alle taken door te scannen door de TASKDATA-argumenten-array.<br  />
+ Let op. Eerst wordt de scheduler gestopt, dan de taken gecreëerd, dan de scheduler gestopt. Waarom? Anders gaan taken gelijk beginnen en wachten op taken die nog niet bestaan, dat geeft een rommeltje.  <a href="my__app_8h.html#a7f983159a50cdcaaad786c6c7a216cd9">Meer...</a><br /></td></tr>
+<tr class="separator:a7f983159a50cdcaaad786c6c7a216cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3fcde4e5fc023f9a6b398139143c657"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#af3fcde4e5fc023f9a6b398139143c657">GetTaskhandle</a> (char *)</td></tr>
+<tr class="memdesc:af3fcde4e5fc023f9a6b398139143c657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zoekt in tasks-array de task, en returns de handle. Deze handle wordt door <a class="el" href="tasks_8c.html#a7f983159a50cdcaaad786c6c7a216cd9" title="Creëert alle taken door te scannen door de TASKDATA-argumenten-array.  Let op. Eerst wordt de schedul...">CreateTasks()</a> in de array geplaatst. In plaats van deze functie kan ook de OS-functie xTaskGetHandle() gebruikt worden. Alleen is 'mijn' functie sneller.  <a href="my__app_8h.html#af3fcde4e5fc023f9a6b398139143c657">Meer...</a><br /></td></tr>
+<tr class="separator:af3fcde4e5fc023f9a6b398139143c657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ba23da293f6f319ffbc502a4cb7d5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a16ba23da293f6f319ffbc502a4cb7d5c">SetTaskPriority</a> (int, int)</td></tr>
+<tr class="memdesc:a16ba23da293f6f319ffbc502a4cb7d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verandert de prioriteit van een taak. Eerst wordt de taak gezocht in de lijst van alle taken (tasks[]) Daarna wordt de priority in de lijst gewijzigd en prioriteit van de taak aangepast. De functie <a class="el" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671" title="Displays de stack-gegevens van alle taken op de UART.">DisplayTaskData()</a> toont op de UART het tasknummer dat je nodig hebt.  <a href="my__app_8h.html#a16ba23da293f6f319ffbc502a4cb7d5c">Meer...</a><br /></td></tr>
+<tr class="separator:a16ba23da293f6f319ffbc502a4cb7d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9aab30edaac2fecc7fd1c21f5763a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a0c9aab30edaac2fecc7fd1c21f5763a2">StartStopTask</a> (int)</td></tr>
+<tr class="memdesc:a0c9aab30edaac2fecc7fd1c21f5763a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends (stopt) of Resumes (start) een task. Pas op. Als een task suspended wordt als hij een mutex bezet houdt blokkeer je alle tasks die op die mutex wachten. En als je de task stopt die de UART leest, schiet je jezelf ook in de voet.  <a href="my__app_8h.html#a0c9aab30edaac2fecc7fd1c21f5763a2">Meer...</a><br /></td></tr>
+<tr class="separator:a0c9aab30edaac2fecc7fd1c21f5763a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183387e08a88262f831be8b883ce8754"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a> (void)</td></tr>
+<tr class="memdesc:a183387e08a88262f831be8b883ce8754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates alle handles voor deze applicatie.  <a href="my__app_8h.html#a183387e08a88262f831be8b883ce8754">Meer...</a><br /></td></tr>
+<tr class="separator:a183387e08a88262f831be8b883ce8754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa46093b138efd9f745379e50aaebb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a8fa46093b138efd9f745379e50aaebb1">LED_Task1</a> (void *)</td></tr>
+<tr class="memdesc:a8fa46093b138efd9f745379e50aaebb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.  <a href="my__app_8h.html#a8fa46093b138efd9f745379e50aaebb1">Meer...</a><br /></td></tr>
+<tr class="separator:a8fa46093b138efd9f745379e50aaebb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6578679005e0ded1868835daa8fbede"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#aa6578679005e0ded1868835daa8fbede">LED_Task2</a> (void *)</td></tr>
+<tr class="memdesc:aa6578679005e0ded1868835daa8fbede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.  <a href="my__app_8h.html#aa6578679005e0ded1868835daa8fbede">Meer...</a><br /></td></tr>
+<tr class="separator:aa6578679005e0ded1868835daa8fbede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379c01dd4fb15e45ca6e00a95c761cc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a379c01dd4fb15e45ca6e00a95c761cc7">LED_Task3</a> (void *)</td></tr>
+<tr class="memdesc:a379c01dd4fb15e45ca6e00a95c761cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification.  <a href="my__app_8h.html#a379c01dd4fb15e45ca6e00a95c761cc7">Meer...</a><br /></td></tr>
+<tr class="separator:a379c01dd4fb15e45ca6e00a95c761cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549798a0f2a6d88c91a8297567a018c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a549798a0f2a6d88c91a8297567a018c1">LED_Task4</a> (void *)</td></tr>
+<tr class="memdesc:a549798a0f2a6d88c91a8297567a018c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification.  <a href="my__app_8h.html#a549798a0f2a6d88c91a8297567a018c1">Meer...</a><br /></td></tr>
+<tr class="separator:a549798a0f2a6d88c91a8297567a018c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c660e87fd3fb5216355c32e3a72f95e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a0c660e87fd3fb5216355c32e3a72f95e">ARM_keys_IRQ</a> (void *)</td></tr>
+<tr class="memdesc:a0c660e87fd3fb5216355c32e3a72f95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deze task handelt de ARM-toets af, die ontvangen is van de ISR-handler (zie: <a class="el" href="stm32f4xx__it_8c.html" title="Interrupt Service Routines.">stm32f4xx_it.c</a>).  <a href="my__app_8h.html#a0c660e87fd3fb5216355c32e3a72f95e">Meer...</a><br /></td></tr>
+<tr class="separator:a0c660e87fd3fb5216355c32e3a72f95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21164a48742d972455d2ce8c6317262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#af21164a48742d972455d2ce8c6317262">ARM_keys_task</a> (void *)</td></tr>
+<tr class="memdesc:af21164a48742d972455d2ce8c6317262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task krijgt ARM-key met notificatie binnen, en zet ledjes op die waarde. Ook de gekleurde ledjes (behalve blauw, die wordt door de timer gebruikt) krijgen een schwung...  <a href="my__app_8h.html#af21164a48742d972455d2ce8c6317262">Meer...</a><br /></td></tr>
+<tr class="separator:af21164a48742d972455d2ce8c6317262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390831b4b34c463c81b188d9973d2a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a390831b4b34c463c81b188d9973d2a52">UART_keys_poll</a> (void *)</td></tr>
+<tr class="memdesc:a390831b4b34c463c81b188d9973d2a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">deze waarde kan hier veranderd worden.  <a href="my__app_8h.html#a390831b4b34c463c81b188d9973d2a52">Meer...</a><br /></td></tr>
+<tr class="separator:a390831b4b34c463c81b188d9973d2a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42059fd155a512774c89e7fc38bc03c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#af42059fd155a512774c89e7fc38bc03c">UART_keys_IRQ</a> (void *)</td></tr>
+<tr class="memdesc:af42059fd155a512774c89e7fc38bc03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leest characters in die de gebruiker via Terminalprogramma intikt.  <a href="my__app_8h.html#af42059fd155a512774c89e7fc38bc03c">Meer...</a><br /></td></tr>
+<tr class="separator:af42059fd155a512774c89e7fc38bc03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af909ca669055035da2246051d81ae747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#af909ca669055035da2246051d81ae747">UART_menu</a> (void *)</td></tr>
+<tr class="memdesc:af909ca669055035da2246051d81ae747"><td class="mdescLeft">&#160;</td><td class="mdescRight">User Interface. De task wacht op kant en klare user-strings (TaskNotifyTake) van ISR-handler, en interpreteert de string. Het eerste character geeft het hoofd-commando aan. Afhankelijk van het commando worden opvolgende chars geinterpreteerd.  <a href="my__app_8h.html#af909ca669055035da2246051d81ae747">Meer...</a><br /></td></tr>
+<tr class="separator:af909ca669055035da2246051d81ae747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fe84bfb739ead3f3005b8378170b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a23fe84bfb739ead3f3005b8378170b62">Student_task1</a> (void *)</td></tr>
+<tr class="memdesc:a23fe84bfb739ead3f3005b8378170b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oefentask voor studenten.  <a href="my__app_8h.html#a23fe84bfb739ead3f3005b8378170b62">Meer...</a><br /></td></tr>
+<tr class="separator:a23fe84bfb739ead3f3005b8378170b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c9e7d4608bbcbb1f89460ea7d8da6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a> (void)</td></tr>
+<tr class="memdesc:a96c9e7d4608bbcbb1f89460ea7d8da6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vangt de FreeRTOS software-interrupt op (zie <a class="el" href="handles_8c.html" title="Definieert en creëert alle handles (semaphores, notifications, queues, eventgroups etc....">handles.c</a>), en toggelt een ledje.  <a href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Meer...</a><br /></td></tr>
+<tr class="separator:a96c9e7d4608bbcbb1f89460ea7d8da6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variabelen</h2></td></tr>
+<tr class="memitem:a1db415a0f7c5ecff145e4bb53cc54dbe"><td class="memItemLeft" align="right" valign="top">QueueHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a></td></tr>
+<tr class="separator:a1db415a0f7c5ecff145e4bb53cc54dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a011b1349f4d8c02977b852c7587f0581"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a></td></tr>
+<tr class="memdesc:a011b1349f4d8c02977b852c7587f0581"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle voor LED-mutex  <a href="my__app_8h.html#a011b1349f4d8c02977b852c7587f0581">Meer...</a><br /></td></tr>
+<tr class="separator:a011b1349f4d8c02977b852c7587f0581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada55e3a3cc32b9d16e1bbc08d83431c9"><td class="memItemLeft" align="right" valign="top">EventGroupHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a></td></tr>
+<tr class="memdesc:ada55e3a3cc32b9d16e1bbc08d83431c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle voor ARM-keys-event  <a href="my__app_8h.html#ada55e3a3cc32b9d16e1bbc08d83431c9">Meer...</a><br /></td></tr>
+<tr class="separator:ada55e3a3cc32b9d16e1bbc08d83431c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a9410a47225cac12eb96a84b51b035"><td class="memItemLeft" align="right" valign="top">TimerHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a></td></tr>
+<tr class="memdesc:af1a9410a47225cac12eb96a84b51b035"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle voor software timer  <a href="my__app_8h.html#af1a9410a47225cac12eb96a84b51b035">Meer...</a><br /></td></tr>
+<tr class="separator:af1a9410a47225cac12eb96a84b51b035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a952449da34b356e2651de547daf4312c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my__app_8h.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a></td></tr>
+<tr class="memdesc:a952449da34b356e2651de547daf4312c"><td class="mdescLeft">&#160;</td><td class="mdescRight">default: debug all output to uart  <a href="my__app_8h.html#a952449da34b356e2651de547daf4312c">Meer...</a><br /></td></tr>
+<tr class="separator:a952449da34b356e2651de547daf4312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<div class="textblock"><p >Bevat de defines &amp; externals voor deze applicatie. </p>
+<dl class="section attention"><dt>Attentie</dt><dd><h3>&copy; Copyright (c) 2021 (HU) Michiel Scager.</h3>
+</dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>MSC</dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>5/5/2022 </dd></dl>
+
+<p class="definition">De definitie bevindt zich in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+</div><h2 class="groupheader">Documentatie van macro's</h2>
+<a id="ae2de7e45f2168abc45779a2d5dce35e2" name="ae2de7e45f2168abc45779a2d5dce35e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2de7e45f2168abc45779a2d5dce35e2">&#9670;&nbsp;</a></span>ARMKEYS_DEBUG_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARMKEYS_DEBUG_OUT&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit 2: toggles armkeys stuff output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00051">51</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="adf61e71f815198fd487984a437f413fe" name="adf61e71f815198fd487984a437f413fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf61e71f815198fd487984a437f413fe">&#9670;&nbsp;</a></span>DEBUG_OUT_ALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_OUT_ALL&#160;&#160;&#160;0xff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>genereer alle test output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00046">46</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="aecec3b7ee8e67b05c23fe851e7115999" name="aecec3b7ee8e67b05c23fe851e7115999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecec3b7ee8e67b05c23fe851e7115999">&#9670;&nbsp;</a></span>DEBUG_OUT_NONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_OUT_NONE&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stop alle test output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00044">44</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="aa93f0eb578d23995850d61f7d61c55c1" name="aa93f0eb578d23995850d61f7d61c55c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93f0eb578d23995850d61f7d61c55c1">&#9670;&nbsp;</a></span>FALSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALSE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00022">22</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e14f0fe9bbd66b4bb5a86911b030043" name="a4e14f0fe9bbd66b4bb5a86911b030043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e14f0fe9bbd66b4bb5a86911b030043">&#9670;&nbsp;</a></span>LEDBLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEDBLUE&#160;&#160;&#160;GPIO_PIN_15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LD6_Pin. </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00069">69</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a5cd9ee80876b12602eb666a07b9cfe50" name="a5cd9ee80876b12602eb666a07b9cfe50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cd9ee80876b12602eb666a07b9cfe50">&#9670;&nbsp;</a></span>LEDGREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEDGREEN&#160;&#160;&#160;GPIO_PIN_12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Redefine pins om beter aan te geven waar het om gaat: gekleurde ledjes LD4_Pin </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00063">63</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a997de867fda1d8d8774cda7ef97c6f9d" name="a997de867fda1d8d8774cda7ef97c6f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a997de867fda1d8d8774cda7ef97c6f9d">&#9670;&nbsp;</a></span>LEDORANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEDORANGE&#160;&#160;&#160;GPIO_PIN_14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LD5_Pin. </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00067">67</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a865d371e7fdede347031acef7248a1" name="a4a865d371e7fdede347031acef7248a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a865d371e7fdede347031acef7248a1">&#9670;&nbsp;</a></span>LEDRED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEDRED&#160;&#160;&#160;GPIO_PIN_13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LD3_Pin. </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00065">65</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a367617a9804f8aeeb1b5b09d17af0d1a" name="a367617a9804f8aeeb1b5b09d17af0d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367617a9804f8aeeb1b5b09d17af0d1a">&#9670;&nbsp;</a></span>LEDS_DEBUG_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEDS_DEBUG_OUT&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit 1: toggles leds stuff output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00049">49</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a18901836d92cf76a93826b9e1116292d" name="a18901836d92cf76a93826b9e1116292d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18901836d92cf76a93826b9e1116292d">&#9670;&nbsp;</a></span>QSIZE_UART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QSIZE_UART&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set queue op 10 elementen </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00025">25</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a14091316fcd82711d980261b8897affd" name="a14091316fcd82711d980261b8897affd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14091316fcd82711d980261b8897affd">&#9670;&nbsp;</a></span>RES1_DEBUG_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RES1_DEBUG_OUT&#160;&#160;&#160;0x10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit 5: toggles reserved1 output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00057">57</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a391da0aead1bc9a483c1f96cc6b802eb" name="a391da0aead1bc9a483c1f96cc6b802eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391da0aead1bc9a483c1f96cc6b802eb">&#9670;&nbsp;</a></span>RES2_DEBUG_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RES2_DEBUG_OUT&#160;&#160;&#160;0x24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit 6: toggles reserved2 output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00059">59</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a6fcd7c2c8ee6e408e84e96747933027c" name="a6fcd7c2c8ee6e408e84e96747933027c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fcd7c2c8ee6e408e84e96747933027c">&#9670;&nbsp;</a></span>STUDENT_DEBUG_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STUDENT_DEBUG_OUT&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit 4: toggles student stuff output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00055">55</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a13315792b47dcf5207ce4e06daeab518" name="a13315792b47dcf5207ce4e06daeab518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13315792b47dcf5207ce4e06daeab518">&#9670;&nbsp;</a></span>TIMER1_DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMER1_DELAY&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set software timer 500 msecs </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00027">27</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="aa8cecfc5c5c054d2875c03e77b7be15d" name="aa8cecfc5c5c054d2875c03e77b7be15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cecfc5c5c054d2875c03e77b7be15d">&#9670;&nbsp;</a></span>TRUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRUE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00021">21</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fb4ecb0210feec08883b3c4a1d401e3" name="a4fb4ecb0210feec08883b3c4a1d401e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb4ecb0210feec08883b3c4a1d401e3">&#9670;&nbsp;</a></span>UART_DEBUG_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_DEBUG_OUT&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit 3: toggles uart stuff output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8h_source.html#l00053">53</a> in het bestand <a class="el" href="my__app_8h_source.html">my_app.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentatie van functies</h2>
+<a id="a0c660e87fd3fb5216355c32e3a72f95e" name="a0c660e87fd3fb5216355c32e3a72f95e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c660e87fd3fb5216355c32e3a72f95e">&#9670;&nbsp;</a></span>ARM_keys_IRQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ARM_keys_IRQ </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deze task handelt de ARM-toets af, die ontvangen is van de ISR-handler (zie: <a class="el" href="stm32f4xx__it_8c.html" title="Interrupt Service Routines.">stm32f4xx_it.c</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void. </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="_a_r_m__keys_8c_source.html#l00037">37</a> in het bestand <a class="el" href="_a_r_m__keys_8c_source.html">ARM_keys.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> key;</div>
+<div class="line"><span class="lineno">   40</span>    osThreadId_t hTask;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>); UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot; started&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (!(hTask = xTaskGetHandle(<span class="stringliteral">&quot;ARM_keys_task&quot;</span>)))</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Err:ARM_hndle&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        <span class="comment">// wait for ISR (EXTI0_IRQHandler()) to signal that a key is pressed</span></div>
+<div class="line"><span class="lineno">   50</span>        key = xEventGroupWaitBits(<a class="code hl_variable" href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a>, 0xffff, pdTRUE, pdFALSE, portMAX_DELAY );</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>        xTaskNotify(hTask, key, eSetValueWithOverwrite); <span class="comment">// notify task2 with value</span></div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="ahandles_8c_html_a34a9c5eb09cae80d85d5d13a348ee1e8"><div class="ttname"><a href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a></div><div class="ttdeci">void error_HaltOS(char *msg)</div><div class="ttdoc">Fatale OS-error opgetreden tijdens startup of runtime, doorgaan is zinloos. Het OS wordt tot stoppen ...</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00038">handles.c:38</a></div></div>
+<div class="ttc" id="ahandles_8c_html_ada55e3a3cc32b9d16e1bbc08d83431c9"><div class="ttname"><a href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a></div><div class="ttdeci">EventGroupHandle_t hKEY_Event</div><div class="ttdoc">handle voor ARM-keys-event</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00026">handles.c:26</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af21164a48742d972455d2ce8c6317262" name="af21164a48742d972455d2ce8c6317262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af21164a48742d972455d2ce8c6317262">&#9670;&nbsp;</a></span>ARM_keys_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ARM_keys_task </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Task krijgt ARM-key met notificatie binnen, en zet ledjes op die waarde. Ook de gekleurde ledjes (behalve blauw, die wordt door de timer gebruikt) krijgen een schwung... </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void. </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="_a_r_m__keys_8c_source.html#l00064">64</a> in het bestand <a class="el" href="_a_r_m__keys_8c_source.html">ARM_keys.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
+<div class="line"><span class="lineno">   66</span>    uint32_t     key;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span>          i, led;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="comment">// WAITING FOR users key</span></div>
+<div class="line"><span class="lineno">   72</span>        xTaskNotifyWait (0x00,              <span class="comment">// Don&#39;t clear any notification bits on entry.</span></div>
+<div class="line"><span class="lineno">   73</span>                         0xffffffff,        <span class="comment">// ULONG_MAX, reset the notification value to 0 on exit.</span></div>
+<div class="line"><span class="lineno">   74</span>                         &amp;key,              <span class="comment">// Notified value.</span></div>
+<div class="line"><span class="lineno">   75</span>                         portMAX_DELAY);    <span class="comment">// Block indefinitely.</span></div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        xSemaphoreTake(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>, portMAX_DELAY); <span class="comment">// krijg toegang (mutex) tot leds</span></div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>        LED_put((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)key); <span class="comment">// set 8 leds-byte to key-value</span></div>
+<div class="line"><span class="lineno">   80</span>        BUZZER_put (500);</div>
+<div class="line"><span class="lineno">   81</span>        osDelay(500);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">ARMKEYS_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">   84</span>        {</div>
+<div class="line"><span class="lineno">   85</span>            UART_puts(<span class="stringliteral">&quot;\r\n\tARM_key pressed to leds: &quot;</span>); UART_putint(key);</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        xSemaphoreGive(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>); <span class="comment">// geef toegang (mutex) vrij</span></div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>        <span class="comment">// tot slot, laat de gekleurde ledjes meedoen</span></div>
+<div class="line"><span class="lineno">   91</span>        <span class="comment">// maar niet blauw, want die is ingezet voor de timer</span></div>
+<div class="line"><span class="lineno">   92</span>        <span class="comment">// kijk naar de manier waarop de if-elses er uitzien</span></div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">for</span> (i=0; i&lt;3; i++)</div>
+<div class="line"><span class="lineno">   94</span>        {</div>
+<div class="line"><span class="lineno">   95</span>            led = (i==0 ? <a class="code hl_define" href="my__app_8h.html#a4a865d371e7fdede347031acef7248a1">LEDRED</a> : (i==1 ? <a class="code hl_define" href="my__app_8h.html#a997de867fda1d8d8774cda7ef97c6f9d">LEDORANGE</a> : <a class="code hl_define" href="my__app_8h.html#a5cd9ee80876b12602eb666a07b9cfe50">LEDGREEN</a>));</div>
+<div class="line"><span class="lineno">   96</span>            <a class="code hl_function" href="_a_r_m__keys_8c.html#a1fd0008123c48c14439411716629af5a">toggle_led</a>(led);</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span>        taskYIELD(); <span class="comment">// done, force context switch</span></div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+<div class="ttc" id="a_a_r_m__keys_8c_html_a1fd0008123c48c14439411716629af5a"><div class="ttname"><a href="_a_r_m__keys_8c.html#a1fd0008123c48c14439411716629af5a">toggle_led</a></div><div class="ttdeci">void toggle_led(uint32_t color)</div><div class="ttdoc">Zet een kleurenledje aan en uit.</div><div class="ttdef"><b>Definition:</b> <a href="_a_r_m__keys_8c_source.html#l00024">ARM_keys.c:24</a></div></div>
+<div class="ttc" id="ahandles_8c_html_a011b1349f4d8c02977b852c7587f0581"><div class="ttname"><a href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a></div><div class="ttdeci">SemaphoreHandle_t hLED_Sem</div><div class="ttdoc">handle voor LED-mutex</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00025">handles.c:25</a></div></div>
+<div class="ttc" id="amy__app_8c_html_a952449da34b356e2651de547daf4312c"><div class="ttname"><a href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a></div><div class="ttdeci">int Uart_debug_out</div><div class="ttdoc">default: debug all output to uart</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8c_source.html#l00021">my_app.c:21</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a4a865d371e7fdede347031acef7248a1"><div class="ttname"><a href="my__app_8h.html#a4a865d371e7fdede347031acef7248a1">LEDRED</a></div><div class="ttdeci">#define LEDRED</div><div class="ttdoc">LD3_Pin.</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00065">my_app.h:65</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a5cd9ee80876b12602eb666a07b9cfe50"><div class="ttname"><a href="my__app_8h.html#a5cd9ee80876b12602eb666a07b9cfe50">LEDGREEN</a></div><div class="ttdeci">#define LEDGREEN</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00063">my_app.h:63</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a997de867fda1d8d8774cda7ef97c6f9d"><div class="ttname"><a href="my__app_8h.html#a997de867fda1d8d8774cda7ef97c6f9d">LEDORANGE</a></div><div class="ttdeci">#define LEDORANGE</div><div class="ttdoc">LD5_Pin.</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00067">my_app.h:67</a></div></div>
+<div class="ttc" id="amy__app_8h_html_ae2de7e45f2168abc45779a2d5dce35e2"><div class="ttname"><a href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">ARMKEYS_DEBUG_OUT</a></div><div class="ttdeci">#define ARMKEYS_DEBUG_OUT</div><div class="ttdoc">bit 2: toggles armkeys stuff output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00051">my_app.h:51</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a183387e08a88262f831be8b883ce8754" name="a183387e08a88262f831be8b883ce8754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183387e08a88262f831be8b883ce8754">&#9670;&nbsp;</a></span>CreateHandles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreateHandles </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates alle handles voor deze applicatie. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="handles_8c_source.html#l00056">56</a> in het bestand <a class="el" href="handles_8c_source.html">handles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a> = xSemaphoreCreateMutex()))</div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hLED_Sem&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a> = xQueueCreate(<a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>))))</div>
+<div class="line"><span class="lineno">   62</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hUART_Q&quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a> = xEventGroupCreate()))</div>
+<div class="line"><span class="lineno">   65</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hLCD_Event&quot;</span>);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!(<a class="code hl_variable" href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a> = xTimerCreate(<span class="stringliteral">&quot;Timer_1&quot;</span>, pdMS_TO_TICKS(<a class="code hl_define" href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a>), pdTRUE, 0, <a class="code hl_function" href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a>)))</div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Error hTimer1&quot;</span>);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    UART_puts(<span class="stringliteral">&quot;\n\rAll handles created successfully.&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    UART_puts(<span class="stringliteral">&quot;\n\rTimer set to: &quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>    UART_putint((<span class="keywordtype">int</span>)<a class="code hl_define" href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a>); <span class="comment">// (int)-cast is nodig!</span></div>
+<div class="line"><span class="lineno">   74</span>    xTimerStart(<a class="code hl_variable" href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a>, 0); <span class="comment">// start de timer...</span></div>
+<div class="line"><span class="lineno">   75</span>}</div>
+<div class="ttc" id="ahandles_8c_html_a1db415a0f7c5ecff145e4bb53cc54dbe"><div class="ttname"><a href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a></div><div class="ttdeci">QueueHandle_t hUART_Queue</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00024">handles.c:24</a></div></div>
+<div class="ttc" id="ahandles_8c_html_af1a9410a47225cac12eb96a84b51b035"><div class="ttname"><a href="handles_8c.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a></div><div class="ttdeci">TimerHandle_t hTimer1</div><div class="ttdoc">handle voor software timer</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00027">handles.c:27</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a13315792b47dcf5207ce4e06daeab518"><div class="ttname"><a href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">TIMER1_DELAY</a></div><div class="ttdeci">#define TIMER1_DELAY</div><div class="ttdoc">set software timer 500 msecs</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00027">my_app.h:27</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a18901836d92cf76a93826b9e1116292d"><div class="ttname"><a href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a></div><div class="ttdeci">#define QSIZE_UART</div><div class="ttdoc">set queue op 10 elementen</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00025">my_app.h:25</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a96c9e7d4608bbcbb1f89460ea7d8da6f"><div class="ttname"><a href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a></div><div class="ttdeci">void Timer1_Handler(void)</div><div class="ttdoc">Vangt de FreeRTOS software-interrupt op (zie handles.c), en toggelt een ledje.</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00022">timer.c:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7f983159a50cdcaaad786c6c7a216cd9" name="a7f983159a50cdcaaad786c6c7a216cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f983159a50cdcaaad786c6c7a216cd9">&#9670;&nbsp;</a></span>CreateTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreateTasks </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creëert alle taken door te scannen door de TASKDATA-argumenten-array.<br  />
+ Let op. Eerst wordt de scheduler gestopt, dan de taken gecreëerd, dan de scheduler gestopt. Waarom? Anders gaan taken gelijk beginnen en wachten op taken die nog niet bestaan, dat geeft een rommeltje. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00091">91</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>; <span class="comment">// tasks == &amp;tasks[0]: both are addresses of first struct</span></div>
+<div class="line"><span class="lineno">   94</span>    vTaskSuspendAll(); <span class="comment">// zet de scheduler stil en dwing FreeRTOS om eerst alle taken te starten</span></div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">for</span> (; ptd-&gt;func != NULL; ptd++) <span class="comment">// loopje zonder teller; gewoon de pointer steeds ophogen...</span></div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>        UART_puts(<span class="stringliteral">&quot;\r\nCreated: &quot;</span>);</div>
+<div class="line"><span class="lineno">   99</span>        UART_puts((<span class="keywordtype">char</span> *)ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>        <span class="comment">// nb. kijk naar de haakjes van argument 3: het gaat om het adres van (structure attr).</span></div>
+<div class="line"><span class="lineno">  102</span>        ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a> = osThreadNew(ptd-&gt;func, ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a6a0147ed63ef3f0f7e291aa5f6f48191">argument</a>, &amp;(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>));</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    xTaskResumeAll();   <span class="comment">// start nu de scheduler: play ball</span></div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a>();  <span class="comment">// display alle taskdata op UART</span></div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="astruct_task_data_html"><div class="ttname"><a href="struct_task_data.html">TaskData</a></div><div class="ttdoc">struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00030">tasks.c:31</a></div></div>
+<div class="ttc" id="astruct_task_data_html_a00081de8efdf72da5c61ecf1780936a7"><div class="ttname"><a href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">TaskData::hTask</a></div><div class="ttdeci">osThreadId_t hTask</div><div class="ttdoc">struct for OS, but we only declare a few members</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00035">tasks.c:35</a></div></div>
+<div class="ttc" id="astruct_task_data_html_a6a0147ed63ef3f0f7e291aa5f6f48191"><div class="ttname"><a href="struct_task_data.html#a6a0147ed63ef3f0f7e291aa5f6f48191">TaskData::argument</a></div><div class="ttdeci">void * argument</div><div class="ttdoc">de naam van de taak zelf</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00033">tasks.c:33</a></div></div>
+<div class="ttc" id="astruct_task_data_html_aeab588ea33fe027c4408d552ea7fd965"><div class="ttname"><a href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">TaskData::attr</a></div><div class="ttdeci">osThreadAttr_t attr</div><div class="ttdoc">evt extra variabele voor taak, bv. &quot;hello&quot;</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00034">tasks.c:34</a></div></div>
+<div class="ttc" id="atasks_8c_html_a3759c2b4aa705e22db51d0174f889570"><div class="ttname"><a href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a></div><div class="ttdeci">TASKDATA tasks[]</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00057">tasks.c:57</a></div></div>
+<div class="ttc" id="atasks_8c_html_a8d78f01ecc2ff5ebf5c8c6450b175671"><div class="ttname"><a href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a></div><div class="ttdeci">void DisplayTaskData(void)</div><div class="ttdoc">Displays de stack-gegevens van alle taken op de UART.</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00200">tasks.c:200</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a93467475af28d4b75cafb508f95578bf" name="a93467475af28d4b75cafb508f95578bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93467475af28d4b75cafb508f95578bf">&#9670;&nbsp;</a></span>DisplayMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayMenu </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >User Interface (menu) naar UART. </p><dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>MSC </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8c_source.html#l00065">65</a> in het bestand <a class="el" href="my__app_8c_source.html">my_app.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">char</span> *menu =</div>
+<div class="line"><span class="lineno">   68</span><span class="stringliteral">&quot;\r\nMenu:=============================================================\r\n\</span></div>
+<div class="line"><span class="lineno">   69</span><span class="stringliteral">0: [on/off] ALL TEST OUTPUT\r\n\</span></div>
+<div class="line"><span class="lineno">   70</span><span class="stringliteral">1: [on/off] LEDS output\r\n\</span></div>
+<div class="line"><span class="lineno">   71</span><span class="stringliteral">2: [on/off] ARM_keys output\r\n\</span></div>
+<div class="line"><span class="lineno">   72</span><span class="stringliteral">3: [on/off] UART_keys output\r\n\</span></div>
+<div class="line"><span class="lineno">   73</span><span class="stringliteral">4: [on/off] STUDENT output\r\n\</span></div>
+<div class="line"><span class="lineno">   74</span><span class="stringliteral">5: [on/off] reserved output\r\n\</span></div>
+<div class="line"><span class="lineno">   75</span><span class="stringliteral">d: change Delay time (default 200), eg. &#39;d,50&#39;\r\n\</span></div>
+<div class="line"><span class="lineno">   76</span><span class="stringliteral">p: change Priority of task, eg. &#39;p,7,20&#39; sets priority of task 7 to 20\r\n\</span></div>
+<div class="line"><span class="lineno">   77</span><span class="stringliteral">t: display Task-data (number, priority, stack usage, status)\r\n\</span></div>
+<div class="line"><span class="lineno">   78</span><span class="stringliteral">s: start/stop task, eg. p,7 starts or stops task 7\r\n\</span></div>
+<div class="line"><span class="lineno">   79</span><span class="stringliteral">===================================================================\r\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    UART_puts(menu);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8d78f01ecc2ff5ebf5c8c6450b175671" name="a8d78f01ecc2ff5ebf5c8c6450b175671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d78f01ecc2ff5ebf5c8c6450b175671">&#9670;&nbsp;</a></span>DisplayTaskData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayTaskData </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays de stack-gegevens van alle taken op de UART. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00200">200</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>{</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a>    ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  203</span>    UBaseType_t  freespace;</div>
+<div class="line"><span class="lineno">  204</span>    TaskStatus_t xTaskDetails;</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> used;</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> task_nr; <span class="comment">// tasknr for changing priority</span></div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">for</span> (task_nr=1; ptd-&gt;func != NULL; ptd++, task_nr++)</div>
+<div class="line"><span class="lineno">  209</span>    {</div>
+<div class="line"><span class="lineno">  210</span>        freespace = uxTaskGetStackHighWaterMark(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>) * 4;    <span class="comment">// amount of free bytes</span></div>
+<div class="line"><span class="lineno">  211</span>        used = 100 - (freespace * 100) / ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.stack_size;      <span class="comment">// in percentage</span></div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>        vTaskGetInfo (ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>, &amp;xTaskDetails, pdTRUE, eInvalid); <span class="comment">// get task status</span></div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t[&quot;</span>);        UART_putint(task_nr); UART_puts(<span class="stringliteral">&quot;] &quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>        UART_puts(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  217</span>        UART_puts(<span class="stringliteral">&quot;\t priority: &quot;</span>);  UART_putint(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.priority);</div>
+<div class="line"><span class="lineno">  218</span>        UART_puts(<span class="stringliteral">&quot;\t stacksize: &quot;</span>); UART_putint(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.stack_size);</div>
+<div class="line"><span class="lineno">  219</span>        UART_puts(<span class="stringliteral">&quot;\t used: &quot;</span>);      UART_putint(used); UART_puts(<span class="stringliteral">&quot;%&quot;</span>);</div>
+<div class="line"><span class="lineno">  220</span>        UART_puts(<span class="stringliteral">&quot;\t status: &quot;</span>);    UART_puts(xTaskDetails.eCurrentState == eSuspended ? <span class="stringliteral">&quot;suspended&quot;</span>: <span class="stringliteral">&quot;running&quot;</span>);</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="line"><span class="lineno">  222</span>    UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  223</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9dec45875121142b6466b9475691b40a" name="a9dec45875121142b6466b9475691b40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dec45875121142b6466b9475691b40a">&#9670;&nbsp;</a></span>DisplayVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayVersion </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Schrijft applicatiedata (versie, werking, menu) naar UART. Les: je ziet hoe je handig een lange string kunt opstellen met het '\'-karakter. </p><dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>MSC </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8c_source.html#l00030">30</a> in het bestand <a class="el" href="my__app_8c_source.html">my_app.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">char</span> infobuf[100];</div>
+<div class="line"><span class="lineno">   33</span>    osVersion_t osv;</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">char</span> *functionality =</div>
+<div class="line"><span class="lineno">   36</span><span class="stringliteral">&quot;Deze applicatie laat de basis werking van verschillende FreeRTOS-mechanismen zien,\r\n\</span></div>
+<div class="line"><span class="lineno">   37</span><span class="stringliteral">zoals queueing, notifications, eventgroups, mutex-semaphores, hoe je makkelijk tasks\r\n\</span></div>
+<div class="line"><span class="lineno">   38</span><span class="stringliteral">creëert (tasks.c) én hoe je de bidirectionele omgang met de UART-comport gebruikt.\r\n\</span></div>
+<div class="line"><span class="lineno">   39</span><span class="stringliteral">Zie verder de Doxygen documentatie van de applicatie. \r\n\</span></div>
+<div class="line"><span class="lineno">   40</span><span class="stringliteral">Michiel Scager (update: july 2022)\r\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    LCD_clear();</div>
+<div class="line"><span class="lineno">   43</span>    LCD_puts(app_nameLCD);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    UART_puts(app_name);</div>
+<div class="line"><span class="lineno">   46</span>    UART_puts(functionality);</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    osKernelGetInfo(&amp;osv, infobuf, <span class="keyword">sizeof</span>(infobuf));</div>
+<div class="line"><span class="lineno">   49</span>    UART_puts(<span class="stringliteral">&quot;\t-----&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>    UART_puts(<span class="stringliteral">&quot;\r\n\t&quot;</span>);                       UART_puts(infobuf);</div>
+<div class="line"><span class="lineno">   51</span>    UART_puts(<span class="stringliteral">&quot;\r\n\tVersion: &quot;</span>);              UART_putint(osv.kernel);</div>
+<div class="line"><span class="lineno">   52</span>    UART_puts(<span class="stringliteral">&quot;\r\n\tOS Timer freq (MHz): &quot;</span> ); UART_putint(osKernelGetSysTimerFreq()/1000000);</div>
+<div class="line"><span class="lineno">   53</span>    UART_puts(<span class="stringliteral">&quot;\r\n\tOS Tick freq (Hz): &quot;</span> );   UART_putint(osKernelGetTickFreq());</div>
+<div class="line"><span class="lineno">   54</span>    UART_puts(<span class="stringliteral">&quot;\r\n\t-----\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_function" href="my__app_8c.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a>();</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+<div class="ttc" id="amy__app_8c_html_a93467475af28d4b75cafb508f95578bf"><div class="ttname"><a href="my__app_8c.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a></div><div class="ttdeci">void DisplayMenu(void)</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8c_source.html#l00065">my_app.c:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac7a60a0c0a7a24b63849288395b81b59" name="ac7a60a0c0a7a24b63849288395b81b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7a60a0c0a7a24b63849288395b81b59">&#9670;&nbsp;</a></span>error_HaltOS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void error_HaltOS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fatale OS-error opgetreden tijdens startup of runtime, doorgaan is zinloos. Het OS wordt tot stoppen gebracht, er wordt output gegenereerd waar mogelijk, dus op UART en LCD. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Foutmelding </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="handles_8c_source.html#l00038">38</a> in het bestand <a class="el" href="handles_8c_source.html">handles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    LCD_puts(msg);</div>
+<div class="line"><span class="lineno">   41</span>    UART_puts(msg); UART_puts(<span class="stringliteral">&quot;. Application halted\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    BUZZER_put(1000);</div>
+<div class="line"><span class="lineno">   44</span>    vTaskSuspendAll(); <span class="comment">// stop alle tasks</span></div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af3fcde4e5fc023f9a6b398139143c657" name="af3fcde4e5fc023f9a6b398139143c657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3fcde4e5fc023f9a6b398139143c657">&#9670;&nbsp;</a></span>GetTaskhandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osThreadId_t GetTaskhandle </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>taskname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zoekt in tasks-array de task, en returns de handle. Deze handle wordt door <a class="el" href="tasks_8c.html#a7f983159a50cdcaaad786c6c7a216cd9" title="Creëert alle taken door te scannen door de TASKDATA-argumenten-array.  Let op. Eerst wordt de schedul...">CreateTasks()</a> in de array geplaatst. In plaats van deze functie kan ook de OS-functie xTaskGetHandle() gebruikt worden. Alleen is 'mijn' functie sneller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*taskname</td><td>De tasknaam </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>osThreadId_t De taskhandle </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00117">117</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">for</span> (; ptd-&gt;func != NULL; ptd++)</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> (!strcmp(taskname, ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name))</div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">return</span> (ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>);</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> (NULL); <span class="comment">// if task was not found...</span></div>
+<div class="line"><span class="lineno">  126</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8fa46093b138efd9f745379e50aaebb1" name="a8fa46093b138efd9f745379e50aaebb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fa46093b138efd9f745379e50aaebb1">&#9670;&nbsp;</a></span>LED_Task1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED_Task1 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="ledjes_8c_source.html#l00045">45</a> in het bestand <a class="el" href="ledjes_8c_source.html">ledjes.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot; started\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">int</span> i, leds;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        xSemaphoreTake(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>, portMAX_DELAY); <span class="comment">/* wacht op toegang tot de semaphore;</span></div>
+<div class="line"><span class="lineno">   53</span><span class="comment">        * de code hieronder wordt alleen uitgevoerd nadat ik de mutex heb gekregen.</span></div>
+<div class="line"><span class="lineno">   54</span><span class="comment">        * andere tasks die op deze mutex wachten, kunnen pas door nadat ik de mutex</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment">        * heb vrijgegeven met Give.</span></div>
+<div class="line"><span class="lineno">   56</span><span class="comment">        */</span></div>
+<div class="line"><span class="lineno">   57</span>        leds = 128; <span class="comment">// start at led nr. 8</span></div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">for</span> (i=0; i&lt;8; i++, leds&gt;&gt;=1)</div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            LED_put(leds); <span class="comment">// set leds</span></div>
+<div class="line"><span class="lineno">   61</span>            osDelay(<a class="code hl_variable" href="ledjes_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a>);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">   64</span>            {</div>
+<div class="line"><span class="lineno">   65</span>                UART_puts(<span class="stringliteral">&quot;\r\nM1 led: &quot;</span>); UART_putint(leds);</div>
+<div class="line"><span class="lineno">   66</span>            }</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+<div class="line"><span class="lineno">   68</span>        xSemaphoreGive(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>); <span class="comment">// geef de semaphore weer vrij voor een ander</span></div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>        taskYIELD(); <span class="comment">// done, force context switch</span></div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="line"><span class="lineno">   72</span>}</div>
+<div class="ttc" id="aledjes_8c_html_ac0e8ff7c2f49b0988165336ca423dcea"><div class="ttname"><a href="ledjes_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a></div><div class="ttdeci">unsigned int os_delay</div><div class="ttdoc">default value 100MSEC, kan veranderd worden via Terminal (user interface)</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00037">ledjes.c:37</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a367617a9804f8aeeb1b5b09d17af0d1a"><div class="ttname"><a href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a></div><div class="ttdeci">#define LEDS_DEBUG_OUT</div><div class="ttdoc">bit 1: toggles leds stuff output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00049">my_app.h:49</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa6578679005e0ded1868835daa8fbede" name="aa6578679005e0ded1868835daa8fbede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6578679005e0ded1868835daa8fbede">&#9670;&nbsp;</a></span>LED_Task2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED_Task2 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="ledjes_8c_source.html#l00079">79</a> in het bestand <a class="el" href="ledjes_8c_source.html">ledjes.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
+<div class="line"><span class="lineno">   81</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot; started\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordtype">int</span> i, leds;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>        xSemaphoreTake(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>, portMAX_DELAY);</div>
+<div class="line"><span class="lineno">   87</span>        leds = 1;</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">for</span> (i=0; i&lt;8; i++, leds&lt;&lt;=1)</div>
+<div class="line"><span class="lineno">   89</span>        {</div>
+<div class="line"><span class="lineno">   90</span>            LED_put(leds); <span class="comment">// set leds</span></div>
+<div class="line"><span class="lineno">   91</span>            osDelay(<a class="code hl_variable" href="ledjes_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a>);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">   94</span>            {</div>
+<div class="line"><span class="lineno">   95</span>                UART_puts(<span class="stringliteral">&quot;\r\n\tM2 led: &quot;</span>); UART_putint(leds);</div>
+<div class="line"><span class="lineno">   96</span>            }</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span>        xSemaphoreGive(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>        taskYIELD(); <span class="comment">// done, force context switch</span></div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a379c01dd4fb15e45ca6e00a95c761cc7" name="a379c01dd4fb15e45ca6e00a95c761cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379c01dd4fb15e45ca6e00a95c761cc7">&#9670;&nbsp;</a></span>LED_Task3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED_Task3 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="ledjes_8c_source.html#l00110">110</a> in het bestand <a class="el" href="ledjes_8c_source.html">ledjes.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordtype">int</span>          i, leds;</div>
+<div class="line"><span class="lineno">  113</span>    osThreadId_t hTask4;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (!(hTask4 = xTaskGetHandle(<span class="stringliteral">&quot;LED_Task4&quot;</span>)))</div>
+<div class="line"><span class="lineno">  116</span>       <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Err:hTask4&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot; started\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">  121</span>    {</div>
+<div class="line"><span class="lineno">  122</span>        xSemaphoreTake(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>, portMAX_DELAY);</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">for</span> (i=0; i&lt;4; i++) <span class="comment">// voorbeeld hoe je je code zo overdraagbaar mogelijk maakt</span></div>
+<div class="line"><span class="lineno">  125</span>        {</div>
+<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">if</span>      (i==0)  leds = 8+16; <span class="comment">// zichtbaar: 1. waarde i, 2. welke leds aan gaan</span></div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i==1)  leds = 4+32; <span class="comment">// ... had ook met switch-case gekund</span></div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i==2)  leds = 2+64;</div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">else</span>            leds = 1+128;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            LED_put(leds);     <span class="comment">// set leds</span></div>
+<div class="line"><span class="lineno">  132</span>            osDelay(<a class="code hl_variable" href="ledjes_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a>); <span class="comment">// snelheid bepalen, kan veranderd worden via user interface</span></div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">  135</span>            {</div>
+<div class="line"><span class="lineno">  136</span>                UART_puts(<span class="stringliteral">&quot;\r\n\t\tM3 led: &quot;</span>); UART_putint(leds);</div>
+<div class="line"><span class="lineno">  137</span>            }</div>
+<div class="line"><span class="lineno">  138</span>        }</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>        xSemaphoreGive(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        xTaskNotifyGive(hTask4); <span class="comment">// give the ball to mutextask4</span></div>
+<div class="line"><span class="lineno">  143</span>        osDelay(200);</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); <span class="comment">// wait for task 4</span></div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a549798a0f2a6d88c91a8297567a018c1" name="a549798a0f2a6d88c91a8297567a018c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a549798a0f2a6d88c91a8297567a018c1">&#9670;&nbsp;</a></span>LED_Task4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED_Task4 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="ledjes_8c_source.html#l00155">155</a> in het bestand <a class="el" href="ledjes_8c_source.html">ledjes.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>{</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordtype">int</span>          i, leds;</div>
+<div class="line"><span class="lineno">  158</span>    osThreadId_t hTask3;</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (!(hTask3 = xTaskGetHandle(<span class="stringliteral">&quot;LED_Task3&quot;</span>)))</div>
+<div class="line"><span class="lineno">  161</span>       <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Err:hTask3&quot;</span>);</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot; started\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        xSemaphoreTake(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>, portMAX_DELAY);</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">for</span> (i=0; i&lt;4; i++) <span class="comment">// voorbeeld hoe je je code zo overdraagbaar mogelijk maakt</span></div>
+<div class="line"><span class="lineno">  172</span>        {</div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">if</span>      (i==0)  leds = 1+128; <span class="comment">// zichtbaar: 1. waarde i, 2. welke leds aan gaan</span></div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i==1)  leds = 2+64;  <span class="comment">// ... had ook met switch-case gekund</span></div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i==2)  leds = 4+32;</div>
+<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">else</span>            leds = 8+16;</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>            LED_put(leds);     <span class="comment">// set leds</span></div>
+<div class="line"><span class="lineno">  179</span>            osDelay(<a class="code hl_variable" href="ledjes_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a>); <span class="comment">// snelheid bepalen, kan veranderd worden via user interface</span></div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">  182</span>            {</div>
+<div class="line"><span class="lineno">  183</span>                UART_puts(<span class="stringliteral">&quot;\r\n\t\t\tM4 led: &quot;</span>); UART_putint(leds);</div>
+<div class="line"><span class="lineno">  184</span>            }</div>
+<div class="line"><span class="lineno">  185</span>        }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>        xSemaphoreGive(<a class="code hl_variable" href="handles_8c.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>);</div>
+<div class="line"><span class="lineno">  188</span>        osDelay(200);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        xTaskNotifyGive(hTask3); <span class="comment">// give the ball back to task 3</span></div>
+<div class="line"><span class="lineno">  191</span>    }</div>
+<div class="line"><span class="lineno">  192</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a16ba23da293f6f319ffbc502a4cb7d5c" name="a16ba23da293f6f319ffbc502a4cb7d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ba23da293f6f319ffbc502a4cb7d5c">&#9670;&nbsp;</a></span>SetTaskPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetTaskPriority </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>task_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>new_priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verandert de prioriteit van een taak. Eerst wordt de taak gezocht in de lijst van alle taken (tasks[]) Daarna wordt de priority in de lijst gewijzigd en prioriteit van de taak aangepast. De functie <a class="el" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671" title="Displays de stack-gegevens van alle taken op de UART.">DisplayTaskData()</a> toont op de UART het tasknummer dat je nodig hebt. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task_id</td><td>Task identifier </td></tr>
+    <tr><td class="paramname">new_priority</td><td>Nieuwe prioriteit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00138">138</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>{</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    task_nr;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">for</span> (task_nr = 1; ptd-&gt;func != NULL; ptd++, task_nr++)</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">if</span> (task_nr == task_id) <span class="comment">// hebbes</span></div>
+<div class="line"><span class="lineno">  146</span>        {</div>
+<div class="line"><span class="lineno">  147</span>            ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.priority = new_priority;          <span class="comment">// struct-member</span></div>
+<div class="line"><span class="lineno">  148</span>            vTaskPrioritySet(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>, new_priority); <span class="comment">// taskpriority</span></div>
+<div class="line"><span class="lineno">  149</span>            <span class="comment">// of</span></div>
+<div class="line"><span class="lineno">  150</span>            <span class="comment">// osThreadSetPriority(ptd-&gt;hTask, new_priority);</span></div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>            UART_puts(<span class="stringliteral">&quot;\r\nSet task &quot;</span>); UART_puts(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  153</span>            UART_puts(<span class="stringliteral">&quot;&#39;s priority to: &quot;</span>); UART_putint(new_priority);</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
+<div class="line"><span class="lineno">  156</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0c9aab30edaac2fecc7fd1c21f5763a2" name="a0c9aab30edaac2fecc7fd1c21f5763a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9aab30edaac2fecc7fd1c21f5763a2">&#9670;&nbsp;</a></span>StartStopTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StartStopTask </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>task_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suspends (stopt) of Resumes (start) een task. Pas op. Als een task suspended wordt als hij een mutex bezet houdt blokkeer je alle tasks die op die mutex wachten. En als je de task stopt die de UART leest, schiet je jezelf ook in de voet. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00166">166</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    task_nr;</div>
+<div class="line"><span class="lineno">  170</span>    TaskStatus_t    xTaskDetails;</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">for</span> (task_nr = 1; ptd-&gt;func != NULL; ptd++, task_nr++)</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span> (task_nr == task_id) <span class="comment">// hebbes</span></div>
+<div class="line"><span class="lineno">  174</span>        {</div>
+<div class="line"><span class="lineno">  175</span>            vTaskGetInfo (ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>, &amp;xTaskDetails, pdTRUE, eInvalid);</div>
+<div class="line"><span class="lineno">  176</span>            UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  177</span>            UART_puts(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>            <span class="comment">// een task kan meerdere statussen hebben; het wordt simpeler</span></div>
+<div class="line"><span class="lineno">  180</span>            <span class="comment">// als je alleen de eSuspended checkt.</span></div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> (xTaskDetails.eCurrentState == eSuspended)</div>
+<div class="line"><span class="lineno">  182</span>            {</div>
+<div class="line"><span class="lineno">  183</span>                vTaskResume(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>);</div>
+<div class="line"><span class="lineno">  184</span>                UART_puts(<span class="stringliteral">&quot; resumed.&quot;</span>);</div>
+<div class="line"><span class="lineno">  185</span>            }</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">else</span> <span class="comment">// bv. eBlocked, eRunning, eInvalid etc.</span></div>
+<div class="line"><span class="lineno">  187</span>            {</div>
+<div class="line"><span class="lineno">  188</span>                vTaskSuspend(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>);</div>
+<div class="line"><span class="lineno">  189</span>                UART_puts(<span class="stringliteral">&quot; suspended.&quot;</span>);</div>
+<div class="line"><span class="lineno">  190</span>            }</div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  192</span>        }</div>
+<div class="line"><span class="lineno">  193</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a23fe84bfb739ead3f3005b8378170b62" name="a23fe84bfb739ead3f3005b8378170b62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23fe84bfb739ead3f3005b8378170b62">&#9670;&nbsp;</a></span>Student_task1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Student_task1 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Oefentask voor studenten. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument,kan</td><td>evt vanuit tasks gebruikt worden </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="student_8c_source.html#l00020">20</a> in het bestand <a class="el" href="student_8c_source.html">student.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot; started\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">char</span> buf[80];</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        osDelay(1000);</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">STUDENT_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            sprintf(buf, <span class="stringliteral">&quot;\r\n%s: %u&quot;</span>, __func__, i++);</div>
+<div class="line"><span class="lineno">   33</span>            UART_puts(buf);</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="line"><span class="lineno">   36</span>}</div>
+<div class="ttc" id="amy__app_8h_html_a6fcd7c2c8ee6e408e84e96747933027c"><div class="ttname"><a href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">STUDENT_DEBUG_OUT</a></div><div class="ttdeci">#define STUDENT_DEBUG_OUT</div><div class="ttdoc">bit 4: toggles student stuff output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00055">my_app.h:55</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a96c9e7d4608bbcbb1f89460ea7d8da6f" name="a96c9e7d4608bbcbb1f89460ea7d8da6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96c9e7d4608bbcbb1f89460ea7d8da6f">&#9670;&nbsp;</a></span>Timer1_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Timer1_Handler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vangt de FreeRTOS software-interrupt op (zie <a class="el" href="handles_8c.html" title="Definieert en creëert alle handles (semaphores, notifications, queues, eventgroups etc....">handles.c</a>), en toggelt een ledje. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hTimer1</td><td>De handle van de timer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="timer_8c_source.html#l00022">22</a> in het bestand <a class="el" href="timer_8c_source.html">timer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    HAL_GPIO_TogglePin(GPIOD, <a class="code hl_define" href="my__app_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">LEDBLUE</a>);   <span class="comment">// turns led on/off</span></div>
+<div class="line"><span class="lineno">   25</span>}</div>
+<div class="ttc" id="amy__app_8h_html_a4e14f0fe9bbd66b4bb5a86911b030043"><div class="ttname"><a href="my__app_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">LEDBLUE</a></div><div class="ttdeci">#define LEDBLUE</div><div class="ttdoc">LD6_Pin.</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00069">my_app.h:69</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af42059fd155a512774c89e7fc38bc03c" name="af42059fd155a512774c89e7fc38bc03c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42059fd155a512774c89e7fc38bc03c">&#9670;&nbsp;</a></span>UART_keys_IRQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UART_keys_IRQ </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leest characters in die de gebruiker via Terminalprogramma intikt. </p>
+<ol type="1">
+<li>wacht op chars in queue, gevuld door de IRQ_handler (<a class="el" href="main_8c.html" title=": Main program body">main.c</a>)</li>
+<li>notifies/stuurt command-string naar andere task <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+</li>
+</ol>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="_u_a_r_t__keys_8c_source.html#l00062">62</a> in het bestand <a class="el" href="_u_a_r_t__keys_8c_source.html">UART_keys.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">char</span>            buffer[<a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>];</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">char</span>            buffer_copy[<a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>];</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">int</span>             pos = 0;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span>             finish = FALSE;</div>
+<div class="line"><span class="lineno">   68</span>    osThreadId_t    hTask;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot;started, enter key on terminal...\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (!(hTask = xTaskGetHandle(<span class="stringliteral">&quot;UART_menu&quot;</span>)))</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_function" href="handles_8c.html#a34a9c5eb09cae80d85d5d13a348ee1e8">error_HaltOS</a>(<span class="stringliteral">&quot;Err:UART_hndl 0&quot;</span>);</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>        <span class="comment">// laat de VIC de q vullen, tot LFEED gedrukt is of qsize - 1 bereikt is.</span></div>
+<div class="line"><span class="lineno">   78</span>        <span class="comment">// nb: argument 2 is het adres waar ik het q-char in zet</span></div>
+<div class="line"><span class="lineno">   79</span>        <span class="comment">// nb: q-receive haalt gelijk de buffer leeg (q-peek niet).</span></div>
+<div class="line"><span class="lineno">   80</span>        xQueueReceive(<a class="code hl_variable" href="handles_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a>, &amp;buffer[pos], portMAX_DELAY);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>        <span class="comment">// negeer dit char bij geen data: -1, 255, of CR of spatie</span></div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (buffer[pos] == 0 || buffer[pos] == -1 || buffer[pos] == 255 || buffer[pos] == CRETURN || buffer[pos] == 32)</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <span class="comment">//UART_putchar(buffer[pos]);  // echo</span></div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        <span class="comment">// check of de string gesloten was of gesloten moet worden...</span></div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">if</span> (buffer[pos] == LFEED)     <span class="comment">// close als LF gedrukt</span></div>
+<div class="line"><span class="lineno">   90</span>        {</div>
+<div class="line"><span class="lineno">   91</span>            buffer[pos] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   92</span>            finish = TRUE;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>        }</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pos == <a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a> - 2) <span class="comment">// close if end of buf</span></div>
+<div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>            buffer[++pos] = <span class="charliteral">&#39;\0&#39;</span>;       <span class="comment">// first, skip to last position, then close string</span></div>
+<div class="line"><span class="lineno">   98</span>            finish = TRUE;</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">if</span> (finish)</div>
+<div class="line"><span class="lineno">  102</span>        {</div>
+<div class="line"><span class="lineno">  103</span>            <span class="comment">// de volgende taak krijgt een copy van de string</span></div>
+<div class="line"><span class="lineno">  104</span>            <span class="comment">// mijn eigen buffer kan zo gelijk weer gevuld worden door de ISR</span></div>
+<div class="line"><span class="lineno">  105</span>            strcpy(buffer_copy, buffer);</div>
+<div class="line"><span class="lineno">  106</span>            memset(buffer, 0, <a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>); <span class="comment">// clear original buffer</span></div>
+<div class="line"><span class="lineno">  107</span>            finish = FALSE;</div>
+<div class="line"><span class="lineno">  108</span>            pos = 0;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>            xTaskNotify(hTask, buffer_copy, eSetValueWithOverwrite); <span class="comment">// notify task2 with copy</span></div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">UART_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">  113</span>            {</div>
+<div class="line"><span class="lineno">  114</span>                UART_puts(<span class="stringliteral">&quot;\n\r&quot;</span>); UART_puts((<span class="keywordtype">char</span> *)__func__);</div>
+<div class="line"><span class="lineno">  115</span>                UART_puts(<span class="stringliteral">&quot;: UART_menu notified with &quot;</span>); UART_puts(buffer_copy);</div>
+<div class="line"><span class="lineno">  116</span>                UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span>            }</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  120</span>            pos++;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span>}</div>
+<div class="ttc" id="amy__app_8h_html_a4fb4ecb0210feec08883b3c4a1d401e3"><div class="ttname"><a href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">UART_DEBUG_OUT</a></div><div class="ttdeci">#define UART_DEBUG_OUT</div><div class="ttdoc">bit 3: toggles uart stuff output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00053">my_app.h:53</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a390831b4b34c463c81b188d9973d2a52" name="a390831b4b34c463c81b188d9973d2a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390831b4b34c463c81b188d9973d2a52">&#9670;&nbsp;</a></span>UART_keys_poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UART_keys_poll </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>deze waarde kan hier veranderd worden. </p>
+<p >Polt en leest characters in die de gebruiker via Terminalprogramma intikt.</p><ol type="1">
+<li>leest characters van uart</li>
+<li>notifies command-string naar andere task <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+</li>
+</ol>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="_u_a_r_t__keys_8c_source.html#l00031">31</a> in het bestand <a class="el" href="_u_a_r_t__keys_8c_source.html">UART_keys.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">char</span> buffer[<a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>];</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    osThreadId_t hTask = xTaskGetHandle(<span class="stringliteral">&quot;UART_menu&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot;started, enter key on terminal\n\r&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span>(TRUE)</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        UART_gets(buffer, <a class="code hl_define" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">QSIZE_UART</a>, TRUE); <span class="comment">// wait for string</span></div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>        xTaskNotify(hTask, buffer, eSetValueWithOverwrite); <span class="comment">// notify task2 with value</span></div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">UART_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>            UART_puts(<span class="stringliteral">&quot;\n\r&quot;</span>); UART_puts((<span class="keywordtype">char</span> *)__func__);</div>
+<div class="line"><span class="lineno">   48</span>            UART_puts(<span class="stringliteral">&quot;- notified with &quot;</span>); UART_puts(buffer);</div>
+<div class="line"><span class="lineno">   49</span>            UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="line"><span class="lineno">   52</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af909ca669055035da2246051d81ae747" name="af909ca669055035da2246051d81ae747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af909ca669055035da2246051d81ae747">&#9670;&nbsp;</a></span>UART_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UART_menu </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User Interface. De task wacht op kant en klare user-strings (TaskNotifyTake) van ISR-handler, en interpreteert de string. Het eerste character geeft het hoofd-commando aan. Afhankelijk van het commando worden opvolgende chars geinterpreteerd. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*argument</td><td>Niet gebruikt, eventueel een waarde of string om te testen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+<p ><b>0 - 5</b>: Togglet verschillende debug-outputs naar UART</p>
+<p >... en reageert ook op een paar letters</p>
+<p >D: Verandert de Default OSTIME-DELAY, die gebruikt wordt bij de LEDs. commando: <b>"d,200"</b> betekent: set delay op 200, NB: spaties worden niet afgevangen...</p>
+<p >M: Displays het menu (zie <a class="el" href="my__app_8c.html" title="Bevat algemene functies, die normaal in main.c zouden staan. Echter, main.c wordt gegenereerd door de...">my_app.c</a>)</p>
+<p >T: Displays de stackdata van alle Tasks</p>
+<p >P: Verandert de Proriteit van een taak commando, als: <b>"t,9,20"</b> betekent: set Task 9 op priority 20</p>
+<p >S: Start/Stop task commando, als: <b>"s,9"</b> betekent: start/stop Task 9</p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="_u_a_r_t__keys_8c_source.html#l00133">133</a> in het bestand <a class="el" href="_u_a_r_t__keys_8c_source.html">UART_keys.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordtype">char</span>   *s;</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordtype">char</span>   *tok = <span class="stringliteral">&quot;,&quot;</span>;  <span class="comment">// token if command is more than 1 char</span></div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordtype">int</span>     val1, val2;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot;started\n\r&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>        <span class="comment">// wacht op de string; let op de cast van (unsigned long) naar (char *)!</span></div>
+<div class="line"><span class="lineno">  144</span>        <span class="comment">// want de waarde die ik terug krijg is een pointer.</span></div>
+<div class="line"><span class="lineno">  145</span>        s = (<span class="keywordtype">char</span> *)ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>        <span class="comment">// check het eerste (en vaak enige) karakter van de inkomende command-string</span></div>
+<div class="line"><span class="lineno">  148</span>        <span class="comment">// toupper() zorgt ervoor dat het eerste karakter hoofdletter wordt, zo hoef ik niet op kleine</span></div>
+<div class="line"><span class="lineno">  149</span>        <span class="comment">// letters te checken.</span></div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">switch</span> (toupper((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)s[0]))</div>
+<div class="line"><span class="lineno">  151</span>        {</div>
+<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">default</span>:  UART_puts(s);</div>
+<div class="line"><span class="lineno">  153</span>                  UART_puts(<span class="stringliteral">&quot; (unkown command)\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  154</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>: <a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> = (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> ? <a class="code hl_define" href="my__app_8h.html#aecec3b7ee8e67b05c23fe851e7115999">DEBUG_OUT_NONE</a> : <a class="code hl_define" href="my__app_8h.html#adf61e71f815198fd487984a437f413fe">DEBUG_OUT_ALL</a>);</div>
+<div class="line"><span class="lineno">  158</span>                  UART_puts(<span class="stringliteral">&quot;\r\nall debug output = &quot;</span>);</div>
+<div class="line"><span class="lineno">  159</span>                  UART_puts(<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> == <a class="code hl_define" href="my__app_8h.html#adf61e71f815198fd487984a437f413fe">DEBUG_OUT_ALL</a> ? <span class="stringliteral">&quot;ON\r\n&quot;</span> : <span class="stringliteral">&quot;OFF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>                  <span class="comment">// als alle output uitgezet wordt, is het handig om gelijk het menu te laten zien.</span></div>
+<div class="line"><span class="lineno">  162</span>                  <span class="keywordflow">if</span> (<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> == <a class="code hl_define" href="my__app_8h.html#aecec3b7ee8e67b05c23fe851e7115999">DEBUG_OUT_NONE</a>)</div>
+<div class="line"><span class="lineno">  163</span>                      <a class="code hl_function" href="my__app_8c.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a>();</div>
+<div class="line"><span class="lineno">  164</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>: <a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> ^= <a class="code hl_define" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a>; <span class="comment">// toggle output on/off</span></div>
+<div class="line"><span class="lineno">  167</span>                  UART_puts(<span class="stringliteral">&quot;\r\nleds output = &quot;</span>);</div>
+<div class="line"><span class="lineno">  168</span>                  UART_puts(<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">LEDS_DEBUG_OUT</a> ? <span class="stringliteral">&quot;ON\r\n&quot;</span> : <span class="stringliteral">&quot;OFF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  169</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>: <a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> ^= <a class="code hl_define" href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">ARMKEYS_DEBUG_OUT</a>; <span class="comment">// toggle output on/off</span></div>
+<div class="line"><span class="lineno">  172</span>                  UART_puts(<span class="stringliteral">&quot;\r\narmkeys output = &quot;</span>);</div>
+<div class="line"><span class="lineno">  173</span>                  UART_puts(<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">ARMKEYS_DEBUG_OUT</a> ? <span class="stringliteral">&quot;ON\r\n&quot;</span> : <span class="stringliteral">&quot;OFF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  174</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>: <a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> ^= <a class="code hl_define" href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">UART_DEBUG_OUT</a>; <span class="comment">// toggle output on/off</span></div>
+<div class="line"><span class="lineno">  177</span>                  UART_puts(<span class="stringliteral">&quot;\r\nuart output = &quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>                  UART_puts(<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">UART_DEBUG_OUT</a> ? <span class="stringliteral">&quot;ON\r\n&quot;</span> : <span class="stringliteral">&quot;OFF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>: <a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> ^= <a class="code hl_define" href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">STUDENT_DEBUG_OUT</a>; <span class="comment">// toggle output on/off</span></div>
+<div class="line"><span class="lineno">  182</span>                  UART_puts(<span class="stringliteral">&quot;\r\nstudent output = &quot;</span>);</div>
+<div class="line"><span class="lineno">  183</span>                  UART_puts(<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">STUDENT_DEBUG_OUT</a> ? <span class="stringliteral">&quot;ON\r\n&quot;</span> : <span class="stringliteral">&quot;OFF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  184</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>: <a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> ^= <a class="code hl_define" href="my__app_8h.html#a14091316fcd82711d980261b8897affd">RES1_DEBUG_OUT</a>; <span class="comment">// toggle output on/off</span></div>
+<div class="line"><span class="lineno">  187</span>                  UART_puts(<span class="stringliteral">&quot;\r\nreserved1 output = &quot;</span>);</div>
+<div class="line"><span class="lineno">  188</span>                  UART_puts(<a class="code hl_variable" href="my__app_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="my__app_8h.html#a14091316fcd82711d980261b8897affd">RES1_DEBUG_OUT</a> ? <span class="stringliteral">&quot;ON\r\n&quot;</span> : <span class="stringliteral">&quot;OFF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  189</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>: </div>
+<div class="line"><span class="lineno">  194</span>                  <a class="code hl_variable" href="_u_a_r_t__keys_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a> = atoi(s+2); <span class="comment">// skip first 2 characters</span></div>
+<div class="line"><span class="lineno">  195</span>                  UART_puts(<span class="stringliteral">&quot;\r\n os_delay set to: &quot;</span>); UART_putint(<a class="code hl_variable" href="_u_a_r_t__keys_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a>);</div>
+<div class="line"><span class="lineno">  196</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>: <a class="code hl_function" href="my__app_8c.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a>(); </div>
+<div class="line"><span class="lineno">  199</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;T&#39;</span>: <a class="code hl_function" href="my__app_8h.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a>(); </div>
+<div class="line"><span class="lineno">  202</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;P&#39;</span>: </div>
+<div class="line"><span class="lineno">  206</span>                  <span class="comment">//  eerst: de 2 waarden worden uit de string gehaald met strtok()</span></div>
+<div class="line"><span class="lineno">  207</span>                  <span class="comment">//  dan: de strings worden naar int geconverteerd</span></div>
+<div class="line"><span class="lineno">  208</span>                  <span class="comment">//  nb. dit is wel grof geprogrammeerd zo, in het echt maak je hier een mooie functie van.</span></div>
+<div class="line"><span class="lineno">  209</span>                  s = strtok(s,    tok);                 <span class="comment">// naar start van string, negeer &#39;t,&#39;</span></div>
+<div class="line"><span class="lineno">  210</span>                  s = strtok(NULL, tok); val1 = atoi(s); <span class="comment">// volgende = task_id</span></div>
+<div class="line"><span class="lineno">  211</span>                  s = strtok(NULL, tok); val2 = atoi(s); <span class="comment">// volgende = priority</span></div>
+<div class="line"><span class="lineno">  212</span>                  <span class="keywordflow">if</span> (val1 &amp;&amp; val2)                      <span class="comment">// kleine validiteitscontrole</span></div>
+<div class="line"><span class="lineno">  213</span>                      <a class="code hl_function" href="my__app_8h.html#a16ba23da293f6f319ffbc502a4cb7d5c">SetTaskPriority</a>(val1, val2);</div>
+<div class="line"><span class="lineno">  214</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>: </div>
+<div class="line"><span class="lineno">  218</span>                  <span class="comment">//  eerst: de waarde worden uit de string gehaald met strtok()</span></div>
+<div class="line"><span class="lineno">  219</span>                  <span class="comment">//  dan: de string wordt naar int geconverteerd</span></div>
+<div class="line"><span class="lineno">  220</span>                  <span class="comment">//  nb. dit is wel grof geprogrammeerd zo, in het echt maak je hier een mooie functie van.</span></div>
+<div class="line"><span class="lineno">  221</span>                  s = strtok(s,    tok);                 <span class="comment">// naar start van string, negeer &#39;s,&#39;</span></div>
+<div class="line"><span class="lineno">  222</span>                  s = strtok(NULL, tok); val1 = atoi(s); <span class="comment">// volgende = task_id</span></div>
+<div class="line"><span class="lineno">  223</span>                  <span class="keywordflow">if</span> (val1)                      <span class="comment">// kleine validiteitscontrole</span></div>
+<div class="line"><span class="lineno">  224</span>                      <a class="code hl_function" href="my__app_8h.html#a0c9aab30edaac2fecc7fd1c21f5763a2">StartStopTask</a>(val1);</div>
+<div class="line"><span class="lineno">  225</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  226</span>        }</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span>}</div>
+<div class="ttc" id="a_u_a_r_t__keys_8c_html_ac0e8ff7c2f49b0988165336ca423dcea"><div class="ttname"><a href="_u_a_r_t__keys_8c.html#ac0e8ff7c2f49b0988165336ca423dcea">os_delay</a></div><div class="ttdeci">unsigned int os_delay</div><div class="ttdoc">default value 100MSEC, kan veranderd worden via Terminal (user interface)</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00037">ledjes.c:37</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a0c9aab30edaac2fecc7fd1c21f5763a2"><div class="ttname"><a href="my__app_8h.html#a0c9aab30edaac2fecc7fd1c21f5763a2">StartStopTask</a></div><div class="ttdeci">void StartStopTask(int)</div><div class="ttdoc">Suspends (stopt) of Resumes (start) een task. Pas op. Als een task suspended wordt als hij een mutex ...</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00166">tasks.c:166</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a14091316fcd82711d980261b8897affd"><div class="ttname"><a href="my__app_8h.html#a14091316fcd82711d980261b8897affd">RES1_DEBUG_OUT</a></div><div class="ttdeci">#define RES1_DEBUG_OUT</div><div class="ttdoc">bit 5: toggles reserved1 output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00057">my_app.h:57</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a16ba23da293f6f319ffbc502a4cb7d5c"><div class="ttname"><a href="my__app_8h.html#a16ba23da293f6f319ffbc502a4cb7d5c">SetTaskPriority</a></div><div class="ttdeci">void SetTaskPriority(int, int)</div><div class="ttdoc">Verandert de prioriteit van een taak. Eerst wordt de taak gezocht in de lijst van alle taken (tasks[]...</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00138">tasks.c:138</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a8d78f01ecc2ff5ebf5c8c6450b175671"><div class="ttname"><a href="my__app_8h.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a></div><div class="ttdeci">void DisplayTaskData(void)</div><div class="ttdoc">Displays de stack-gegevens van alle taken op de UART.</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00200">tasks.c:200</a></div></div>
+<div class="ttc" id="amy__app_8h_html_adf61e71f815198fd487984a437f413fe"><div class="ttname"><a href="my__app_8h.html#adf61e71f815198fd487984a437f413fe">DEBUG_OUT_ALL</a></div><div class="ttdeci">#define DEBUG_OUT_ALL</div><div class="ttdoc">genereer alle test output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00046">my_app.h:46</a></div></div>
+<div class="ttc" id="amy__app_8h_html_aecec3b7ee8e67b05c23fe851e7115999"><div class="ttname"><a href="my__app_8h.html#aecec3b7ee8e67b05c23fe851e7115999">DEBUG_OUT_NONE</a></div><div class="ttdeci">#define DEBUG_OUT_NONE</div><div class="ttdoc">stop alle test output</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8h_source.html#l00044">my_app.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentatie van variabelen</h2>
+<a id="ada55e3a3cc32b9d16e1bbc08d83431c9" name="ada55e3a3cc32b9d16e1bbc08d83431c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada55e3a3cc32b9d16e1bbc08d83431c9">&#9670;&nbsp;</a></span>hKEY_Event</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventGroupHandle_t hKEY_Event</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>handle voor ARM-keys-event </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="handles_8c_source.html#l00026">26</a> in het bestand <a class="el" href="handles_8c_source.html">handles.c</a>.</p>
+
+</div>
+</div>
+<a id="a011b1349f4d8c02977b852c7587f0581" name="a011b1349f4d8c02977b852c7587f0581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011b1349f4d8c02977b852c7587f0581">&#9670;&nbsp;</a></span>hLED_Sem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SemaphoreHandle_t hLED_Sem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>handle voor LED-mutex </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="handles_8c_source.html#l00025">25</a> in het bestand <a class="el" href="handles_8c_source.html">handles.c</a>.</p>
+
+</div>
+</div>
+<a id="af1a9410a47225cac12eb96a84b51b035" name="af1a9410a47225cac12eb96a84b51b035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a9410a47225cac12eb96a84b51b035">&#9670;&nbsp;</a></span>hTimer1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimerHandle_t hTimer1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>handle voor software timer </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="handles_8c_source.html#l00027">27</a> in het bestand <a class="el" href="handles_8c_source.html">handles.c</a>.</p>
+
+</div>
+</div>
+<a id="a1db415a0f7c5ecff145e4bb53cc54dbe" name="a1db415a0f7c5ecff145e4bb53cc54dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db415a0f7c5ecff145e4bb53cc54dbe">&#9670;&nbsp;</a></span>hUART_Queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QueueHandle_t hUART_Queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >alle handles handle voor UART-queue </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="handles_8c_source.html#l00024">24</a> in het bestand <a class="el" href="handles_8c_source.html">handles.c</a>.</p>
+
+</div>
+</div>
+<a id="a952449da34b356e2651de547daf4312c" name="a952449da34b356e2651de547daf4312c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a952449da34b356e2651de547daf4312c">&#9670;&nbsp;</a></span>Uart_debug_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Uart_debug_out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>default: debug all output to uart </p>
+<p >debug naar uart output, zie <a class="el" href="_u_a_r_t__keys_8c.html" title="Behandelt de communicatie met de UART.  Demonstreert: IRQ-handling, queue-handling,...">uart_keys.c</a> bitmask-toggle key voor task-debug-output </p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="my__app_8c_source.html#l00021">21</a> in het bestand <a class="el" href="my__app_8c_source.html">my_app.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

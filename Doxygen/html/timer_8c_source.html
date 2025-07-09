@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_GPS_411: Core/MyApp/App/timer.c Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_GPS_411
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">timer.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="timer_8c.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="admin_8h.html">admin.h</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;main.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;cmsis_os.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="admin_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">   21</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="timer_8c.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    HAL_GPIO_TogglePin(GPIOD, <a class="code hl_define" href="admin_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">LEDBLUE</a>);   <span class="comment">// turns led on/off</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="ttc" id="aadmin_8h_html"><div class="ttname"><a href="admin_8h.html">admin.h</a></div><div class="ttdoc">Bevat de defines &amp; externals voor deze applicatie.</div></div>
+<div class="ttc" id="aadmin_8h_html_a4e14f0fe9bbd66b4bb5a86911b030043"><div class="ttname"><a href="admin_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">LEDBLUE</a></div><div class="ttdeci">#define LEDBLUE</div><div class="ttdoc">LD6_Pin.</div><div class="ttdef"><b>Definition:</b> <a href="admin_8h_source.html#l00092">admin.h:92</a></div></div>
+<div class="ttc" id="atimer_8c_html_a96c9e7d4608bbcbb1f89460ea7d8da6f"><div class="ttname"><a href="timer_8c.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a></div><div class="ttdeci">void Timer1_Handler(void)</div><div class="ttdoc">Vangt de FreeRTOS software-interrupt op (zie handles.c), en toggelt een ledje.</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00021">timer.c:21</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

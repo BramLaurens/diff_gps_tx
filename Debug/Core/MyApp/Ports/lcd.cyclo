@@ -1,0 +1,14 @@
+../Core/MyApp/Ports/lcd.c:40:6:ClearBits	1
+../Core/MyApp/Ports/lcd.c:48:6:LCD_cursor_home	1
+../Core/MyApp/Ports/lcd.c:54:6:LCD_clear	1
+../Core/MyApp/Ports/lcd.c:63:6:LCD_XY	5
+../Core/MyApp/Ports/lcd.c:80:6:LCD_init	1
+../Core/MyApp/Ports/lcd.c:133:6:LCD_putchar	2
+../Core/MyApp/Ports/lcd.c:142:6:LCD_put	4
+../Core/MyApp/Ports/lcd.c:161:6:LCD_puts	1
+../Core/MyApp/Ports/lcd.c:167:6:LCD_putint	4
+../Core/MyApp/Ports/lcd.c:191:13:LCD_writenibble	5
+../Core/MyApp/Ports/lcd.c:211:13:LCD_writebyte	1
+../Core/MyApp/Ports/lcd.c:229:6:LCD_writecontrol	1
+../Core/MyApp/Ports/lcd.c:236:6:busyflag	1
+../Core/MyApp/Ports/lcd.c:271:6:LCD_createChar	2

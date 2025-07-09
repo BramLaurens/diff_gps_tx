@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_methods: Core/MyApp/App/LEDs.c Bestand Referentie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_methods
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functies</a> &#124;
+<a href="#var-members">Variabelen</a>  </div>
+  <div class="headertitle"><div class="title">LEDs.c Bestand Referentie</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Demonstreert: mutexes (mutual exclusion semaphores), tasknotifcation, taskYIELD().  
+<a href="#details">Meer...</a></p>
+<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;cmsis_os.h&quot;</code><br />
+<code>#include &quot;usb_host.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="my__app_8h_source.html">my_app.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:ad2a474dac2e6473d36cbaa6bd4ef1654"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_app_2_l_e_ds_8c.html#ad2a474dac2e6473d36cbaa6bd4ef1654">MutexTask1</a> (void *pdata)</td></tr>
+<tr class="memdesc:ad2a474dac2e6473d36cbaa6bd4ef1654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.  <a href="_app_2_l_e_ds_8c.html#ad2a474dac2e6473d36cbaa6bd4ef1654">Meer...</a><br /></td></tr>
+<tr class="separator:ad2a474dac2e6473d36cbaa6bd4ef1654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08e74854169aed0aa22c4fde744b008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_app_2_l_e_ds_8c.html#af08e74854169aed0aa22c4fde744b008">MutexTask2</a> (void *pdata)</td></tr>
+<tr class="memdesc:af08e74854169aed0aa22c4fde744b008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.  <a href="_app_2_l_e_ds_8c.html#af08e74854169aed0aa22c4fde744b008">Meer...</a><br /></td></tr>
+<tr class="separator:af08e74854169aed0aa22c4fde744b008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c905d0c5031fb83d594317d31604f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_app_2_l_e_ds_8c.html#ae2c905d0c5031fb83d594317d31604f0">MutexTask3</a> (void *pdata)</td></tr>
+<tr class="memdesc:ae2c905d0c5031fb83d594317d31604f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification.  <a href="_app_2_l_e_ds_8c.html#ae2c905d0c5031fb83d594317d31604f0">Meer...</a><br /></td></tr>
+<tr class="separator:ae2c905d0c5031fb83d594317d31604f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c7122711b46d3c1ec137f95f3aa188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_app_2_l_e_ds_8c.html#a86c7122711b46d3c1ec137f95f3aa188">MutexTask4</a> (void *pdata)</td></tr>
+<tr class="memdesc:a86c7122711b46d3c1ec137f95f3aa188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification.  <a href="_app_2_l_e_ds_8c.html#a86c7122711b46d3c1ec137f95f3aa188">Meer...</a><br /></td></tr>
+<tr class="separator:a86c7122711b46d3c1ec137f95f3aa188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variabelen</h2></td></tr>
+<tr class="memitem:ac0e8ff7c2f49b0988165336ca423dcea"><td class="memItemLeft" align="right" valign="top"><a id="ac0e8ff7c2f49b0988165336ca423dcea" name="ac0e8ff7c2f49b0988165336ca423dcea"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>os_delay</b> = 100</td></tr>
+<tr class="memdesc:ac0e8ff7c2f49b0988165336ca423dcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">default value 100MSEC, kan veranderd worden via Terminal (user interface) <br /></td></tr>
+<tr class="separator:ac0e8ff7c2f49b0988165336ca423dcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<div class="textblock"><p >Demonstreert: mutexes (mutual exclusion semaphores), tasknotifcation, taskYIELD(). </p>
+<p ><a class="el" href="_app_2_l_e_ds_8c.html#ad2a474dac2e6473d36cbaa6bd4ef1654" title="Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.">MutexTask1()</a>, <a class="el" href="_app_2_l_e_ds_8c.html#af08e74854169aed0aa22c4fde744b008" title="Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.">MutexTask2()</a>, <a class="el" href="_app_2_l_e_ds_8c.html#ae2c905d0c5031fb83d594317d31604f0" title="Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....">MutexTask3()</a> en <a class="el" href="_app_2_l_e_ds_8c.html#a86c7122711b46d3c1ec137f95f3aa188" title="Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....">MutexTask4()</a> tonen het semaphore principe. <br  />
+ Allemaal zetten ze de LEDs op een bepaalde manier aan en uit. <em>Doordat ze een semaphore gebruiken kunnen ze allemaal hun eigen loepje afmaken, zonder dat ze door een context switch onderbroken worden</em>. De semaphore zorgt ervoor dat ze steeds even zelf eigenaar zijn van de LEDs, en zolang ze de semaphore bezitten worden andere taken uitgesloten (hence: <em>Mutual Exclusion Semaphore</em>). Ze krijgen dan pas de beurt als de task die de mutex bezit, deze vrijgeeft (met semaphoregive). Mutextasks 1 en 2 werken met het Round Robin principe. Dat kan door ze dezelfde prioriteit te geven.<br  />
+</p>
+<p >Stel, je wilt dat niet, dan moet je iets anders verzinnen, zie <a class="el" href="_app_2_l_e_ds_8c.html#ae2c905d0c5031fb83d594317d31604f0" title="Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....">MutexTask3()</a> en <a class="el" href="_app_2_l_e_ds_8c.html#a86c7122711b46d3c1ec137f95f3aa188" title="Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....">MutexTask4()</a>. Deze hebben een kleine toevoeging t.o.v. 1 en 2: Ze laten niet het OS bepalen wie aan de beurt is met Round Robin, maar bepalen het zelf met tasknotify! Ze geven steeds elkaar de beurt. Zo kun je werken met verschillende task-priorities, zonder dat tasks met een lage prioriteit 'starven', dus geen timeslices krijgen van het OS.<br  />
+ Want: FreeRTOS bezit geen priority-inversion (uC//OSII bv. wel)! Daarbij gaat het OS een taak met een lage prioriteit die dreigt te 'starven', zelf ophogen zodat de taak wel aan de beurt komt.</p>
+<dl class="section author"><dt>Auteur</dt><dd>MSC</dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>5/5/2022 </dd></dl>
+</div><h2 class="groupheader">Documentatie van functies</h2>
+<a id="ad2a474dac2e6473d36cbaa6bd4ef1654" name="ad2a474dac2e6473d36cbaa6bd4ef1654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a474dac2e6473d36cbaa6bd4ef1654">&#9670;&nbsp;</a></span>MutexTask1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MutexTask1 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td>*pdata, kan vanuit tasks gebruikt worden </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af08e74854169aed0aa22c4fde744b008" name="af08e74854169aed0aa22c4fde744b008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08e74854169aed0aa22c4fde744b008">&#9670;&nbsp;</a></span>MutexTask2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MutexTask2 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td>*pdata </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae2c905d0c5031fb83d594317d31604f0" name="ae2c905d0c5031fb83d594317d31604f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2c905d0c5031fb83d594317d31604f0">&#9670;&nbsp;</a></span>MutexTask3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MutexTask3 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument</td><td>Not used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a86c7122711b46d3c1ec137f95f3aa188" name="a86c7122711b46d3c1ec137f95f3aa188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c7122711b46d3c1ec137f95f3aa188">&#9670;&nbsp;</a></span>MutexTask4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MutexTask4 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores. Task 3 en 4 werken daarnaast nog met tasknotification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument</td><td>Not used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

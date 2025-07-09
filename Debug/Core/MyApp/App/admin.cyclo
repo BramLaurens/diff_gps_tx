@@ -1,0 +1,10 @@
+../Core/MyApp/App/admin.c:114:6:DisplayVersion	1
+../Core/MyApp/App/admin.c:150:6:DisplayMenu	1
+../Core/MyApp/App/admin.c:190:6:error_HaltOS	1
+../Core/MyApp/App/admin.c:208:6:CreateHandles	6
+../Core/MyApp/App/admin.c:237:6:Timer1_Handler	1
+../Core/MyApp/App/admin.c:262:6:CreateTasks	2
+../Core/MyApp/App/admin.c:288:14:GetTaskhandle	3
+../Core/MyApp/App/admin.c:309:6:SetTaskPriority	3
+../Core/MyApp/App/admin.c:337:6:StartStopTask	4
+../Core/MyApp/App/admin.c:371:6:DisplayTaskData	3

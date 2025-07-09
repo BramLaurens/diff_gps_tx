@@ -1,0 +1,4 @@
+../Core/MyApp/Ports/keys.c:33:6:KEYS_init	1
+../Core/MyApp/Ports/keys.c:55:6:KEYS_initISR	1
+../Core/MyApp/Ports/keys.c:67:14:KEYS_read	5
+../Core/MyApp/Ports/keys.c:100:14:KEYS_kolom	5

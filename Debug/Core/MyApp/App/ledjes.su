@@ -1,0 +1,4 @@
+../Core/MyApp/App/ledjes.c:44:6:LED_Task1	24	static,ignoring_inline_asm
+../Core/MyApp/App/ledjes.c:77:6:LED_Task2	24	static,ignoring_inline_asm
+../Core/MyApp/App/ledjes.c:107:6:LED_Task3	32	static
+../Core/MyApp/App/ledjes.c:152:6:LED_Task4	32	static

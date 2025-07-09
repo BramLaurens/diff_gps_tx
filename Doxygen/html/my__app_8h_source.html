@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_methods: Core/MyApp/App/my_app.h Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_methods
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">my_app.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="my__app_8h.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;freeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;event_groups.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;queue.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;task.h&quot;</span> <span class="comment">// taskYield</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;semphr.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;stdio.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;string.h&quot;</span> <span class="comment">// strtok, strcpy</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;stdlib.h&quot;</span> <span class="comment">// atoi</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;ctype.h&quot;</span>  <span class="comment">// toupper</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define TRUE       1</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define FALSE      0</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="my__app_8h.html#a18901836d92cf76a93826b9e1116292d">   25</a></span><span class="preprocessor">#define QSIZE_UART 10</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="my__app_8h.html#a13315792b47dcf5207ce4e06daeab518">   27</a></span><span class="preprocessor">#define TIMER1_DELAY 500</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">extern</span> QueueHandle_t      <a class="code hl_variable" href="my__app_8h.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">extern</span> SemaphoreHandle_t  <a class="code hl_variable" href="my__app_8h.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">extern</span> EventGroupHandle_t <a class="code hl_variable" href="my__app_8h.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">extern</span> TimerHandle_t      <a class="code hl_variable" href="my__app_8h.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="my__app_8h.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="my__app_8h.html#aecec3b7ee8e67b05c23fe851e7115999">   44</a></span><span class="preprocessor">#define DEBUG_OUT_NONE      0x00</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="my__app_8h.html#adf61e71f815198fd487984a437f413fe">   46</a></span><span class="preprocessor">#define DEBUG_OUT_ALL       0xff</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="my__app_8h.html#a367617a9804f8aeeb1b5b09d17af0d1a">   49</a></span><span class="preprocessor">#define LEDS_DEBUG_OUT      0x01</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="my__app_8h.html#ae2de7e45f2168abc45779a2d5dce35e2">   51</a></span><span class="preprocessor">#define ARMKEYS_DEBUG_OUT   0x02</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="my__app_8h.html#a4fb4ecb0210feec08883b3c4a1d401e3">   53</a></span><span class="preprocessor">#define UART_DEBUG_OUT      0x04</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="my__app_8h.html#a6fcd7c2c8ee6e408e84e96747933027c">   55</a></span><span class="preprocessor">#define STUDENT_DEBUG_OUT   0x08</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="my__app_8h.html#a14091316fcd82711d980261b8897affd">   57</a></span><span class="preprocessor">#define RES1_DEBUG_OUT      0x10</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="my__app_8h.html#a391da0aead1bc9a483c1f96cc6b802eb">   59</a></span><span class="preprocessor">#define RES2_DEBUG_OUT      0x24</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="my__app_8h.html#a5cd9ee80876b12602eb666a07b9cfe50">   63</a></span><span class="preprocessor">#define LEDGREEN  GPIO_PIN_12</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="my__app_8h.html#a4a865d371e7fdede347031acef7248a1">   65</a></span><span class="preprocessor">#define LEDRED    GPIO_PIN_13</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="my__app_8h.html#a997de867fda1d8d8774cda7ef97c6f9d">   67</a></span><span class="preprocessor">#define LEDORANGE GPIO_PIN_14</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="my__app_8h.html#a4e14f0fe9bbd66b4bb5a86911b030043">   69</a></span><span class="preprocessor">#define LEDBLUE   GPIO_PIN_15</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">// my_app.c</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a9dec45875121142b6466b9475691b40a">DisplayVersion</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a>    (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#ac7a60a0c0a7a24b63849288395b81b59">error_HaltOS</a>   (<span class="keywordtype">char</span> *);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// tasks.c</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">extern</span> <span class="keywordtype">void</span>         <a class="code hl_function" href="my__app_8h.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">extern</span> <span class="keywordtype">void</span>         <a class="code hl_function" href="my__app_8h.html#a7f983159a50cdcaaad786c6c7a216cd9">CreateTasks</a>     (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">extern</span> osThreadId_t <a class="code hl_function" href="my__app_8h.html#af3fcde4e5fc023f9a6b398139143c657">GetTaskhandle</a>   (<span class="keywordtype">char</span> *);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">extern</span> <span class="keywordtype">void</span>         <a class="code hl_function" href="my__app_8h.html#a16ba23da293f6f319ffbc502a4cb7d5c">SetTaskPriority</a> (<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">extern</span> <span class="keywordtype">void</span>         <a class="code hl_function" href="my__app_8h.html#a0c9aab30edaac2fecc7fd1c21f5763a2">StartStopTask</a>   (<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">// handles.c</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">extern</span> <span class="keywordtype">void</span>         <a class="code hl_function" href="my__app_8h.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a>   (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">// LEDS.c</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a8fa46093b138efd9f745379e50aaebb1">LED_Task1</a>   (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#aa6578679005e0ded1868835daa8fbede">LED_Task2</a>   (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a379c01dd4fb15e45ca6e00a95c761cc7">LED_Task3</a>   (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a549798a0f2a6d88c91a8297567a018c1">LED_Task4</a>   (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">// ARM_keys.c</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a0c660e87fd3fb5216355c32e3a72f95e">ARM_keys_IRQ</a> (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#af21164a48742d972455d2ce8c6317262">ARM_keys_task</a>(<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">// UART_keys.c</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a390831b4b34c463c81b188d9973d2a52">UART_keys_poll</a>(<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#af42059fd155a512774c89e7fc38bc03c">UART_keys_IRQ</a> (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#af909ca669055035da2246051d81ae747">UART_menu</a>     (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">// student.c</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a23fe84bfb739ead3f3005b8378170b62">Student_task1</a> (<span class="keywordtype">void</span> *);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">// timer.c</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="ttc" id="amy__app_8h_html_a011b1349f4d8c02977b852c7587f0581"><div class="ttname"><a href="my__app_8h.html#a011b1349f4d8c02977b852c7587f0581">hLED_Sem</a></div><div class="ttdeci">SemaphoreHandle_t hLED_Sem</div><div class="ttdoc">handle voor LED-mutex</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00025">handles.c:25</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a0c660e87fd3fb5216355c32e3a72f95e"><div class="ttname"><a href="my__app_8h.html#a0c660e87fd3fb5216355c32e3a72f95e">ARM_keys_IRQ</a></div><div class="ttdeci">void ARM_keys_IRQ(void *)</div><div class="ttdoc">Deze task handelt de ARM-toets af, die ontvangen is van de ISR-handler (zie: stm32f4xx_it....</div><div class="ttdef"><b>Definition:</b> <a href="_a_r_m__keys_8c_source.html#l00037">ARM_keys.c:37</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a0c9aab30edaac2fecc7fd1c21f5763a2"><div class="ttname"><a href="my__app_8h.html#a0c9aab30edaac2fecc7fd1c21f5763a2">StartStopTask</a></div><div class="ttdeci">void StartStopTask(int)</div><div class="ttdoc">Suspends (stopt) of Resumes (start) een task. Pas op. Als een task suspended wordt als hij een mutex ...</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00166">tasks.c:166</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a16ba23da293f6f319ffbc502a4cb7d5c"><div class="ttname"><a href="my__app_8h.html#a16ba23da293f6f319ffbc502a4cb7d5c">SetTaskPriority</a></div><div class="ttdeci">void SetTaskPriority(int, int)</div><div class="ttdoc">Verandert de prioriteit van een taak. Eerst wordt de taak gezocht in de lijst van alle taken (tasks[]...</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00138">tasks.c:138</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a183387e08a88262f831be8b883ce8754"><div class="ttname"><a href="my__app_8h.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a></div><div class="ttdeci">void CreateHandles(void)</div><div class="ttdoc">Creates alle handles voor deze applicatie.</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00056">handles.c:56</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a1db415a0f7c5ecff145e4bb53cc54dbe"><div class="ttname"><a href="my__app_8h.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a></div><div class="ttdeci">QueueHandle_t hUART_Queue</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00024">handles.c:24</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a23fe84bfb739ead3f3005b8378170b62"><div class="ttname"><a href="my__app_8h.html#a23fe84bfb739ead3f3005b8378170b62">Student_task1</a></div><div class="ttdeci">void Student_task1(void *)</div><div class="ttdoc">Oefentask voor studenten.</div><div class="ttdef"><b>Definition:</b> <a href="student_8c_source.html#l00020">student.c:20</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a379c01dd4fb15e45ca6e00a95c761cc7"><div class="ttname"><a href="my__app_8h.html#a379c01dd4fb15e45ca6e00a95c761cc7">LED_Task3</a></div><div class="ttdeci">void LED_Task3(void *)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00110">ledjes.c:110</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a390831b4b34c463c81b188d9973d2a52"><div class="ttname"><a href="my__app_8h.html#a390831b4b34c463c81b188d9973d2a52">UART_keys_poll</a></div><div class="ttdeci">void UART_keys_poll(void *)</div><div class="ttdoc">deze waarde kan hier veranderd worden.</div><div class="ttdef"><b>Definition:</b> <a href="_u_a_r_t__keys_8c_source.html#l00031">UART_keys.c:31</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a549798a0f2a6d88c91a8297567a018c1"><div class="ttname"><a href="my__app_8h.html#a549798a0f2a6d88c91a8297567a018c1">LED_Task4</a></div><div class="ttdeci">void LED_Task4(void *)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00155">ledjes.c:155</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a7f983159a50cdcaaad786c6c7a216cd9"><div class="ttname"><a href="my__app_8h.html#a7f983159a50cdcaaad786c6c7a216cd9">CreateTasks</a></div><div class="ttdeci">void CreateTasks(void)</div><div class="ttdoc">Creëert alle taken door te scannen door de TASKDATA-argumenten-array.  Let op. Eerst wordt de schedul...</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00091">tasks.c:91</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a8d78f01ecc2ff5ebf5c8c6450b175671"><div class="ttname"><a href="my__app_8h.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a></div><div class="ttdeci">void DisplayTaskData(void)</div><div class="ttdoc">Displays de stack-gegevens van alle taken op de UART.</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00200">tasks.c:200</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a8fa46093b138efd9f745379e50aaebb1"><div class="ttname"><a href="my__app_8h.html#a8fa46093b138efd9f745379e50aaebb1">LED_Task1</a></div><div class="ttdeci">void LED_Task1(void *)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00045">ledjes.c:45</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a93467475af28d4b75cafb508f95578bf"><div class="ttname"><a href="my__app_8h.html#a93467475af28d4b75cafb508f95578bf">DisplayMenu</a></div><div class="ttdeci">void DisplayMenu(void)</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8c_source.html#l00065">my_app.c:65</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a952449da34b356e2651de547daf4312c"><div class="ttname"><a href="my__app_8h.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a></div><div class="ttdeci">int Uart_debug_out</div><div class="ttdoc">default: debug all output to uart</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8c_source.html#l00021">my_app.c:21</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a96c9e7d4608bbcbb1f89460ea7d8da6f"><div class="ttname"><a href="my__app_8h.html#a96c9e7d4608bbcbb1f89460ea7d8da6f">Timer1_Handler</a></div><div class="ttdeci">void Timer1_Handler(void)</div><div class="ttdoc">Vangt de FreeRTOS software-interrupt op (zie handles.c), en toggelt een ledje.</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00022">timer.c:22</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a9dec45875121142b6466b9475691b40a"><div class="ttname"><a href="my__app_8h.html#a9dec45875121142b6466b9475691b40a">DisplayVersion</a></div><div class="ttdeci">void DisplayVersion(void)</div><div class="ttdef"><b>Definition:</b> <a href="my__app_8c_source.html#l00030">my_app.c:30</a></div></div>
+<div class="ttc" id="amy__app_8h_html_aa6578679005e0ded1868835daa8fbede"><div class="ttname"><a href="my__app_8h.html#aa6578679005e0ded1868835daa8fbede">LED_Task2</a></div><div class="ttdeci">void LED_Task2(void *)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00079">ledjes.c:79</a></div></div>
+<div class="ttc" id="amy__app_8h_html_ac7a60a0c0a7a24b63849288395b81b59"><div class="ttname"><a href="my__app_8h.html#ac7a60a0c0a7a24b63849288395b81b59">error_HaltOS</a></div><div class="ttdeci">void error_HaltOS(char *)</div><div class="ttdoc">Fatale OS-error opgetreden tijdens startup of runtime, doorgaan is zinloos. Het OS wordt tot stoppen ...</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00038">handles.c:38</a></div></div>
+<div class="ttc" id="amy__app_8h_html_ada55e3a3cc32b9d16e1bbc08d83431c9"><div class="ttname"><a href="my__app_8h.html#ada55e3a3cc32b9d16e1bbc08d83431c9">hKEY_Event</a></div><div class="ttdeci">EventGroupHandle_t hKEY_Event</div><div class="ttdoc">handle voor ARM-keys-event</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00026">handles.c:26</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af1a9410a47225cac12eb96a84b51b035"><div class="ttname"><a href="my__app_8h.html#af1a9410a47225cac12eb96a84b51b035">hTimer1</a></div><div class="ttdeci">TimerHandle_t hTimer1</div><div class="ttdoc">handle voor software timer</div><div class="ttdef"><b>Definition:</b> <a href="handles_8c_source.html#l00027">handles.c:27</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af21164a48742d972455d2ce8c6317262"><div class="ttname"><a href="my__app_8h.html#af21164a48742d972455d2ce8c6317262">ARM_keys_task</a></div><div class="ttdeci">void ARM_keys_task(void *)</div><div class="ttdoc">Task krijgt ARM-key met notificatie binnen, en zet ledjes op die waarde. Ook de gekleurde ledjes (beh...</div><div class="ttdef"><b>Definition:</b> <a href="_a_r_m__keys_8c_source.html#l00064">ARM_keys.c:64</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af3fcde4e5fc023f9a6b398139143c657"><div class="ttname"><a href="my__app_8h.html#af3fcde4e5fc023f9a6b398139143c657">GetTaskhandle</a></div><div class="ttdeci">osThreadId_t GetTaskhandle(char *)</div><div class="ttdoc">Zoekt in tasks-array de task, en returns de handle. Deze handle wordt door CreateTasks() in de array ...</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00117">tasks.c:117</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af42059fd155a512774c89e7fc38bc03c"><div class="ttname"><a href="my__app_8h.html#af42059fd155a512774c89e7fc38bc03c">UART_keys_IRQ</a></div><div class="ttdeci">void UART_keys_IRQ(void *)</div><div class="ttdoc">Leest characters in die de gebruiker via Terminalprogramma intikt.</div><div class="ttdef"><b>Definition:</b> <a href="_u_a_r_t__keys_8c_source.html#l00062">UART_keys.c:62</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af909ca669055035da2246051d81ae747"><div class="ttname"><a href="my__app_8h.html#af909ca669055035da2246051d81ae747">UART_menu</a></div><div class="ttdeci">void UART_menu(void *)</div><div class="ttdoc">User Interface. De task wacht op kant en klare user-strings (TaskNotifyTake) van ISR-handler,...</div><div class="ttdef"><b>Definition:</b> <a href="_u_a_r_t__keys_8c_source.html#l00133">UART_keys.c:133</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

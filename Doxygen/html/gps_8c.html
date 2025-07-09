@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_GPS_407: Core/MyApp/App/gps.c Bestand Referentie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_GPS_407
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Laden...</div>
+<div class="SRStatus" id="Searching">Zoeken...</div>
+<div class="SRStatus" id="NoMatches">Niets gevonden</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functies</a> &#124;
+<a href="#var-members">Variabelen</a>  </div>
+  <div class="headertitle"><div class="title">gps.c Bestand Referentie</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Behandelt de gps input-strings (NMEA-protocol) van UART1.<br  />
+ <b>Demonstreert: xMessageBufferRead() </b><br  />
+ Aan UART1 is een interrupt gekoppeld (zie <a class="el" href="main_8c.html" title=": Main program body">main.c</a>: <a class="el" href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b" title="ISR die UART-characters op een Queue zet. De core-functie wordt gegenereerd.">HAL_UART_RxCpltCallback()</a>, die de inkomende string op een messagebuffer zet, die we hier uitlezen en verwerken.<br  />
+  
+<a href="#details">Meer...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="admin_8h_source.html">admin.h</a>&gt;</code><br />
+<code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;cmsis_os.h&quot;</code><br />
+<code>#include &quot;gps.h&quot;</code><br />
+</div>
+<p><a href="gps_8c_source.html">Ga naar de broncode van dit bestand.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:a294c695f1e114c0a4975cef5b91f8e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gps_8c.html#a294c695f1e114c0a4975cef5b91f8e7d">fill_GNRMC</a> (char *message)</td></tr>
+<tr class="memdesc:a294c695f1e114c0a4975cef5b91f8e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">De chars van de binnengekomen GNRMC-string worden in data omgezet, dwz in een GNRMC-struct, mbv strtok(); De struct bevat nu alleen chars - je kunt er ook voor kiezen om gelijk met doubles te werken, die je dan met atof(); omzet.  <br /></td></tr>
+<tr class="separator:a294c695f1e114c0a4975cef5b91f8e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af733a2317b43875d2c911c34f3a86823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gps_8c.html#af733a2317b43875d2c911c34f3a86823">GPS_getNMEA</a> (void *argument)</td></tr>
+<tr class="memdesc:af733a2317b43875d2c911c34f3a86823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leest de GPS-NMEA-strings die via de UART via interrupt-handler (HAL_UART_RxCpltCallback) binnenkomen. * De handler zet elk inkomende character gelijk op een queue, die hier uitgelezen wordt. Vervolgens wordt hiervan een GPS-message opgebouwd en verwerkt.  <br /></td></tr>
+<tr class="separator:af733a2317b43875d2c911c34f3a86823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66735348a4e65644ec1762bdf37e4f19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gps_8c.html#a66735348a4e65644ec1762bdf37e4f19">hex2int</a> (char *c)</td></tr>
+<tr class="separator:a66735348a4e65644ec1762bdf37e4f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49002bb606cdf9e9ffecb4dba16082c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gps_8c.html#a49002bb606cdf9e9ffecb4dba16082c0">hexchar2int</a> (char c)</td></tr>
+<tr class="separator:a49002bb606cdf9e9ffecb4dba16082c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599d945c53e74265e35aff35847c15e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gps_8c.html#a599d945c53e74265e35aff35847c15e2">checksum_valid</a> (char *string)</td></tr>
+<tr class="separator:a599d945c53e74265e35aff35847c15e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variabelen</h2></td></tr>
+<tr class="memitem:a0467b1a9289b2992a0c040d54b5409f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct___g_n_r_m_c.html">GNRMC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gps_8c.html#a0467b1a9289b2992a0c040d54b5409f3">gnrmc</a></td></tr>
+<tr class="separator:a0467b1a9289b2992a0c040d54b5409f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<div class="textblock"><p>Behandelt de gps input-strings (NMEA-protocol) van UART1.<br  />
+ <b>Demonstreert: xMessageBufferRead() </b><br  />
+ Aan UART1 is een interrupt gekoppeld (zie <a class="el" href="main_8c.html" title=": Main program body">main.c</a>: <a class="el" href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b" title="ISR die UART-characters op een Queue zet. De core-functie wordt gegenereerd.">HAL_UART_RxCpltCallback()</a>, die de inkomende string op een messagebuffer zet, die we hier uitlezen en verwerken.<br  />
+ </p>
+<dl class="section author"><dt>Auteur</dt><dd>MSC</dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>5/5/2023 </dd></dl>
+
+<p class="definition">De definitie bevindt zich in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+</div><h2 class="groupheader">Documentatie van functies</h2>
+<a id="a599d945c53e74265e35aff35847c15e2" name="a599d945c53e74265e35aff35847c15e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599d945c53e74265e35aff35847c15e2">&#9670;&#160;</a></span>checksum_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int checksum_valid </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="gps_8c_source.html#l00191">191</a> in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordtype">char</span> *checksum_str;</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordtype">int</span> checksum, i;</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> calculated_checksum = 0;</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    <span class="comment">// Checksum is postcede by *</span></div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">if</span> ((checksum_str = strchr(<span class="keywordtype">string</span>, <span class="charliteral">&#39;*&#39;</span>)))</div>
+<div class="line"><span class="lineno">  199</span>    {</div>
+<div class="line"><span class="lineno">  200</span>        *checksum_str = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">// Remove checksum from string</span></div>
+<div class="line"><span class="lineno">  201</span>        <span class="comment">// Calculate checksum, starting after $ (i = 1)</span></div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">for</span> (i = 1; i &lt; strlen(<span class="keywordtype">string</span>); i++)</div>
+<div class="line"><span class="lineno">  203</span>            calculated_checksum = calculated_checksum ^ <span class="keywordtype">string</span>[i];</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>        checksum = hex2int((<span class="keywordtype">char</span> *)checksum_str+1);</div>
+<div class="line"><span class="lineno">  206</span>        <span class="comment">//printf(&quot;Checksum Str [%s], Checksum %02X, Calculated Checksum %02X\r\n&quot;,(char *)checksum_str+1, checksum, calculated_checksum);</span></div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">if</span> (checksum == calculated_checksum)</div>
+<div class="line"><span class="lineno">  208</span>            <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">  212</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a294c695f1e114c0a4975cef5b91f8e7d" name="a294c695f1e114c0a4975cef5b91f8e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a294c695f1e114c0a4975cef5b91f8e7d">&#9670;&#160;</a></span>fill_GNRMC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fill_GNRMC </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>De chars van de binnengekomen GNRMC-string worden in data omgezet, dwz in een GNRMC-struct, mbv strtok(); De struct bevat nu alleen chars - je kunt er ook voor kiezen om gelijk met doubles te werken, die je dan met atof(); omzet. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="gps_8c_source.html#l00026">26</a> in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">// example: $GNRMC,164435.000,A,5205.9505,N,00507.0873,E,0.49,21.70,140423,,,A</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">//          id    , time     ,s,</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">char</span> *tok = <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">char</span> *s;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    memset(&amp;gnrmc, 0, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct___g_n_r_m_c.html">GNRMC</a>)); <span class="comment">// clear the struct</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    s = strtok(message, tok); <span class="comment">// 0. header;</span></div>
+<div class="line"><span class="lineno">   36</span>    strcpy(gnrmc.head, s);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    s = strtok(NULL, tok);    <span class="comment">// 1. time; not used</span></div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    s = strtok(NULL, tok);    <span class="comment">// 2. valid;</span></div>
+<div class="line"><span class="lineno">   41</span>    gnrmc.status = s[0];</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    s = strtok(NULL, tok);    <span class="comment">// 3. latitude;</span></div>
+<div class="line"><span class="lineno">   44</span>    strcpy(gnrmc.latitude, s);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    s = strtok(NULL, tok);    <span class="comment">// 4. N/S; not used</span></div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    s = strtok(NULL, tok);    <span class="comment">// 5. longitude;</span></div>
+<div class="line"><span class="lineno">   49</span>    strcpy(gnrmc.longitude, s);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    s = strtok(NULL, tok);    <span class="comment">// 6. E/W; not used</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    s = strtok(NULL, tok);    <span class="comment">// 7. speed;</span></div>
+<div class="line"><span class="lineno">   54</span>    strcpy(gnrmc.speed, s);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    s = strtok(NULL, tok);    <span class="comment">// 8. course;</span></div>
+<div class="line"><span class="lineno">   57</span>    strcpy(gnrmc.course, s);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="admin_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="admin_8h.html#aaaa64fd595cb0468a82ae3c5c19df4fd">GPS_DEBUG_OUT</a>)</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t GPS type: \t&quot;</span>);  UART_puts(gnrmc.head);</div>
+<div class="line"><span class="lineno">   62</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t status: \t\t&quot;</span>);  UART_putchar(gnrmc.status);</div>
+<div class="line"><span class="lineno">   63</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t latitude:\t\t&quot;</span>); UART_puts(gnrmc.latitude);</div>
+<div class="line"><span class="lineno">   64</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t longitude:\t&quot;</span>);  UART_puts(gnrmc.longitude);</div>
+<div class="line"><span class="lineno">   65</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t speed:    \t&quot;</span>);  UART_puts(gnrmc.speed);</div>
+<div class="line"><span class="lineno">   66</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t course:   \t&quot;</span>);  UART_puts(gnrmc.course);</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="aadmin_8c_html_a952449da34b356e2651de547daf4312c"><div class="ttname"><a href="admin_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a></div><div class="ttdeci">int Uart_debug_out</div><div class="ttdoc">default: debug all output to uart</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00038">admin.c:38</a></div></div>
+<div class="ttc" id="aadmin_8h_html_aaaa64fd595cb0468a82ae3c5c19df4fd"><div class="ttname"><a href="admin_8h.html#aaaa64fd595cb0468a82ae3c5c19df4fd">GPS_DEBUG_OUT</a></div><div class="ttdeci">#define GPS_DEBUG_OUT</div><div class="ttdoc">bit 5: toggles gps uart1 output</div><div class="ttdef"><b>Definitie</b> <a href="admin_8h_source.html#l00080">admin.h:80</a></div></div>
+<div class="ttc" id="astruct___g_n_r_m_c_html"><div class="ttname"><a href="struct___g_n_r_m_c.html">_GNRMC</a></div><div class="ttdef"><b>Definitie</b> <a href="gps_8h_source.html#l00016">gps.h:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af733a2317b43875d2c911c34f3a86823" name="af733a2317b43875d2c911c34f3a86823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af733a2317b43875d2c911c34f3a86823">&#9670;&#160;</a></span>GPS_getNMEA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GPS_getNMEA </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leest de GPS-NMEA-strings die via de UART via interrupt-handler (HAL_UART_RxCpltCallback) binnenkomen. * De handler zet elk inkomende character gelijk op een queue, die hier uitgelezen wordt. Vervolgens wordt hiervan een GPS-message opgebouwd en verwerkt. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="gps_8c_source.html#l00077">77</a> in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordtype">char</span>  Q_char;               <span class="comment">// char to receive from queue</span></div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">char</span>  MSG_buff[GPS_MAXLEN]; <span class="comment">// buffer for GPS-string</span></div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordtype">int</span>   pos = 0;</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordtype">int</span>   cs;                   <span class="comment">// checksum-flag</span></div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordtype">int</span>   new_msg = FALSE;      <span class="comment">// do we encounter a &#39;$&#39;-char?</span></div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">int</span>   msg_type = 0;         <span class="comment">// do we want this message to be interpreted?</span></div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    UART_puts((<span class="keywordtype">char</span> *)__func__); UART_puts(<span class="stringliteral">&quot;started\n\r&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><span class="lineno">   89</span>    {</div>
+<div class="line"><span class="lineno">   90</span>        xQueueReceive(<a class="code hl_variable" href="admin_8c.html#a77d12f838c966d96a18a31e503b7955c">hGPS_Queue</a>, &amp;Q_char, portMAX_DELAY); <span class="comment">// get one char from the q</span></div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>        <span class="comment">//UART_putchar(Q_buff);  // echo, for testing</span></div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">if</span> (Q_char == <span class="charliteral">&#39;$&#39;</span>) <span class="comment">// gotcha, new datastring started</span></div>
+<div class="line"><span class="lineno">   95</span>        {</div>
+<div class="line"><span class="lineno">   96</span>            memset(MSG_buff, 0, <span class="keyword">sizeof</span>(MSG_buff)); <span class="comment">// clear buff</span></div>
+<div class="line"><span class="lineno">   97</span>            pos = 0;</div>
+<div class="line"><span class="lineno">   98</span>            new_msg = TRUE; <span class="comment">// from now on, chars are valid to receive</span></div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">if</span> (new_msg == FALSE) <span class="comment">// char only valid if started by $</span></div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        MSG_buff[pos] = Q_char; <span class="comment">// copy char read from Q into the msg-buf</span></div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// if pos==5, the message type (f.i. &quot;$GPGSA) is complete, so we now we can determine</span></div>
+<div class="line"><span class="lineno">  107</span>        <span class="comment">// if we want the rest of the message... else we skip the rest characters</span></div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">if</span> (pos == 5)</div>
+<div class="line"><span class="lineno">  109</span>        {</div>
+<div class="line"><span class="lineno">  110</span>            msg_type = 0; <span class="comment">// reset</span></div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>            <span class="comment">// next, we decide which message types we want to interpret</span></div>
+<div class="line"><span class="lineno">  113</span>            <span class="comment">// and we set the message-type for later use...</span></div>
+<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">if</span>      (!strncmp(&amp;MSG_buff[1], <span class="stringliteral">&quot;GNRMC&quot;</span>, 5)) msg_type = eGNRMC;</div>
+<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strncmp(&amp;MSG_buff[1], <span class="stringliteral">&quot;GPGSA&quot;</span>, 5)) msg_type = eGPGSA;</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strncmp(&amp;MSG_buff[1], <span class="stringliteral">&quot;GNGGA&quot;</span>, 5)) msg_type = eGNGGA;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> (!msg_type) <span class="comment">// not an interesting message type</span></div>
+<div class="line"><span class="lineno">  119</span>            {</div>
+<div class="line"><span class="lineno">  120</span>                new_msg = FALSE;</div>
+<div class="line"><span class="lineno">  121</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  122</span>            }</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>        <span class="comment">// if we are here, we are reading the rest of the message into the msg_buff</span></div>
+<div class="line"><span class="lineno">  127</span><span class="comment"></span>        <span class="keywordflow">if</span> (pos &gt;= GPS_MAXLEN - 1) <span class="comment">// avoid overflow (should not happen, but still...)</span></div>
+<div class="line"><span class="lineno">  128</span>        {</div>
+<div class="line"><span class="lineno">  129</span>            new_msg = FALSE; <span class="comment">// ignore it</span></div>
+<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span> (MSG_buff[pos] == <span class="charliteral">&#39;\r&#39;</span>) <span class="comment">// end of message encountered - all messages end with &lt;CR-13&gt;&lt;LF-10&gt;</span></div>
+<div class="line"><span class="lineno">  134</span>        {</div>
+<div class="line"><span class="lineno">  135</span>            MSG_buff[pos] = <span class="charliteral">&#39;\0&#39;</span>;          <span class="comment">// close string</span></div>
+<div class="line"><span class="lineno">  136</span>            cs = checksum_valid(MSG_buff); <span class="comment">// note, checksumchars (eg &quot;*43&quot;) are removed from string</span></div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="admin_8c.html#a952449da34b356e2651de547daf4312c">Uart_debug_out</a> &amp; <a class="code hl_define" href="admin_8h.html#aaaa64fd595cb0468a82ae3c5c19df4fd">GPS_DEBUG_OUT</a>) <span class="comment">// output to uart if wanted</span></div>
+<div class="line"><span class="lineno">  139</span>            {</div>
+<div class="line"><span class="lineno">  140</span>                UART_puts(<span class="stringliteral">&quot;\r\nGPS (UART4): &quot;</span>); UART_puts(MSG_buff);</div>
+<div class="line"><span class="lineno">  141</span>                UART_puts( cs ? <span class="stringliteral">&quot; [cs:OK]\r\n&quot;</span> : <span class="stringliteral">&quot; [cs:ERR]\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  142</span>            }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (cs) <span class="comment">// checksum okay, so interpret the message</span></div>
+<div class="line"><span class="lineno">  145</span>            {</div>
+<div class="line"><span class="lineno">  146</span>                <span class="keywordflow">switch</span>(msg_type) <span class="comment">// extract data from msg into right struct</span></div>
+<div class="line"><span class="lineno">  147</span>                {</div>
+<div class="line"><span class="lineno">  148</span>                <span class="keywordflow">case</span> eGNRMC: <a class="code hl_function" href="gps_8c.html#a294c695f1e114c0a4975cef5b91f8e7d">fill_GNRMC</a>(MSG_buff);</div>
+<div class="line"><span class="lineno">  149</span>                             <span class="comment">// use the data...</span></div>
+<div class="line"><span class="lineno">  150</span>                             <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">case</span> eGPGSA:</div>
+<div class="line"><span class="lineno">  152</span>                <span class="keywordflow">case</span> eGNGGA: <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  153</span>                <span class="keywordflow">default</span>:     <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  154</span>                }</div>
+<div class="line"><span class="lineno">  155</span>            }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>            new_msg = FALSE; <span class="comment">// new message possible</span></div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  159</span>        }</div>
+<div class="line"><span class="lineno">  160</span>        pos++; <span class="comment">// proceed reading next char from the queue</span></div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span>}</div>
+<div class="ttc" id="aadmin_8c_html_a77d12f838c966d96a18a31e503b7955c"><div class="ttname"><a href="admin_8c.html#a77d12f838c966d96a18a31e503b7955c">hGPS_Queue</a></div><div class="ttdeci">QueueHandle_t hGPS_Queue</div><div class="ttdoc">uses UART2</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00044">admin.c:44</a></div></div>
+<div class="ttc" id="agps_8c_html_a294c695f1e114c0a4975cef5b91f8e7d"><div class="ttname"><a href="gps_8c.html#a294c695f1e114c0a4975cef5b91f8e7d">fill_GNRMC</a></div><div class="ttdeci">void fill_GNRMC(char *message)</div><div class="ttdoc">De chars van de binnengekomen GNRMC-string worden in data omgezet, dwz in een GNRMC-struct,...</div><div class="ttdef"><b>Definitie</b> <a href="gps_8c_source.html#l00026">gps.c:26</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a66735348a4e65644ec1762bdf37e4f19" name="a66735348a4e65644ec1762bdf37e4f19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66735348a4e65644ec1762bdf37e4f19">&#9670;&#160;</a></span>hex2int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hex2int </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="gps_8c_source.html#l00166">166</a> in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">int</span> value;</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    value = hexchar2int(c[0]);</div>
+<div class="line"><span class="lineno">  171</span>    value = value &lt;&lt; 4;</div>
+<div class="line"><span class="lineno">  172</span>    value += hexchar2int(c[1]);</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> value;</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a49002bb606cdf9e9ffecb4dba16082c0" name="a49002bb606cdf9e9ffecb4dba16082c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49002bb606cdf9e9ffecb4dba16082c0">&#9670;&#160;</a></span>hexchar2int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hexchar2int </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="gps_8c_source.html#l00178">178</a> in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>{</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> (c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;F&#39;</span>)</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">return</span> (c - <span class="charliteral">&#39;A&#39;</span> + 10);</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;f&#39;</span>)</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">return</span> (c - <span class="charliteral">&#39;a&#39;</span> + 10);</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><span class="lineno">  187</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentatie van variabelen</h2>
+<a id="a0467b1a9289b2992a0c040d54b5409f3" name="a0467b1a9289b2992a0c040d54b5409f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0467b1a9289b2992a0c040d54b5409f3">&#9670;&#160;</a></span>gnrmc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct___g_n_r_m_c.html">GNRMC</a> gnrmc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="gps_8c_source.html#l00017">17</a> in het bestand <a class="el" href="gps_8c_source.html">gps.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

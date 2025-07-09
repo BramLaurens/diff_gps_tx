@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_methods: mainpage</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_methods
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">mainpage </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >Hoofdpagina {#mainpage} --------&mdash; enzovoort</p>
+<h2><a class="anchor" id="autotoc_md0"></a>
+Opbouw applicatie</h2>
+<p >Hieronder zie je de voor deze applicatie belangrijkste bestanden. De applicatie bevindt zich in de map <b>Core</b>, en wel hoofdzakelijk in de map <b>MyApp</b>, die weer verdeeld is in <b>App</b> en <b>Ports</b>. Daarnaast zie je in <b>Core</b> nog de map <b>Src</b>, die door STM gegenereerde bestanden bevat. </p><pre><ul>
+<li>Core/Src          [Bevat de door STM gegenereerde bestanden]
+    <a class="el" href="main_8c.html" title=": Main program body">main.c</a>          [bevat ISR voor UART, blijf ik verder zoveel mogelijk uit...]
+    <a class="el" href="stm32f4xx__it_8c.html" title="Interrupt Service Routines.">stm32f4xx_it.c</a>  [bevat ISR voor ARM_keys]</li>
+<li>Core/MyApp/App    [Bevat de applicatie-code (Michiel Scager)]
+    <a class="el" href="my__app_8c.html" title="Bevat algemene functies, die normaal in main.c zouden staan. Echter, main.c wordt gegenereerd door de...">my_app.c</a>        [versie-beheer, kleine algemene functies]
+    <a class="el" href="my__app_8h.html" title=": defines &amp; externals for the application">my_app.h</a>        [#defines, externals, etc.]
+    <a class="el" href="handles_8c.html" title="Definieert en creëert alle handles (semaphores, notifactions, queues, eventgroups etc....">handles.c</a>       [alle handles worden hier aangemaakt]
+    <a class="el" href="tasks_8c.html" title="Bevat de functies die tasks aanmaakt én hulpfuncties voor tasks.  Demonstreert: osThreadNew(),...">tasks.c</a>         [alle taken (tasks, threads) worden hier aangemaakt]
+    <a class="el" href="ledjes_8c.html" title="Demonstreert: mutexes (mutual exclusion semaphores), tasknotifcation, taskYIELD().">ledjes.c</a>        [mutex, notification]
+    <a class="el" href="_u_a_r_t__keys_8c.html" title="Demonstreert: IRQ-handling, queue-handling, tasknotifcation, string-handling (strtok,...">UART_keys.c</a>     [afhandeling van UART-input via ISR in <a class="el" href="main_8c.html" title=": Main program body">main.c</a>]
+    <a class="el" href="_a_r_m__keys_8c.html" title="Demonstreert: Eventgroups, TaskNotify, Queue-handling, Interrupt-handling Aan de ARM-keys is een inte...">ARM_keys.c</a>      [afhandeling van ARM-toetsten via ISR in <a class="el" href="stm32f4xx__it_8c.html" title="Interrupt Service Routines.">stm32f4xx_it.c</a>]
+    <a class="el" href="timer_8c.html" title="Demonstreert: timerhandler. De timer zelf wordt aangemaakt in handles.c.">timer.c</a>         [afhandeling van software-timer via <a class="el" href="handles_8c.html" title="Definieert en creëert alle handles (semaphores, notifactions, queues, eventgroups etc....">handles.c</a>]
+    <a class="el" href="student_8c.html" title="Hier kunnen studenten hun eigen tasks aanmaken.">student.c</a>       [speeltuin voor studenten]</li>
+<li>Core/Myapp/Ports  [Bevat ARM-port-functies (Franc van der Bent)]
+    buzzer.c        [buzzer-stuff]
+    uart.c          [UART-stuff]
+    leds.c          [ledjes]
+    lcd.c           [lcd-stuff]
+    keys.c          [ARM-toetsen]
+</li>
+</ul>
+</pre><pre>Introductie</pre><pre></pre><h1><a class="anchor" id="autotoc_md1"></a>
+Markdown: Basics</h1>
+<pre></pre><pre><ul id="Opbouw sources">
+<li>
+<a href="../../Core/Src/main.c" title="main.c - gegenereerd">main.c</a>
+    </li>
+<li>
+<a href="../../Core/Src/stm32f4xx_it.c" title="main.c - gegenereerd">stm32</a>
+    </li>
+<li>
+Basics
+    </li>
+<li>
+<a href="/projects/markdown/syntax" title="Markdown Syntax Documentation">Syntax</a>
+    </li>
+<li>
+<a href="/projects/markdown/license" title="Pricing and License Information">License</a>
+    </li>
+<li>
+<a href="/projects/markdown/dingus" title="Online Markdown Web Form">Dingus</a>
+</li>
+</ul>
+</pre><pre><ul>
+<li>Overview<ul>
+<li>Philosophy</li>
+<li>Inline HTML</li>
+<li>Automatic Escaping for Special Characters</li>
+</ul>
+</li>
+<li>Block Elements<ul>
+<li>Paragraphs and Line Breaks</li>
+<li>Headers</li>
+<li>Blockquotes</li>
+<li>Lists</li>
+<li>Code Blocks</li>
+<li>Horizontal Rules</li>
+</ul>
+</li>
+<li>Span Elements<ul>
+<li>Links</li>
+<li>Emphasis</li>
+<li>Code</li>
+<li>Images</li>
+</ul>
+</li>
+<li>Miscellaneous<ul>
+<li>Backslash Escapes</li>
+<li>Automatic Links</li>
+</ul>
+</li>
+</ul>
+</pre><pre></pre><h2><a class="anchor" id="autotoc_md2"></a>
+Getting the Gist of Markdown's Formatting Syntax</h2>
+<pre></pre><pre>This page offers a brief overview of what it's like to use Markdown.
+The [syntax page] <a href="/projects/markdown/syntax" title="Markdown Syntax">s</a> provides complete, detailed documentation for
+every feature, but Markdown should be very easy to pick up simply by
+looking at a few examples of it in action. The examples on this page
+are written in a before/after style, showing example syntax and the
+HTML output produced by Markdown.</pre><pre>It's also helpful to simply try Markdown out; the [Dingus] <a href="/projects/markdown/dingus" title="Markdown Dingus">d</a> is a
+web application that allows you type your own Markdown-formatted text
+and translate it to XHTML.</pre><pre><b>Note:</b> This document is itself written using Markdown; you
+can [see the source for it by adding '.text' to the URL] <a href="/projects/markdown/basics.text">src</a>.
+</pre></div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

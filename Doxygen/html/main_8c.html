@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_GPS_407: Core/Src/main.c Bestand Referentie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_GPS_407
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Laden...</div>
+<div class="SRStatus" id="Searching">Zoeken...</div>
+<div class="SRStatus" id="NoMatches">Niets gevonden</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functies</a> &#124;
+<a href="#var-members">Variabelen</a>  </div>
+  <div class="headertitle"><div class="title">main.c Bestand Referentie</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>: Main program body  
+<a href="#details">Meer...</a></p>
+<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;cmsis_os.h&quot;</code><br />
+<code>#include &quot;usb_host.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="admin_8h_source.html">admin.h</a>&quot;</code><br />
+</div>
+<p><a href="main_8c_source.html">Ga naar de broncode van dit bestand.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:a70af21c671abfcc773614a9a4f63d920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a> (void)</td></tr>
+<tr class="memdesc:a70af21c671abfcc773614a9a4f63d920"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Clock Configuration.  <br /></td></tr>
+<tr class="separator:a70af21c671abfcc773614a9a4f63d920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d0fdb0434092bcb24d9c9af917e4e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a99d0fdb0434092bcb24d9c9af917e4e9">StartDefaultTask</a> (void *argument)</td></tr>
+<tr class="memdesc:a99d0fdb0434092bcb24d9c9af917e4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function implementing the defaultTask thread.  <br /></td></tr>
+<tr class="separator:a99d0fdb0434092bcb24d9c9af917e4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <br /></td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae494a9643f29b87d6d81e5264e60e57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a> (UART_HandleTypeDef *huart)</td></tr>
+<tr class="memdesc:ae494a9643f29b87d6d81e5264e60e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISR die UART-characters op een Queue zet. De core-functie wordt gegenereerd.  <br /></td></tr>
+<tr class="separator:ae494a9643f29b87d6d81e5264e60e57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="memdesc:a8a3b0ad512a6e6c6157440b68d395eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period elapsed callback in non blocking mode.  <br /></td></tr>
+<tr class="separator:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
+<tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
+<tr class="separator:a1730ffe1e560465665eb47d9264826f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variabelen</h2></td></tr>
+<tr class="memitem:af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memItemLeft" align="right" valign="top">I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af7b2c26e44dadaaa798a5c3d82914ba7">hi2c1</a></td></tr>
+<tr class="separator:af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42cb7a8588778f08bf78b1cb4757169c"><td class="memItemLeft" align="right" valign="top">I2S_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a42cb7a8588778f08bf78b1cb4757169c">hi2s3</a></td></tr>
+<tr class="separator:a42cb7a8588778f08bf78b1cb4757169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6222bae4d0328dd843ae099623b40b"><td class="memItemLeft" align="right" valign="top">SPI_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9c6222bae4d0328dd843ae099623b40b">hspi1</a></td></tr>
+<tr class="separator:a9c6222bae4d0328dd843ae099623b40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae273feb3e0dc44e38892650faa58fced"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae273feb3e0dc44e38892650faa58fced">huart4</a></td></tr>
+<tr class="separator:ae273feb3e0dc44e38892650faa58fced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a></td></tr>
+<tr class="separator:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a263905468b0c37de4ee5e50ede4e74"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6a263905468b0c37de4ee5e50ede4e74">defaultTaskHandle</a></td></tr>
+<tr class="separator:a6a263905468b0c37de4ee5e50ede4e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25fbb54afdba71c24ba51ed50166ac8d"><td class="memItemLeft" align="right" valign="top">const osThreadAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a25fbb54afdba71c24ba51ed50166ac8d">defaultTask_attributes</a></td></tr>
+<tr class="separator:a25fbb54afdba71c24ba51ed50166ac8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<div class="textblock"><p>: Main program body </p>
+<dl class="section attention"><dt>Attentie</dt><dd>Het grootste deel van deze <a class="el" href="main_8c.html" title=": Main program body">main.c</a> wordt gegenereerd door STM. Eigen code bevindt zich op 'gereserveerde' plekken, wees daar voorzichtig mee. Om deze reden heb ik zo min mogelijk 'eigen code' toegevoegd.</dd></dl>
+<h2><center>&copy; Copyright (c) 2021 STMicroelectronics. All rights reserved.</center></h2>
+<p>This software component is licensed by ST under Ultimate Liberty license SLA0044, the "License"; You may not use this file except in compliance with the License. You may obtain a copy of the License at: www.st.com/SLA0044 </p>
+
+<p class="definition">De definitie bevindt zich in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+</div><h2 class="groupheader">Documentatie van functies</h2>
+<a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Error_Handler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is executed in case of error occurrence. </p>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00616">616</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  617</span>{</div>
+<div class="line"><span class="lineno">  618</span>  <span class="comment">/* USER CODE BEGIN Error_Handler_Debug */</span></div>
+<div class="line"><span class="lineno">  619</span>  <span class="comment">/* User can add his own implementation to report the HAL error return state */</span></div>
+<div class="line"><span class="lineno">  620</span>  __disable_irq();</div>
+<div class="line"><span class="lineno">  621</span>  <span class="keywordflow">while</span> (1)</div>
+<div class="line"><span class="lineno">  622</span>  {</div>
+<div class="line"><span class="lineno">  623</span>  }</div>
+<div class="line"><span class="lineno">  624</span>  <span class="comment">/* USER CODE END Error_Handler_Debug */</span></div>
+<div class="line"><span class="lineno">  625</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8a3b0ad512a6e6c6157440b68d395eac" name="a8a3b0ad512a6e6c6157440b68d395eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3b0ad512a6e6c6157440b68d395eac">&#9670;&#160;</a></span>HAL_TIM_PeriodElapsedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_TIM_PeriodElapsedCallback </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>htim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Period elapsed callback in non blocking mode. </p>
+<dl class="section note"><dt>Noot</dt><dd>This function is called when TIM1 interrupt took place, inside HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment a global variable "uwTick" used as application time base. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">htim</td><td>: TIM handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00599">599</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  600</span>{</div>
+<div class="line"><span class="lineno">  601</span>  <span class="comment">/* USER CODE BEGIN Callback 0 */</span></div>
+<div class="line"><span class="lineno">  602</span> </div>
+<div class="line"><span class="lineno">  603</span>  <span class="comment">/* USER CODE END Callback 0 */</span></div>
+<div class="line"><span class="lineno">  604</span>  <span class="keywordflow">if</span> (htim-&gt;Instance == TIM1) {</div>
+<div class="line"><span class="lineno">  605</span>    HAL_IncTick();</div>
+<div class="line"><span class="lineno">  606</span>  }</div>
+<div class="line"><span class="lineno">  607</span>  <span class="comment">/* USER CODE BEGIN Callback 1 */</span></div>
+<div class="line"><span class="lineno">  608</span> </div>
+<div class="line"><span class="lineno">  609</span>  <span class="comment">/* USER CODE END Callback 1 */</span></div>
+<div class="line"><span class="lineno">  610</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae494a9643f29b87d6d81e5264e60e57b" name="ae494a9643f29b87d6d81e5264e60e57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae494a9643f29b87d6d81e5264e60e57b">&#9670;&#160;</a></span>HAL_UART_RxCpltCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_UART_RxCpltCallback </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>huart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISR die UART-characters op een Queue zet. De core-functie wordt gegenereerd. </p>
+<p>Demonstreert: xQueueSendFromISR(); portYIELD_FROM_ISR();</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">huart</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void. </dd></dl>
+<p>Receive one byte in interrupt mode</p>
+<p>Zet de byte op de UART_queue</p>
+<p>Receive one byte in interrupt mode</p>
+<p>Zet de byte op de GPS_queue</p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00526">526</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  527</span>{</div>
+<div class="line"><span class="lineno">  528</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>       uart4_char, uart2_char;</div>
+<div class="line"><span class="lineno">  529</span>    BaseType_t          xHigherPriorityTaskWoken = pdFALSE;</div>
+<div class="line"><span class="lineno">  530</span> </div>
+<div class="line"><span class="lineno">  531</span>    <span class="comment">// receive terminal user commands</span></div>
+<div class="line"><span class="lineno">  532</span>    <span class="keywordflow">if</span> (huart-&gt;Instance == USART2)</div>
+<div class="line"><span class="lineno">  533</span>    {</div>
+<div class="line"><span class="lineno">  535</span>        HAL_UART_Receive_IT(&amp;huart2, &amp;uart2_char, 1);</div>
+<div class="line"><span class="lineno">  536</span> </div>
+<div class="line"><span class="lineno">  538</span>        xQueueSendFromISR(<a class="code hl_variable" href="admin_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a>, &amp;uart2_char, &amp;xHigherPriorityTaskWoken);</div>
+<div class="line"><span class="lineno">  539</span>        <span class="keywordflow">if</span> (xHigherPriorityTaskWoken != pdFALSE)</div>
+<div class="line"><span class="lineno">  540</span>            portYIELD_FROM_ISR(xHigherPriorityTaskWoken); <span class="comment">// force context switch</span></div>
+<div class="line"><span class="lineno">  541</span>    }</div>
+<div class="line"><span class="lineno">  542</span> </div>
+<div class="line"><span class="lineno">  543</span>    <span class="comment">// receive GPS-data</span></div>
+<div class="line"><span class="lineno">  544</span>    <span class="keywordflow">if</span> (huart-&gt;Instance == UART4)</div>
+<div class="line"><span class="lineno">  545</span>    {</div>
+<div class="line"><span class="lineno">  547</span>        HAL_UART_Receive_IT(&amp;huart4, &amp;uart4_char, 1);</div>
+<div class="line"><span class="lineno">  548</span> </div>
+<div class="line"><span class="lineno">  550</span>        xQueueSendFromISR(<a class="code hl_variable" href="admin_8c.html#a77d12f838c966d96a18a31e503b7955c">hGPS_Queue</a>, &amp;uart4_char, &amp;xHigherPriorityTaskWoken);</div>
+<div class="line"><span class="lineno">  551</span>        <span class="keywordflow">if</span> (xHigherPriorityTaskWoken != pdFALSE)</div>
+<div class="line"><span class="lineno">  552</span>            portYIELD_FROM_ISR(xHigherPriorityTaskWoken); <span class="comment">// force context switch</span></div>
+<div class="line"><span class="lineno">  553</span>    }</div>
+<div class="line"><span class="lineno">  554</span> </div>
+<div class="line"><span class="lineno">  555</span>}</div>
+<div class="ttc" id="aadmin_8c_html_a1db415a0f7c5ecff145e4bb53cc54dbe"><div class="ttname"><a href="admin_8c.html#a1db415a0f7c5ecff145e4bb53cc54dbe">hUART_Queue</a></div><div class="ttdeci">QueueHandle_t hUART_Queue</div><div class="ttdoc">typedefs of struct itself and pointer to it</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00043">admin.c:43</a></div></div>
+<div class="ttc" id="aadmin_8c_html_a77d12f838c966d96a18a31e503b7955c"><div class="ttname"><a href="admin_8c.html#a77d12f838c966d96a18a31e503b7955c">hGPS_Queue</a></div><div class="ttdeci">QueueHandle_t hGPS_Queue</div><div class="ttdoc">uses UART2</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00044">admin.c:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The application entry point. </p>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00090">90</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
+<div class="line"><span class="lineno">   92</span>  <span class="comment">/* USER CODE BEGIN 1 */</span></div>
+<div class="line"><span class="lineno">   93</span>  <span class="comment">/* USER CODE END 1 */</span></div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>  <span class="comment">/* MCU Configuration--------------------------------------------------------*/</span></div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>  <span class="comment">/* Reset of all peripherals, Initializes the Flash interface and the Systick. */</span></div>
+<div class="line"><span class="lineno">   98</span>  HAL_Init();</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>  <span class="comment">/* USER CODE BEGIN Init */</span></div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>  <span class="comment">/* USER CODE END Init */</span></div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>  <span class="comment">/* Configure the system clock */</span></div>
+<div class="line"><span class="lineno">  105</span>  <a class="code hl_function" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a>();</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>  <span class="comment">/* USER CODE BEGIN SysInit */</span></div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>  <span class="comment">/* USER CODE END SysInit */</span></div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>  <span class="comment">/* Initialize all configured peripherals */</span></div>
+<div class="line"><span class="lineno">  112</span>  MX_GPIO_Init();</div>
+<div class="line"><span class="lineno">  113</span>  MX_I2C1_Init();</div>
+<div class="line"><span class="lineno">  114</span>  MX_I2S3_Init();</div>
+<div class="line"><span class="lineno">  115</span>  MX_SPI1_Init();</div>
+<div class="line"><span class="lineno">  116</span>  MX_USART2_UART_Init();</div>
+<div class="line"><span class="lineno">  117</span>  MX_UART4_Init();</div>
+<div class="line"><span class="lineno">  118</span>  <span class="comment">/* USER CODE BEGIN 2 */</span></div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>  LCD_init();</div>
+<div class="line"><span class="lineno">  121</span>  KEYS_init();</div>
+<div class="line"><span class="lineno">  122</span>  KEYS_initISR(1); <span class="comment">// set all lines high once</span></div>
+<div class="line"><span class="lineno">  123</span>  LED_init();</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>  <a class="code hl_function" href="admin_8c.html#a9dec45875121142b6466b9475691b40a">DisplayVersion</a>();</div>
+<div class="line"><span class="lineno">  126</span>  osDelay(500); <span class="comment">// time to read version</span></div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>  <span class="comment">/* USER CODE END 2 */</span></div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>  <span class="comment">/* Init scheduler */</span></div>
+<div class="line"><span class="lineno">  131</span>  osKernelInitialize();</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>  <span class="comment">/* USER CODE BEGIN RTOS_MUTEX */</span></div>
+<div class="line"><span class="lineno">  134</span>  <span class="comment">/* add mutexes, ... */</span></div>
+<div class="line"><span class="lineno">  135</span>  <span class="comment">/* USER CODE END RTOS_MUTEX */</span></div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  <span class="comment">/* USER CODE BEGIN RTOS_SEMAPHORES */</span></div>
+<div class="line"><span class="lineno">  138</span>  <span class="comment">/* add semaphores, ... */</span></div>
+<div class="line"><span class="lineno">  139</span>  <span class="comment">/* USER CODE END RTOS_SEMAPHORES */</span></div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>  <span class="comment">/* USER CODE BEGIN RTOS_TIMERS */</span></div>
+<div class="line"><span class="lineno">  142</span>  <span class="comment">/* start timers, add new ones, ... */</span></div>
+<div class="line"><span class="lineno">  143</span>  <span class="comment">/* USER CODE END RTOS_TIMERS */</span></div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>  <span class="comment">/* USER CODE BEGIN RTOS_QUEUES */</span></div>
+<div class="line"><span class="lineno">  146</span>  <span class="comment">/* add queues, ... */</span></div>
+<div class="line"><span class="lineno">  147</span>  <span class="comment">/* USER CODE END RTOS_QUEUES */</span></div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>  <span class="comment">/* Create the thread(s) */</span></div>
+<div class="line"><span class="lineno">  150</span>  <span class="comment">/* creation of defaultTask */</span></div>
+<div class="line"><span class="lineno">  151</span>  defaultTaskHandle = osThreadNew(<a class="code hl_function" href="main_8c.html#a99d0fdb0434092bcb24d9c9af917e4e9">StartDefaultTask</a>, NULL, &amp;defaultTask_attributes);</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>  <span class="comment">/* USER CODE BEGIN RTOS_THREADS */</span></div>
+<div class="line"><span class="lineno">  154</span>  <span class="comment">/* add threads, ... */</span></div>
+<div class="line"><span class="lineno">  155</span>  <span class="comment">/* USER CODE END RTOS_THREADS */</span></div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>  <span class="comment">/* USER CODE BEGIN RTOS_EVENTS */</span></div>
+<div class="line"><span class="lineno">  158</span>  <span class="comment">/* add events, ... */</span></div>
+<div class="line"><span class="lineno">  159</span>  <span class="comment">/* USER CODE END RTOS_EVENTS */</span></div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="comment">/* Start scheduler */</span></div>
+<div class="line"><span class="lineno">  162</span>  osKernelStart();</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>  <span class="comment">/* We should never get here as control is now taken by the scheduler */</span></div>
+<div class="line"><span class="lineno">  165</span>  <span class="comment">/* Infinite loop */</span></div>
+<div class="line"><span class="lineno">  166</span>  <span class="comment">/* USER CODE BEGIN WHILE */</span></div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordflow">while</span> (1)</div>
+<div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">/* USER CODE END WHILE */</span></div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    <span class="comment">/* USER CODE BEGIN 3 */</span></div>
+<div class="line"><span class="lineno">  172</span>  }</div>
+<div class="line"><span class="lineno">  173</span>  <span class="comment">/* USER CODE END 3 */</span></div>
+<div class="line"><span class="lineno">  174</span>}</div>
+<div class="ttc" id="aadmin_8c_html_a9dec45875121142b6466b9475691b40a"><div class="ttname"><a href="admin_8c.html#a9dec45875121142b6466b9475691b40a">DisplayVersion</a></div><div class="ttdeci">void DisplayVersion(void)</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00114">admin.c:114</a></div></div>
+<div class="ttc" id="amain_8c_html_a70af21c671abfcc773614a9a4f63d920"><div class="ttname"><a href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a></div><div class="ttdeci">void SystemClock_Config(void)</div><div class="ttdoc">System Clock Configuration.</div><div class="ttdef"><b>Definitie</b> <a href="main_8c_source.html#l00180">main.c:180</a></div></div>
+<div class="ttc" id="amain_8c_html_a99d0fdb0434092bcb24d9c9af917e4e9"><div class="ttname"><a href="main_8c.html#a99d0fdb0434092bcb24d9c9af917e4e9">StartDefaultTask</a></div><div class="ttdeci">void StartDefaultTask(void *argument)</div><div class="ttdoc">Function implementing the defaultTask thread.</div><div class="ttdef"><b>Definitie</b> <a href="main_8c_source.html#l00566">main.c:566</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a99d0fdb0434092bcb24d9c9af917e4e9" name="a99d0fdb0434092bcb24d9c9af917e4e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d0fdb0434092bcb24d9c9af917e4e9">&#9670;&#160;</a></span>StartDefaultTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StartDefaultTask </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function implementing the defaultTask thread. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument</td><td>Not used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00566">566</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  567</span>{</div>
+<div class="line"><span class="lineno">  568</span>  <span class="comment">/* init code for USB_HOST */</span></div>
+<div class="line"><span class="lineno">  569</span>  MX_USB_HOST_Init();</div>
+<div class="line"><span class="lineno">  570</span>  <span class="comment">/* USER CODE BEGIN 5 */</span></div>
+<div class="line"><span class="lineno">  571</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> byte1, byte2;</div>
+<div class="line"><span class="lineno">  572</span> </div>
+<div class="line"><span class="lineno">  573</span>  <a class="code hl_function" href="admin_8c.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a>();</div>
+<div class="line"><span class="lineno">  574</span>  <a class="code hl_function" href="admin_8c.html#a7f983159a50cdcaaad786c6c7a216cd9">CreateTasks</a>();</div>
+<div class="line"><span class="lineno">  575</span> </div>
+<div class="line"><span class="lineno">  576</span>  <span class="comment">// start the interrupt handlers after all handles are created</span></div>
+<div class="line"><span class="lineno">  577</span>  HAL_UART_Receive_IT(&amp;huart2, &amp;byte2, 1); <span class="comment">//start the UART2 interrupt engine for reading</span></div>
+<div class="line"><span class="lineno">  578</span>  HAL_UART_Receive_IT(&amp;huart4, &amp;byte1, 1); <span class="comment">//start the UART1 interrupt engine GPS</span></div>
+<div class="line"><span class="lineno">  579</span> </div>
+<div class="line"><span class="lineno">  580</span>  UART_putint(byte2); UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>); <span class="comment">// deze byte is nog een bug.</span></div>
+<div class="line"><span class="lineno">  581</span> </div>
+<div class="line"><span class="lineno">  582</span>  <span class="comment">/* Infinite loop */</span></div>
+<div class="line"><span class="lineno">  583</span>  <span class="keywordflow">for</span>(;;)</div>
+<div class="line"><span class="lineno">  584</span>  {</div>
+<div class="line"><span class="lineno">  585</span>    osDelay(1);</div>
+<div class="line"><span class="lineno">  586</span>    vTaskDelete(defaultTaskHandle); <span class="comment">// remove this default task</span></div>
+<div class="line"><span class="lineno">  587</span>  }</div>
+<div class="line"><span class="lineno">  588</span>  <span class="comment">/* USER CODE END 5 */</span></div>
+<div class="line"><span class="lineno">  589</span>}</div>
+<div class="ttc" id="aadmin_8c_html_a183387e08a88262f831be8b883ce8754"><div class="ttname"><a href="admin_8c.html#a183387e08a88262f831be8b883ce8754">CreateHandles</a></div><div class="ttdeci">void CreateHandles(void)</div><div class="ttdoc">Creates alle handles voor deze applicatie.</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00208">admin.c:208</a></div></div>
+<div class="ttc" id="aadmin_8c_html_a7f983159a50cdcaaad786c6c7a216cd9"><div class="ttname"><a href="admin_8c.html#a7f983159a50cdcaaad786c6c7a216cd9">CreateTasks</a></div><div class="ttdeci">void CreateTasks(void)</div><div class="ttdoc">Creëert alle taken door te scannen door de TASKDATA-argumenten-array.  Let op. Eerst wordt de schedul...</div><div class="ttdef"><b>Definitie</b> <a href="admin_8c_source.html#l00262">admin.c:262</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a70af21c671abfcc773614a9a4f63d920" name="a70af21c671abfcc773614a9a4f63d920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70af21c671abfcc773614a9a4f63d920">&#9670;&#160;</a></span>SystemClock_Config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemClock_Config </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System Clock Configuration. </p>
+<dl class="retval"><dt>Retour waarden</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Configure the main internal regulator output voltage</p>
+<p>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</p>
+<p>Initializes the CPU, AHB and APB buses clocks</p>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00180">180</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>{</div>
+<div class="line"><span class="lineno">  182</span>  RCC_OscInitTypeDef RCC_OscInitStruct = {0};</div>
+<div class="line"><span class="lineno">  183</span>  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  187</span>  __HAL_RCC_PWR_CLK_ENABLE();</div>
+<div class="line"><span class="lineno">  188</span>  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  193</span>  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;</div>
+<div class="line"><span class="lineno">  194</span>  RCC_OscInitStruct.HSEState = RCC_HSE_ON;</div>
+<div class="line"><span class="lineno">  195</span>  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;</div>
+<div class="line"><span class="lineno">  196</span>  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;</div>
+<div class="line"><span class="lineno">  197</span>  RCC_OscInitStruct.PLL.PLLM = 8;</div>
+<div class="line"><span class="lineno">  198</span>  RCC_OscInitStruct.PLL.PLLN = 336;</div>
+<div class="line"><span class="lineno">  199</span>  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;</div>
+<div class="line"><span class="lineno">  200</span>  RCC_OscInitStruct.PLL.PLLQ = 7;</div>
+<div class="line"><span class="lineno">  201</span>  <span class="keywordflow">if</span> (HAL_RCC_OscConfig(&amp;RCC_OscInitStruct) != HAL_OK)</div>
+<div class="line"><span class="lineno">  202</span>  {</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_function" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><span class="lineno">  204</span>  }</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  208</span>  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</div>
+<div class="line"><span class="lineno">  209</span>                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;</div>
+<div class="line"><span class="lineno">  210</span>  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</div>
+<div class="line"><span class="lineno">  211</span>  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</div>
+<div class="line"><span class="lineno">  212</span>  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;</div>
+<div class="line"><span class="lineno">  213</span>  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>  <span class="keywordflow">if</span> (HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)</div>
+<div class="line"><span class="lineno">  216</span>  {</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_function" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><span class="lineno">  218</span>  }</div>
+<div class="line"><span class="lineno">  219</span>}</div>
+<div class="ttc" id="amain_8c_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definitie</b> <a href="main_8c_source.html#l00616">main.c:616</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentatie van variabelen</h2>
+<a id="a25fbb54afdba71c24ba51ed50166ac8d" name="a25fbb54afdba71c24ba51ed50166ac8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25fbb54afdba71c24ba51ed50166ac8d">&#9670;&#160;</a></span>defaultTask_attributes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const osThreadAttr_t defaultTask_attributes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initi&euml;le waarde:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  .name = <span class="stringliteral">&quot;defaultTask&quot;</span>,</div>
+<div class="line">  .stack_size = 128 * 4,</div>
+<div class="line">  .priority = (osPriority_t) osPriorityNormal,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00059">59</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a6a263905468b0c37de4ee5e50ede4e74" name="a6a263905468b0c37de4ee5e50ede4e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a263905468b0c37de4ee5e50ede4e74">&#9670;&#160;</a></span>defaultTaskHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osThreadId_t defaultTaskHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00058">58</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="af7b2c26e44dadaaa798a5c3d82914ba7" name="af7b2c26e44dadaaa798a5c3d82914ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7b2c26e44dadaaa798a5c3d82914ba7">&#9670;&#160;</a></span>hi2c1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">I2C_HandleTypeDef hi2c1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00048">48</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a42cb7a8588778f08bf78b1cb4757169c" name="a42cb7a8588778f08bf78b1cb4757169c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42cb7a8588778f08bf78b1cb4757169c">&#9670;&#160;</a></span>hi2s3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">I2S_HandleTypeDef hi2s3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00050">50</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a9c6222bae4d0328dd843ae099623b40b" name="a9c6222bae4d0328dd843ae099623b40b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6222bae4d0328dd843ae099623b40b">&#9670;&#160;</a></span>hspi1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPI_HandleTypeDef hspi1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00052">52</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="aa9479c261d65eecedd3d9582f7f0f89c" name="aa9479c261d65eecedd3d9582f7f0f89c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9479c261d65eecedd3d9582f7f0f89c">&#9670;&#160;</a></span>huart2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UART_HandleTypeDef huart2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00055">55</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="ae273feb3e0dc44e38892650faa58fced" name="ae273feb3e0dc44e38892650faa58fced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae273feb3e0dc44e38892650faa58fced">&#9670;&#160;</a></span>huart4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UART_HandleTypeDef huart4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="main_8c_source.html#l00054">54</a> in het bestand <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

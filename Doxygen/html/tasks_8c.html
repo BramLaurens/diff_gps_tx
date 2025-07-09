@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FreeRTOS_methods: Core/MyApp/App/tasks.c Bestand Referentie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FreeRTOS_methods
+   </div>
+   <div id="projectbrief">Cursusmateriaal C-programmeren met RTOS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_57032f474d1dbb45fddb3707c23dae53.html">MyApp</a></li><li class="navelem"><a class="el" href="dir_33625ee3d03525a7783dfd3fc9901b4f.html">App</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Klassen</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functies</a> &#124;
+<a href="#var-members">Variabelen</a>  </div>
+  <div class="headertitle"><div class="title">tasks.c Bestand Referentie</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bevat de functies die tasks aanmaakt én hulpfuncties voor tasks.<br  />
+ <b>Demonstreert: osThreadNew(), vTaskSuspendAll(), xTaskResumeAll(), uxTaskGetStackHighWaterMark(), vTaskPrioritySet() en c-stuff als array-handling, structures,</b> en let op: het gebruiken van specifieke structure-members binnen andere structures, zie tasks[]!<br  />
+  
+<a href="#details">Meer...</a></p>
+<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;cmsis_os.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="my__app_8h_source.html">my_app.h</a>&quot;</code><br />
+<code>#include &quot;task.h&quot;</code><br />
+</div>
+<p><a href="tasks_8c_source.html">Ga naar de broncode van dit bestand.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Klassen</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_task_data.html">TaskData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken  <a href="struct_task_data.html#details">Meer...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a7f8e353159968ff0f0becfe26d3bf630"><td class="memItemLeft" align="right" valign="top"><a id="a7f8e353159968ff0f0becfe26d3bf630" name="a7f8e353159968ff0f0becfe26d3bf630"></a>
+typedef struct <a class="el" href="struct_task_data.html">TaskData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TASKDATA</b></td></tr>
+<tr class="memdesc:a7f8e353159968ff0f0becfe26d3bf630"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken <br /></td></tr>
+<tr class="separator:a7f8e353159968ff0f0becfe26d3bf630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b44409a93fa486a84d312252b5cf7c"><td class="memItemLeft" align="right" valign="top"><a id="aa1b44409a93fa486a84d312252b5cf7c" name="aa1b44409a93fa486a84d312252b5cf7c"></a>
+typedef struct <a class="el" href="struct_task_data.html">TaskData</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>PTASKDATA</b></td></tr>
+<tr class="separator:aa1b44409a93fa486a84d312252b5cf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:a7f983159a50cdcaaad786c6c7a216cd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tasks_8c.html#a7f983159a50cdcaaad786c6c7a216cd9">CreateTasks</a> (void)</td></tr>
+<tr class="memdesc:a7f983159a50cdcaaad786c6c7a216cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creëert alle taken door te scannen door de TASKDATA-argumenten-array.<br  />
+ Let op. Eerst wordt de scheduler gestopt, dan de taken gecreëerd, dan de scheduler gestopt. Waarom? Anders gaan taken gelijk beginnen en wachten op taken die nog niet bestaan, dat geeft een rommeltje.  <a href="tasks_8c.html#a7f983159a50cdcaaad786c6c7a216cd9">Meer...</a><br /></td></tr>
+<tr class="separator:a7f983159a50cdcaaad786c6c7a216cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb419791c78bd67bbea178c06a96f684"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tasks_8c.html#abb419791c78bd67bbea178c06a96f684">GetTaskhandle</a> (char *taskname)</td></tr>
+<tr class="memdesc:abb419791c78bd67bbea178c06a96f684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zoekt in tasks-array de task, en returns de handle. Deze handle wordt door <a class="el" href="tasks_8c.html#a7f983159a50cdcaaad786c6c7a216cd9" title="Creëert alle taken door te scannen door de TASKDATA-argumenten-array.  Let op. Eerst wordt de schedul...">CreateTasks()</a> in de array geplaatst. In plaats van deze functie kan ook de OS-functie xTaskGetHandle() gebruikt worden. Alleen is 'mijn' functie sneller.  <a href="tasks_8c.html#abb419791c78bd67bbea178c06a96f684">Meer...</a><br /></td></tr>
+<tr class="separator:abb419791c78bd67bbea178c06a96f684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f97e6c32e65d04aa2425dadff927e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tasks_8c.html#a08f97e6c32e65d04aa2425dadff927e1">SetTaskPriority</a> (int task_id, int new_priority)</td></tr>
+<tr class="memdesc:a08f97e6c32e65d04aa2425dadff927e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verandert de prioriteit van een taak. Eerst wordt de taak gezocht in de lijst van alle taken (tasks[]) Daarna wordt de priority in de lijst gewijzigd en prioriteit van de taak aangepast. De functie <a class="el" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671" title="Displays de stack-gegevens van alle taken op de UART.">DisplayTaskData()</a> toont op de UART het tasknummer dat je nodig hebt.  <a href="tasks_8c.html#a08f97e6c32e65d04aa2425dadff927e1">Meer...</a><br /></td></tr>
+<tr class="separator:a08f97e6c32e65d04aa2425dadff927e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c09afd4e5fad01fc4adbb0c77ecbd6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tasks_8c.html#a3c09afd4e5fad01fc4adbb0c77ecbd6d">StartStopTask</a> (int task_id)</td></tr>
+<tr class="memdesc:a3c09afd4e5fad01fc4adbb0c77ecbd6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends (stopt) of Resumes (start) een task. Pas op. Als een task suspended wordt als hij een mutex bezet houdt blokkeer je alle tasks die op die mutex wachten. En als je de task stopt die de UART leest, schiet je jezelf ook in de voet.  <a href="tasks_8c.html#a3c09afd4e5fad01fc4adbb0c77ecbd6d">Meer...</a><br /></td></tr>
+<tr class="separator:a3c09afd4e5fad01fc4adbb0c77ecbd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d78f01ecc2ff5ebf5c8c6450b175671"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a> (void)</td></tr>
+<tr class="memdesc:a8d78f01ecc2ff5ebf5c8c6450b175671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays de stack-gegevens van alle taken op de UART.  <a href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671">Meer...</a><br /></td></tr>
+<tr class="separator:a8d78f01ecc2ff5ebf5c8c6450b175671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variabelen</h2></td></tr>
+<tr class="memitem:a3759c2b4aa705e22db51d0174f889570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tasks_8c.html#a7f8e353159968ff0f0becfe26d3bf630">TASKDATA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a> []</td></tr>
+<tr class="separator:a3759c2b4aa705e22db51d0174f889570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<div class="textblock"><p >Bevat de functies die tasks aanmaakt én hulpfuncties voor tasks.<br  />
+ <b>Demonstreert: osThreadNew(), vTaskSuspendAll(), xTaskResumeAll(), uxTaskGetStackHighWaterMark(), vTaskPrioritySet() en c-stuff als array-handling, structures,</b> en let op: het gebruiken van specifieke structure-members binnen andere structures, zie tasks[]!<br  />
+ </p>
+<p >Elke task wordt op dezelfde manier aangemaakt, met osThreadNew() die een trits aan argumenten wil, maw: de argumenten zijn de variabelen. Dus waarom niet per task de variabelen op een rijtje zetten in een array - zo krijg je veel meer overzicht. Eerst wordt een structure aangemaakt, die de argumenten gaat bevatten, struct <a class="el" href="struct_task_data.html" title="struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken">TaskData</a>.</p>
+<p ><a class="el" href="struct_task_data.html" title="struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken">TaskData</a> bevat 4 members: func (de taskname), argument (eventueel argument voor task, nu niet gebruikt), struct attr (FreeRTOS structure, waarvan we enkele gebruiken!), de taskhandle. In de array tasks[] worden alleen die members van <a class="el" href="struct_task_data.html" title="struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken">TaskData</a> geinitialiseerd die nodig zijn om elke task/thread aan te maken. <br  />
+Dat zijn: 1. de task, 2. het argument voor de task, 3. de tasknaam als string, 4. de stack size, 5. de prioriteit. De members 3, 4 en 5 zijn members van de attr structure.</p>
+<dl class="section author"><dt>Auteur</dt><dd>MSC </dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>5/5/2022 </dd></dl>
+
+<p class="definition">De definitie bevindt zich in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+</div><h2 class="groupheader">Documentatie van functies</h2>
+<a id="a7f983159a50cdcaaad786c6c7a216cd9" name="a7f983159a50cdcaaad786c6c7a216cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f983159a50cdcaaad786c6c7a216cd9">&#9670;&nbsp;</a></span>CreateTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreateTasks </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creëert alle taken door te scannen door de TASKDATA-argumenten-array.<br  />
+ Let op. Eerst wordt de scheduler gestopt, dan de taken gecreëerd, dan de scheduler gestopt. Waarom? Anders gaan taken gelijk beginnen en wachten op taken die nog niet bestaan, dat geeft een rommeltje. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00091">91</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>; <span class="comment">// tasks == &amp;tasks[0]: both are addresses of first struct</span></div>
+<div class="line"><span class="lineno">   94</span>    vTaskSuspendAll(); <span class="comment">// zet de scheduler stil en dwing FreeRTOS om eerst alle taken te starten</span></div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">for</span> (; ptd-&gt;func != NULL; ptd++) <span class="comment">// loopje zonder teller; gewoon de pointer steeds ophogen...</span></div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>        UART_puts(<span class="stringliteral">&quot;\r\nCreated: &quot;</span>);</div>
+<div class="line"><span class="lineno">   99</span>        UART_puts((<span class="keywordtype">char</span> *)ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>        <span class="comment">// nb. kijk naar de haakjes van argument 3: het gaat om het adres van (structure attr).</span></div>
+<div class="line"><span class="lineno">  102</span>        ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a> = osThreadNew(ptd-&gt;func, ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a6a0147ed63ef3f0f7e291aa5f6f48191">argument</a>, &amp;(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>));</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    xTaskResumeAll();   <span class="comment">// start nu de scheduler: play ball</span></div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a>();  <span class="comment">// display alle taskdata op UART</span></div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="astruct_task_data_html"><div class="ttname"><a href="struct_task_data.html">TaskData</a></div><div class="ttdoc">struct voor taak-gegevens, waaronder de argumenten om een taak aan te maken</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00030">tasks.c:31</a></div></div>
+<div class="ttc" id="astruct_task_data_html_a00081de8efdf72da5c61ecf1780936a7"><div class="ttname"><a href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">TaskData::hTask</a></div><div class="ttdeci">osThreadId_t hTask</div><div class="ttdoc">struct for OS, but we only declare a few members</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00035">tasks.c:35</a></div></div>
+<div class="ttc" id="astruct_task_data_html_a6a0147ed63ef3f0f7e291aa5f6f48191"><div class="ttname"><a href="struct_task_data.html#a6a0147ed63ef3f0f7e291aa5f6f48191">TaskData::argument</a></div><div class="ttdeci">void * argument</div><div class="ttdoc">de naam van de taak zelf</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00033">tasks.c:33</a></div></div>
+<div class="ttc" id="astruct_task_data_html_aeab588ea33fe027c4408d552ea7fd965"><div class="ttname"><a href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">TaskData::attr</a></div><div class="ttdeci">osThreadAttr_t attr</div><div class="ttdoc">evt extra variabele voor taak, bv. &quot;hello&quot;</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00034">tasks.c:34</a></div></div>
+<div class="ttc" id="atasks_8c_html_a3759c2b4aa705e22db51d0174f889570"><div class="ttname"><a href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a></div><div class="ttdeci">TASKDATA tasks[]</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00057">tasks.c:57</a></div></div>
+<div class="ttc" id="atasks_8c_html_a8d78f01ecc2ff5ebf5c8c6450b175671"><div class="ttname"><a href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671">DisplayTaskData</a></div><div class="ttdeci">void DisplayTaskData(void)</div><div class="ttdoc">Displays de stack-gegevens van alle taken op de UART.</div><div class="ttdef"><b>Definition:</b> <a href="tasks_8c_source.html#l00200">tasks.c:200</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8d78f01ecc2ff5ebf5c8c6450b175671" name="a8d78f01ecc2ff5ebf5c8c6450b175671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d78f01ecc2ff5ebf5c8c6450b175671">&#9670;&nbsp;</a></span>DisplayTaskData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayTaskData </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays de stack-gegevens van alle taken op de UART. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00200">200</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>{</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a>    ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  203</span>    UBaseType_t  freespace;</div>
+<div class="line"><span class="lineno">  204</span>    TaskStatus_t xTaskDetails;</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> used;</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> task_nr; <span class="comment">// tasknr for changing priority</span></div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">for</span> (task_nr=1; ptd-&gt;func != NULL; ptd++, task_nr++)</div>
+<div class="line"><span class="lineno">  209</span>    {</div>
+<div class="line"><span class="lineno">  210</span>        freespace = uxTaskGetStackHighWaterMark(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>) * 4;    <span class="comment">// amount of free bytes</span></div>
+<div class="line"><span class="lineno">  211</span>        used = 100 - (freespace * 100) / ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.stack_size;      <span class="comment">// in percentage</span></div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>        vTaskGetInfo (ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>, &amp;xTaskDetails, pdTRUE, eInvalid); <span class="comment">// get task status</span></div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>        UART_puts(<span class="stringliteral">&quot;\r\n\t[&quot;</span>);        UART_putint(task_nr); UART_puts(<span class="stringliteral">&quot;] &quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>        UART_puts(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  217</span>        UART_puts(<span class="stringliteral">&quot;\t priority: &quot;</span>);  UART_putint(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.priority);</div>
+<div class="line"><span class="lineno">  218</span>        UART_puts(<span class="stringliteral">&quot;\t stacksize: &quot;</span>); UART_putint(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.stack_size);</div>
+<div class="line"><span class="lineno">  219</span>        UART_puts(<span class="stringliteral">&quot;\t used: &quot;</span>);      UART_putint(used); UART_puts(<span class="stringliteral">&quot;%&quot;</span>);</div>
+<div class="line"><span class="lineno">  220</span>        UART_puts(<span class="stringliteral">&quot;\t status: &quot;</span>);    UART_puts(xTaskDetails.eCurrentState == eSuspended ? <span class="stringliteral">&quot;suspended&quot;</span>: <span class="stringliteral">&quot;running&quot;</span>);</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="line"><span class="lineno">  222</span>    UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  223</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abb419791c78bd67bbea178c06a96f684" name="abb419791c78bd67bbea178c06a96f684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb419791c78bd67bbea178c06a96f684">&#9670;&nbsp;</a></span>GetTaskhandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osThreadId_t GetTaskhandle </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>taskname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zoekt in tasks-array de task, en returns de handle. Deze handle wordt door <a class="el" href="tasks_8c.html#a7f983159a50cdcaaad786c6c7a216cd9" title="Creëert alle taken door te scannen door de TASKDATA-argumenten-array.  Let op. Eerst wordt de schedul...">CreateTasks()</a> in de array geplaatst. In plaats van deze functie kan ook de OS-functie xTaskGetHandle() gebruikt worden. Alleen is 'mijn' functie sneller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*taskname</td><td>De tasknaam </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>osThreadId_t De taskhandle </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00117">117</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">for</span> (; ptd-&gt;func != NULL; ptd++)</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> (!strcmp(taskname, ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name))</div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">return</span> (ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>);</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> (NULL); <span class="comment">// if task was not found...</span></div>
+<div class="line"><span class="lineno">  126</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a08f97e6c32e65d04aa2425dadff927e1" name="a08f97e6c32e65d04aa2425dadff927e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f97e6c32e65d04aa2425dadff927e1">&#9670;&nbsp;</a></span>SetTaskPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetTaskPriority </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>task_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>new_priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verandert de prioriteit van een taak. Eerst wordt de taak gezocht in de lijst van alle taken (tasks[]) Daarna wordt de priority in de lijst gewijzigd en prioriteit van de taak aangepast. De functie <a class="el" href="tasks_8c.html#a8d78f01ecc2ff5ebf5c8c6450b175671" title="Displays de stack-gegevens van alle taken op de UART.">DisplayTaskData()</a> toont op de UART het tasknummer dat je nodig hebt. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task_id</td><td>Task identifier </td></tr>
+    <tr><td class="paramname">new_priority</td><td>Nieuwe prioriteit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00138">138</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>{</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    task_nr;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">for</span> (task_nr = 1; ptd-&gt;func != NULL; ptd++, task_nr++)</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">if</span> (task_nr == task_id) <span class="comment">// hebbes</span></div>
+<div class="line"><span class="lineno">  146</span>        {</div>
+<div class="line"><span class="lineno">  147</span>            ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.priority = new_priority;          <span class="comment">// struct-member</span></div>
+<div class="line"><span class="lineno">  148</span>            vTaskPrioritySet(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>, new_priority); <span class="comment">// taskpriority</span></div>
+<div class="line"><span class="lineno">  149</span>            <span class="comment">// of</span></div>
+<div class="line"><span class="lineno">  150</span>            <span class="comment">// osThreadSetPriority(ptd-&gt;hTask, new_priority);</span></div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>            UART_puts(<span class="stringliteral">&quot;\r\nSet task &quot;</span>); UART_puts(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  153</span>            UART_puts(<span class="stringliteral">&quot;&#39;s priority to: &quot;</span>); UART_putint(new_priority);</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
+<div class="line"><span class="lineno">  156</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3c09afd4e5fad01fc4adbb0c77ecbd6d" name="a3c09afd4e5fad01fc4adbb0c77ecbd6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c09afd4e5fad01fc4adbb0c77ecbd6d">&#9670;&nbsp;</a></span>StartStopTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StartStopTask </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>task_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suspends (stopt) of Resumes (start) een task. Pas op. Als een task suspended wordt als hij een mutex bezet houdt blokkeer je alle tasks die op die mutex wachten. En als je de task stopt die de UART leest, schiet je jezelf ook in de voet. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>void </dd></dl>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00166">166</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_struct" href="struct_task_data.html">PTASKDATA</a> ptd = <a class="code hl_variable" href="tasks_8c.html#a3759c2b4aa705e22db51d0174f889570">tasks</a>;</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    task_nr;</div>
+<div class="line"><span class="lineno">  170</span>    TaskStatus_t    xTaskDetails;</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">for</span> (task_nr = 1; ptd-&gt;func != NULL; ptd++, task_nr++)</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span> (task_nr == task_id) <span class="comment">// hebbes</span></div>
+<div class="line"><span class="lineno">  174</span>        {</div>
+<div class="line"><span class="lineno">  175</span>            vTaskGetInfo (ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>, &amp;xTaskDetails, pdTRUE, eInvalid);</div>
+<div class="line"><span class="lineno">  176</span>            UART_puts(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  177</span>            UART_puts(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#aeab588ea33fe027c4408d552ea7fd965">attr</a>.name);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>            <span class="comment">// een task kan meerdere statussen hebben; het wordt simpeler</span></div>
+<div class="line"><span class="lineno">  180</span>            <span class="comment">// als je alleen de eSuspended checkt.</span></div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> (xTaskDetails.eCurrentState == eSuspended)</div>
+<div class="line"><span class="lineno">  182</span>            {</div>
+<div class="line"><span class="lineno">  183</span>                vTaskResume(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>);</div>
+<div class="line"><span class="lineno">  184</span>                UART_puts(<span class="stringliteral">&quot; resumed.&quot;</span>);</div>
+<div class="line"><span class="lineno">  185</span>            }</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">else</span> <span class="comment">// bv. eBlocked, eRunning, eInvalid etc.</span></div>
+<div class="line"><span class="lineno">  187</span>            {</div>
+<div class="line"><span class="lineno">  188</span>                vTaskSuspend(ptd-&gt;<a class="code hl_variable" href="struct_task_data.html#a00081de8efdf72da5c61ecf1780936a7">hTask</a>);</div>
+<div class="line"><span class="lineno">  189</span>                UART_puts(<span class="stringliteral">&quot; suspended.&quot;</span>);</div>
+<div class="line"><span class="lineno">  190</span>            }</div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  192</span>        }</div>
+<div class="line"><span class="lineno">  193</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentatie van variabelen</h2>
+<a id="a3759c2b4aa705e22db51d0174f889570" name="a3759c2b4aa705e22db51d0174f889570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3759c2b4aa705e22db51d0174f889570">&#9670;&nbsp;</a></span>tasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="tasks_8c.html#a7f8e353159968ff0f0becfe26d3bf630">TASKDATA</a> tasks[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initi&euml;le waarde:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">  </div>
+<div class="line">{ <a class="code hl_function" href="_a_r_m__keys_8c.html#a38598fd3a3a66db7e4617f5d6d01749b">ARM_keys_IRQ</a>, NULL, .attr.name = <span class="stringliteral">&quot;ARM_keys_IRQ&quot;</span>, .attr.stack_size = 128 * 6, .attr.priority = osPriorityNormal1 },</div>
+<div class="line">{ <a class="code hl_function" href="_a_r_m__keys_8c.html#a877687ff1bd562c855d11d4941cd966d">ARM_keys_task</a>,NULL, .attr.name = <span class="stringliteral">&quot;ARM_keys_task&quot;</span>,.attr.stack_size = 128 * 6, .attr.priority = osPriorityNormal2 },</div>
+<div class="line"> </div>
+<div class="line">  </div>
+<div class="line">{ <a class="code hl_function" href="my__app_8h.html#af42059fd155a512774c89e7fc38bc03c">UART_keys_IRQ</a>,NULL, .attr.name = <span class="stringliteral">&quot;UART_keys_IRQ&quot;</span>,.attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal5 },</div>
+<div class="line">{ <a class="code hl_function" href="my__app_8h.html#af909ca669055035da2246051d81ae747">UART_menu</a>,    NULL, .attr.name = <span class="stringliteral">&quot;UART_menu&quot;</span>,    .attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal6 },</div>
+<div class="line"> </div>
+<div class="line">  </div>
+<div class="line">  </div>
+<div class="line">  </div>
+<div class="line">{ <a class="code hl_function" href="ledjes_8c.html#aaf63dace9f7f47a694f8950fbe086df3">LED_Task1</a>,    NULL, .attr.name = <span class="stringliteral">&quot;LED_Task1&quot;</span>,    .attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal4 },</div>
+<div class="line">{ <a class="code hl_function" href="ledjes_8c.html#a827d2f52992b1ba443aabe4ee4cbc89d">LED_Task2</a>,    NULL, .attr.name = <span class="stringliteral">&quot;LED_Task2&quot;</span>,    .attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal4 },</div>
+<div class="line">{ <a class="code hl_function" href="ledjes_8c.html#ad23f4088808e5ccc47e28a69fdf155e6">LED_Task3</a>,    NULL, .attr.name = <span class="stringliteral">&quot;LED_Task3&quot;</span>,    .attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal5 },</div>
+<div class="line">{ <a class="code hl_function" href="ledjes_8c.html#a46ab630af9d7344d8968a7874ec71578">LED_Task4</a>,    NULL, .attr.name = <span class="stringliteral">&quot;LED_Task4&quot;</span>,    .attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal4 },</div>
+<div class="line"> </div>
+<div class="line">  </div>
+<div class="line">{ <a class="code hl_function" href="my__app_8h.html#a23fe84bfb739ead3f3005b8378170b62">Student_task1</a>,NULL, .attr.name = <span class="stringliteral">&quot;Student_task1&quot;</span>,.attr.stack_size = 128 * 6, .attr.priority = osPriorityBelowNormal7 },</div>
+<div class="line"> </div>
+<div class="line">  </div>
+<div class="line">{ NULL,         NULL, .attr.name = NULL,         .  attr.stack_size = 0,       .attr.priority = 0 }</div>
+<div class="line">}</div>
+<div class="ttc" id="a_a_r_m__keys_8c_html_a38598fd3a3a66db7e4617f5d6d01749b"><div class="ttname"><a href="_a_r_m__keys_8c.html#a38598fd3a3a66db7e4617f5d6d01749b">ARM_keys_IRQ</a></div><div class="ttdeci">void ARM_keys_IRQ(void *argument)</div><div class="ttdoc">Deze task handelt de ARM-toets af, die ontvangen is van de ISR-handler (zie: stm32f4xx_it....</div><div class="ttdef"><b>Definition:</b> <a href="_a_r_m__keys_8c_source.html#l00037">ARM_keys.c:37</a></div></div>
+<div class="ttc" id="a_a_r_m__keys_8c_html_a877687ff1bd562c855d11d4941cd966d"><div class="ttname"><a href="_a_r_m__keys_8c.html#a877687ff1bd562c855d11d4941cd966d">ARM_keys_task</a></div><div class="ttdeci">void ARM_keys_task(void *argument)</div><div class="ttdoc">Task krijgt ARM-key met notificatie binnen, en zet ledjes op die waarde. Ook de gekleurde ledjes (beh...</div><div class="ttdef"><b>Definition:</b> <a href="_a_r_m__keys_8c_source.html#l00064">ARM_keys.c:64</a></div></div>
+<div class="ttc" id="aledjes_8c_html_a46ab630af9d7344d8968a7874ec71578"><div class="ttname"><a href="ledjes_8c.html#a46ab630af9d7344d8968a7874ec71578">LED_Task4</a></div><div class="ttdeci">void LED_Task4(void *argument)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00155">ledjes.c:155</a></div></div>
+<div class="ttc" id="aledjes_8c_html_a827d2f52992b1ba443aabe4ee4cbc89d"><div class="ttname"><a href="ledjes_8c.html#a827d2f52992b1ba443aabe4ee4cbc89d">LED_Task2</a></div><div class="ttdeci">void LED_Task2(void *argument)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00079">ledjes.c:79</a></div></div>
+<div class="ttc" id="aledjes_8c_html_aaf63dace9f7f47a694f8950fbe086df3"><div class="ttname"><a href="ledjes_8c.html#aaf63dace9f7f47a694f8950fbe086df3">LED_Task1</a></div><div class="ttdeci">void LED_Task1(void *argument)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores.</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00045">ledjes.c:45</a></div></div>
+<div class="ttc" id="aledjes_8c_html_ad23f4088808e5ccc47e28a69fdf155e6"><div class="ttname"><a href="ledjes_8c.html#ad23f4088808e5ccc47e28a69fdf155e6">LED_Task3</a></div><div class="ttdeci">void LED_Task3(void *argument)</div><div class="ttdoc">Tasks die ledjes manipuleren nadat ze eerst afgeschermd zijn met mutex semaphores....</div><div class="ttdef"><b>Definition:</b> <a href="ledjes_8c_source.html#l00110">ledjes.c:110</a></div></div>
+<div class="ttc" id="amy__app_8h_html_a23fe84bfb739ead3f3005b8378170b62"><div class="ttname"><a href="my__app_8h.html#a23fe84bfb739ead3f3005b8378170b62">Student_task1</a></div><div class="ttdeci">void Student_task1(void *)</div><div class="ttdoc">Oefentask voor studenten.</div><div class="ttdef"><b>Definition:</b> <a href="student_8c_source.html#l00020">student.c:20</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af42059fd155a512774c89e7fc38bc03c"><div class="ttname"><a href="my__app_8h.html#af42059fd155a512774c89e7fc38bc03c">UART_keys_IRQ</a></div><div class="ttdeci">void UART_keys_IRQ(void *)</div><div class="ttdoc">Leest characters in die de gebruiker via Terminalprogramma intikt.</div><div class="ttdef"><b>Definition:</b> <a href="_u_a_r_t__keys_8c_source.html#l00062">UART_keys.c:62</a></div></div>
+<div class="ttc" id="amy__app_8h_html_af909ca669055035da2246051d81ae747"><div class="ttname"><a href="my__app_8h.html#af909ca669055035da2246051d81ae747">UART_menu</a></div><div class="ttdeci">void UART_menu(void *)</div><div class="ttdoc">User Interface. De task wacht op kant en klare user-strings (TaskNotifyTake) van ISR-handler,...</div><div class="ttdef"><b>Definition:</b> <a href="_u_a_r_t__keys_8c_source.html#l00133">UART_keys.c:133</a></div></div>
+</div><!-- fragment --><p >tasks[] is een array van structures met alleen de argumenten om een taak aan te maken.</p>
+<ul>
+<li><b>NB:</b><br  />
+<ul>
+<li>Dit wist je vast niet. De members .attr.name en .attr.stack_size etc. zijn enkele members van de struct osThreadAttr_t; enkele daarvan zijn nodig om een taak te starten en dus alleen die heb ik in deze array geinitialiseerd - dat kan dus op de manier die je hier ziet.</li>
+<li>Als je in de tweede kolom ipv NULL "hallo" zet, wordt "hallo" aan de taak meegegeven - kun je evt gebruiken voor testen of iets dergelijks.</li>
+<li>De prioriteiten worden hier met default-waarden gezet; hier kun je zelf mee spelen. Via de UART kun je elke taak een andere prioriteit geven. Kun je ook mee spelen. Trouwens, als je taken dezelfde prioriteit geeft, dan gaat het OS ze met Round Robin keurig allemaal gelijk verdelen.</li>
+<li>De laatste regel bevat nullen; deze regel wordt gebruikt om for-loepjes eenvoudig te laten eindigen.</li>
+<li>Om een taak niet te laten starten, zet gewoon '//' voor de regel en Bob is je oom!</li>
+</ul>
+</li>
+<li><b>Doel van de array:</b><ol type="1">
+<li>makkelijk en overzichtelijk om taken te starten</li>
+<li>geeft een overview van alle taken en argumenten (name, stacksize, prty's) </li>
+</ol>
+</li>
+</ul>
+
+<p class="definition">De definitie bevindt zich op regel <a class="el" href="tasks_8c_source.html#l00057">57</a> in het bestand <a class="el" href="tasks_8c_source.html">tasks.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
