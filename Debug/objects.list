@@ -1,4 +1,5 @@
 "./Core/MyApp/App/ARM_keys.o"
+"./Core/MyApp/App/GPS_parser.o"
 "./Core/MyApp/App/UART_keys.o"
 "./Core/MyApp/App/admin.o"
 "./Core/MyApp/App/gps.o"

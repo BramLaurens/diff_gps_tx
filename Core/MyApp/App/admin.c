@@ -92,6 +92,8 @@ TASKDATA tasks[] =
 { LED_Task4,    NULL, .attr.name = "LED_Task4",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
 
   // GPS parsing
+{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
+
 
   // deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops
 { NULL,         NULL, .attr.name = NULL,           .attr.stack_size = 0,       .attr.priority = 0 }
@@ -275,6 +277,7 @@ void CreateTasks(void)
 		ptd->hTask = osThreadNew(ptd->func, ptd->argument, &(ptd->attr));
 	}
 
+	UART_puts("\r\n");
 	xTaskResumeAll();   // start nu de scheduler: play ball
 	DisplayTaskData();  // display alle taskdata op UART
 }
