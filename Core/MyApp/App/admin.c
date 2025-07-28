@@ -45,6 +45,8 @@ QueueHandle_t 	      hGPS_Queue;  /// uses UART1
 SemaphoreHandle_t     hLED_Sem;
 EventGroupHandle_t 	  hKEY_Event;
 TimerHandle_t         hTimer1;
+SemaphoreHandle_t     hGPS_Mutex; /// mutex voor GPS-parsing
+
 
 
 /** tasks[] is een array van structures met alleen de argumenten om een taak aan te maken.
@@ -225,6 +227,9 @@ void CreateHandles(void)
 
 	if (!(hTimer1 = xTimerCreate("Timer_1", pdMS_TO_TICKS(TIMER1_DELAY), pdTRUE, 0, (TimerCallbackFunction_t)Timer1_Handler)))
 		error_HaltOS("Error hTimer1");
+
+	if (!(hGPS_Mutex = xSemaphoreCreateMutex()))
+		error_HaltOS("Error hGPS_Mutex");
 
 	UART_puts("\n\rAll handles created successfully.");
 

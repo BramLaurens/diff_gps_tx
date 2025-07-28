@@ -8,6 +8,7 @@
 #include <admin.h>
 #include "main.h"
 #include "cmsis_os.h"
+#include "gps.h"
 
 /**
 * @brief GPS parser task
@@ -23,6 +24,7 @@ void GPS_parser(void *argument)
 
 	while (TRUE)
 	{
+
 		osDelay(1000);
 
 		if (Uart_debug_out & GPS_DEBUG_OUT)

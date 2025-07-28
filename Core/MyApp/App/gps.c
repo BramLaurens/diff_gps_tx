@@ -27,6 +27,12 @@ void fill_GNRMC(char *message)
 {
 	// example: $GNRMC,164435.000,A,5205.9505,N,00507.0873,E,0.49,21.70,140423,,,A
 	//          id    , time     ,s,
+
+	osThreadId_t hTask;
+
+	if (!(hTask = xTaskGetHandle("GPS_parser")))
+				error_HaltOS("Err:ARM_hndle");
+
 	char *tok = ",";
 	char *s;
 
@@ -46,6 +52,8 @@ void fill_GNRMC(char *message)
 	s = strtok(NULL, tok);    // 4. N/S; not used
 
 	s = strtok(NULL, tok);    // 5. longitude;
+	if (s[0] == '0') // if leading '0' is present, remove it
+		memmove(s, s + 1, strlen(s)); // remove leading '0' if present
 	strcpy(gnrmc.longitude, s);
 
 	s = strtok(NULL, tok);    // 6. E/W; not used

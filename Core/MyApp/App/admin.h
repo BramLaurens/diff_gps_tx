@@ -58,6 +58,8 @@ extern SemaphoreHandle_t  hLED_Sem;
 extern EventGroupHandle_t hKEY_Event;
 /// handle voor software timer
 extern TimerHandle_t      hTimer1;
+/// handle voor GPS parser Mutex
+extern SemaphoreHandle_t  hGPS_Mutex;
 
 
 /// debug naar uart output, zie uart_keys.c
