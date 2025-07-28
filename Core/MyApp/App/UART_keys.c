@@ -108,6 +108,7 @@ void UART_keys_IRQ (void *argument)
 			pos = 0;
 
 			xTaskNotify(hTask, buffer_copy, eSetValueWithOverwrite); // notify task2 with copy
+			//hello test
 
 			if (Uart_debug_out & UART_DEBUG_OUT)
 			{
