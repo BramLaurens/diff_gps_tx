@@ -56,7 +56,8 @@ Core/MyApp/App/GPS_parser.o: ../Core/MyApp/App/GPS_parser.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
  ../Core/MyApp/Ports/lcd.h ../Core/MyApp/Ports/keys.h \
  ../Core/MyApp/Ports/leds.h ../Core/MyApp/Ports/uart.h \
- ../Core/MyApp/Ports/buzzer.h ../Core/MyApp/App/gps.h
+ ../Core/MyApp/Ports/buzzer.h ../Core/MyApp/App/gps.h \
+ ../Core/MyApp/App/GPS_parser.h
 ../Core/MyApp/App/admin.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -119,3 +120,4 @@ Core/MyApp/App/GPS_parser.o: ../Core/MyApp/App/GPS_parser.c \
 ../Core/MyApp/Ports/uart.h:
 ../Core/MyApp/Ports/buzzer.h:
 ../Core/MyApp/App/gps.h:
+../Core/MyApp/App/GPS_parser.h:

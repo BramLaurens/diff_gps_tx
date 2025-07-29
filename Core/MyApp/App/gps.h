@@ -40,4 +40,9 @@ enum NMEA
 	eGNGGA
 };
 
+// Structs for GNRMC atomic buffer swaps
+extern GNRMC buffer_gnrmc_a;
+extern GNRMC buffer_gnrmc_b;
+extern GNRMC *volatile writerBuffer;
+extern GNRMC *volatile readerBuffer;
 
