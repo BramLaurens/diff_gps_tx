@@ -94,7 +94,7 @@ TASKDATA tasks[] =
 { LED_Task4,    NULL, .attr.name = "LED_Task4",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
 
   // GPS parsing
-{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
+{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
 
 
   // deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops
@@ -399,7 +399,7 @@ void DisplayTaskData(void)
 		UART_puts(ptd->attr.name);
 		UART_puts("\t priority: ");  UART_putint(ptd->attr.priority);
 		UART_puts("\t stacksize: "); UART_putint(ptd->attr.stack_size * 4);
-		UART_puts("\t free: ");  UART_putint((ptd->attr.stack_size- highwatermark) * 4);
+		UART_puts("\t free: ");  UART_putint(highwatermark*4);
 		UART_puts("\t used: ");      UART_putint(100 - free); UART_puts("%");
 		UART_puts("\t status: ");    UART_puts(xTaskDetails.eCurrentState == eSuspended ? "suspended": "running");
 	}

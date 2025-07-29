@@ -11,7 +11,7 @@
 #include "gps.h"
 #include "GPS_parser.h"
 
-#define samples_size 100 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
+#define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
 /**
 * @brief GPS parser task
@@ -59,6 +59,8 @@ void GPS_parser(void *argument)
 				UART_puts(" Long: ");
 				sprintf(savedLongitude, "%.6f", GPS_samples[samplecount].longitude);
 				UART_puts(savedLongitude);
+
+				DisplayTaskData();
 
 				samplecount++;
 			}
