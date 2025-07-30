@@ -53,11 +53,11 @@ void GPS_parser(void *argument)
 				UART_puts("\r\nGPS sample added: ");
 				UART_putint(samplecount);
 				UART_puts("	Lat: ");
-				sprintf(savedLatitude, "%.6f", GPS_samples[samplecount].latitude);
+				snprintf(savedLatitude, sizeof(savedLatitude),"%.6f", GPS_samples[samplecount].latitude);
 				UART_puts(savedLatitude);
 
 				UART_puts(" Long: ");
-				sprintf(savedLongitude, "%.6f", GPS_samples[samplecount].longitude);
+				snprintf(savedLongitude, sizeof(savedLongitude),"%.6f", GPS_samples[samplecount].longitude);
 				UART_puts(savedLongitude);
 
 				DisplayTaskData();
@@ -72,11 +72,11 @@ void GPS_parser(void *argument)
 				// Print the average GPS position to UART
 				UART_puts("\r\nAverage GPS position: ");
 				UART_puts("Lat: ");
-				sprintf(savedLatitude, "%.6f", GPS_average_pos.latitude);
+				snprintf(savedLatitude, sizeof(savedLatitude),"%.6f", GPS_average_pos.latitude);
 				UART_puts(savedLatitude);
 
 				UART_puts(" Long: ");
-				sprintf(savedLongitude, "%.6f", GPS_average_pos.longitude);
+				snprintf(savedLongitude, sizeof(savedLongitude),"%.6f", GPS_average_pos.longitude);
 				UART_puts(savedLongitude);
 
 				// Reset sample count for next averaging

@@ -94,7 +94,7 @@ TASKDATA tasks[] =
 { LED_Task4,    NULL, .attr.name = "LED_Task4",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
 
   // GPS parsing
-{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
+{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
 
 
   // deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops
