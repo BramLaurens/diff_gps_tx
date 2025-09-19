@@ -43,6 +43,7 @@ void GPS_parser(void *argument)
 		// Check if GPSdata mutex is available
 		if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
 		{
+			// Copy the data from the readerBuffer to a local struct
 			memcpy(&gnrmc_readercopy, (const void*)readerBuffer, sizeof(GNRMC)); // copy data from readerBuffer to local gnrmc_readercopy
 
 			if(samplecount < samples_size && gnrmc_readercopy.status == 'A') // Check if we have space for more samples
@@ -62,7 +63,7 @@ void GPS_parser(void *argument)
 				snprintf(savedLongitude, sizeof(savedLongitude),"%.6f", GPS_samples[samplecount].longitude);
 				UART_puts(savedLongitude);
 
-				DisplayTaskData();
+//				DisplayTaskData();
 
 				samplecount++;
 			}
@@ -90,7 +91,8 @@ void GPS_parser(void *argument)
 			xSemaphoreGive(hGPS_Mutex); // Release the mutex
 		}
 
-		osDelay(1000);
+
+ 		osDelay(1000); //Function runs every second, as GPS data is updated every second
 
 		if (Uart_debug_out & GPS_DEBUG_OUT)
 		{

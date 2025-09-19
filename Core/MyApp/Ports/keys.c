@@ -60,7 +60,8 @@ void KEYS_initISR(int hilo)
 	HAL_GPIO_WritePin(PKEY_ROW, KEY_R1, hilo);
 	HAL_GPIO_WritePin(PKEY_ROW, KEY_R2, hilo);
 	HAL_GPIO_WritePin(PKEY_ROW, KEY_R4, hilo);
-	HAL_GPIO_WritePin(PKEY_ROW, KEY_R3, hilo);
+//	R3 DISABLED DUE TO USE OF PD2 for UART5
+//	HAL_GPIO_WritePin(PKEY_ROW, KEY_R3, hilo);
 }
 
 
