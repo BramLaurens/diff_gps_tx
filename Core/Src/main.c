@@ -28,6 +28,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "admin.h"
+#include "NRF24.h"
 
 /* USER CODE END Includes */
 
@@ -63,6 +64,7 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+
 
 /* USER CODE END PV */
 
@@ -528,8 +530,10 @@ static void MX_GPIO_Init(void)
   */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	unsigned char       uart4_char, uart2_char;
 	BaseType_t          xHigherPriorityTaskWoken = pdFALSE;
+  static unsigned char       uart4_char, uart2_char;
+
+
 
 	// receive terminal user commands
 	if (huart->Instance == USART2)
@@ -571,7 +575,8 @@ void StartDefaultTask(void *argument)
   /* init code for USB_HOST */
   MX_USB_HOST_Init();
   /* USER CODE BEGIN 5 */
-  unsigned char byte1, byte2;
+  unsigned char       byte1, byte2;
+
 
   CreateHandles();
   CreateTasks();

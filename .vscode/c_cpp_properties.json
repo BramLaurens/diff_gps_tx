@@ -4,7 +4,17 @@
       "name": "STM32",
       "includePath": [
         "${workspaceFolder}/Core/Inc",
-        "${workspaceFolder}/Drivers/**"
+        "${workspaceFolder}/Drivers/**",
+        "${workspaceFolder}/Core/MyApp/**",
+        "${workspaceFolder}/Drivers/STM32F4xx_HAL_Driver/Inc",
+        "${workspaceFolder}/Drivers/CMSIS/Include",
+        "${workspaceFolder}/Drivers/**",
+        "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+        "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+        "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/include",
+        "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+        "${workspaceFolder}/USB_HOST/App",
+        "${workspaceFolder}/USB_HOST/Target"
       ],
       "defines": [
         "USE_HAL_DRIVER",

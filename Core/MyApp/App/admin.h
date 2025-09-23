@@ -87,9 +87,9 @@ extern int Uart_debug_out;
 /// LD4_Pin
 #define LEDGREEN  GPIO_PIN_12
 /// LD3_Pin
-#define LEDRED    GPIO_PIN_13
+#define LEDRED    GPIO_PIN_14
 /// LD5_Pin
-#define LEDORANGE GPIO_PIN_14
+#define LEDORANGE GPIO_PIN_13
 /// LD6_Pin
 #define LEDBLUE   GPIO_PIN_15
 
