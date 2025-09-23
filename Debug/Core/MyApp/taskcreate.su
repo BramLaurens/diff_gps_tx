@@ -1,4 +1,0 @@
-taskcreate.c:58:6:CreateTasks	16	static
-taskcreate.c:72:14:GetTaskhandle	24	static
-taskcreate.c:89:6:DisplayStackUsed	72	static
-taskcreate.c:110:6:CreateHandles	8	static

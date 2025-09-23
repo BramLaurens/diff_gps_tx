@@ -1,2 +1,0 @@
-../Core/MyApp/Ports/leds.c:25:6:LED_init	8	static
-../Core/MyApp/Ports/leds.c:36:6:LED_put	24	static

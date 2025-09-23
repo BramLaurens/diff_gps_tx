@@ -1,9 +1,0 @@
-../Core/MyApp/Ports/uart.c:42:6:UART_init	4	static
-../Core/MyApp/Ports/uart.c:49:6:UART_putchar	16	static
-../Core/MyApp/Ports/uart.c:54:6:UART_puts	24	static
-../Core/MyApp/Ports/uart.c:63:6:UART_INT_init	4	static
-../Core/MyApp/Ports/uart.c:68:12:UART_printf	60	dynamic,ignoring_inline_asm
-../Core/MyApp/Ports/uart.c:91:6:UART_putint	16	static
-../Core/MyApp/Ports/uart.c:97:6:UART_putnum	40	static
-../Core/MyApp/Ports/uart.c:136:6:UART_get	16	static
-../Core/MyApp/Ports/uart.c:155:6:UART_gets	32	static

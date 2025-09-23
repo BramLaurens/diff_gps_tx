@@ -1,5 +1,0 @@
-../Core/MyApp/App/gps.c:32:6:fill_GNRMC	40	static
-../Core/MyApp/App/gps.c:104:6:GPS_getNMEA	120	static
-../Core/MyApp/App/gps.c:193:5:hex2int	24	static
-../Core/MyApp/App/gps.c:205:5:hexchar2int	16	static
-../Core/MyApp/App/gps.c:218:5:checksum_valid	32	static

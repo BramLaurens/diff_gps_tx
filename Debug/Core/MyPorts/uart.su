@@ -1,9 +1,0 @@
-uart.c:42:6:UART_init	4	static
-uart.c:49:6:UART_putchar	16	static
-uart.c:56:6:UART_puts	24	static
-uart.c:67:6:UART_INT_init	4	static
-uart.c:72:12:UART_printf	52	dynamic,ignoring_inline_asm
-uart.c:95:6:UART_putint	16	static
-uart.c:101:6:UART_putnum	40	static
-uart.c:142:6:UART_get	16	static
-uart.c:160:6:UART_gets	16	static

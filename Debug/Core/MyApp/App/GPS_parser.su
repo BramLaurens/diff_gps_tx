@@ -1,3 +1,0 @@
-../Core/MyApp/App/GPS_parser.c:35:6:GPS_parser	32	static
-../Core/MyApp/App/GPS_parser.c:104:8:convert_decimal_degrees	64	static
-../Core/MyApp/App/GPS_parser.c:122:8:calc_average	40	static
