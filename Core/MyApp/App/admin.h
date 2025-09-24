@@ -135,4 +135,7 @@ extern void Timer1_Handler(void);
 // GPS_parser.c
 extern void GPS_parser(void *);
 
+// NRF_driver.c
+extern void NRF_Driver(void *);
+
 

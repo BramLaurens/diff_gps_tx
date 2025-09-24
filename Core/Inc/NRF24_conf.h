@@ -11,11 +11,11 @@
 #define spi_r_timeout 1000
 #define spi_rw_timeout 1000
 
-#define csn_gpio_port GPIOA
-#define csn_gpio_pin GPIO_PIN_3
+#define csn_gpio_port GPIOB
+#define csn_gpio_pin GPIO_PIN_4
 
-#define ce_gpio_port GPIOA
-#define ce_gpio_pin GPIO_PIN_4
+#define ce_gpio_port GPIOB
+#define ce_gpio_pin GPIO_PIN_5
 
 #endif
 

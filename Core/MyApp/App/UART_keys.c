@@ -17,6 +17,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "uart.h"
+#include "NRF_driver.h"
 
 extern unsigned int os_delay; /// deze waarde kan hier veranderd worden.
 
@@ -223,6 +224,13 @@ void UART_menu (void *argument)
 				  if (val1)						 // kleine validiteitscontrole
 					  StartStopTask(val1);
 				  break;
+		
+		case 'X':
+			UART_puts("Testing NRF24 SPI communication..., should return 0x08\r\n");
+			uint8_t cfg = nrf24_SPI_commscheck();
+			char tmp[8];
+			snprintf(tmp, sizeof(tmp), "%02X", cfg);   // prints two hex digits
+			UART_puts("CONFIG register: 0x"); UART_puts(tmp); UART_puts("\r\n");
 		}
 	}
 }

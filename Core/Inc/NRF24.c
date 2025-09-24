@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include "stm32f1xx_hal.h"
+#include "stm32f4xx_hal.h"
 #include "NRF24_conf.h"
 #include "NRF24_reg_addresses.h"
 #include "NRF24.h"
