@@ -58,11 +58,12 @@ uint8_t nrf24_SPI_commscheck(void) {
     uint8_t rx[2] = {0};
 
     HAL_GPIO_WritePin(csn_gpio_port, csn_gpio_pin, GPIO_PIN_RESET);
-    for (volatile int i = 0; i < 50; i++) __NOP();
+    for (volatile int i = 0; i < 50; i++) __NOP(); // Short delay 50 ticks  
 
     HAL_SPI_TransmitReceive(&hspi1, tx, rx, 2, HAL_MAX_DELAY);
 
-    for (volatile int i = 0; i < 50; i++) __NOP();
+    for (volatile int i = 0; i < 50; i++) __NOP(); // Short delay 50 ticks
+    
     HAL_GPIO_WritePin(csn_gpio_port, csn_gpio_pin, GPIO_PIN_SET);
 
     // rx[0] = STATUS, rx[1] = CONFIG
