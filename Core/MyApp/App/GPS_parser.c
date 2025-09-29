@@ -21,7 +21,8 @@
 * @return void
 */
 
-GNRMC gnrmc_readercopy; // global struct for GNRMC-messages
+GNRMC gnrmc_localcopy; // local copy of struct for GNRMC-messages
+GNRMC *localBuffer;
 GPS_decimal_degrees_t GPS_samples[samples_size]; // Struct array to hold converted GPS coordinates
 GPS_decimal_degrees_t GPS_average_pos = {0.0, 0.0}; // Struct to hold the average GPS position
 int samplecount = 0; // Counter for the number of samples taken
@@ -43,13 +44,15 @@ void GPS_parser(void *argument)
 		// Check if GPSdata mutex is available
 		if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
 		{
+			//Get adress of the latest complete GNRMC data
+			//GPS_getLatestGNRMC(localBuffer);
 			// Copy the data from the readerBuffer to a local struct
-			memcpy(&gnrmc_readercopy, (const void*)readerBuffer, sizeof(GNRMC)); // copy data from readerBuffer to local gnrmc_readercopy
+			memcpy(&gnrmc_localcopy, (const void*)localBuffer, sizeof(GNRMC)); // copy data from readerBuffer to local gnrmc_readercopy
 
-			if(samplecount < samples_size && gnrmc_readercopy.status == 'A') // Check if we have space for more samples
+			if(samplecount < samples_size && gnrmc_localcopy.status == 'A') // Check if we have space for more samples
 			{
-				GPS_samples[samplecount].latitude = convert_decimal_degrees(gnrmc_readercopy.latitude, &gnrmc_readercopy.NS_ind);
-				GPS_samples[samplecount].longitude = convert_decimal_degrees(gnrmc_readercopy.longitude, &gnrmc_readercopy.EW_ind);
+				GPS_samples[samplecount].latitude = convert_decimal_degrees(gnrmc_localcopy.latitude, &gnrmc_localcopy.NS_ind);
+				GPS_samples[samplecount].longitude = convert_decimal_degrees(gnrmc_localcopy.longitude, &gnrmc_localcopy.EW_ind);
 
 
 				// Print the saved GPS sample to UART
@@ -62,8 +65,6 @@ void GPS_parser(void *argument)
 				UART_puts(" Long: ");
 				snprintf(savedLongitude, sizeof(savedLongitude),"%.6f", GPS_samples[samplecount].longitude);
 				UART_puts(savedLongitude);
-
-//				DisplayTaskData();
 
 				samplecount++;
 			}

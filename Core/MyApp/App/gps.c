@@ -16,12 +16,30 @@
 
 GNRMC gnrmc; // global struct for GNRMC-messages
 
-// Structs for GNRMC atomic buffer swaps
-GNRMC buffer_gnrmc_a;
-GNRMC buffer_gnrmc_b;
-GNRMC *volatile writerBuffer = &buffer_gnrmc_a;
-GNRMC *volatile readerBuffer = &buffer_gnrmc_b;
+static GNRMC bufferA;
+static GNRMC bufferB;
 
+static GNRMC *volatile frontendBuffer = &bufferA; 
+static GNRMC *volatile backendBuffer  = &bufferB; 
+
+/**
+ * @brief Function that gets a pointer to the latest complete GNRMC data
+ * 
+ * @param dest pointer of type GNRMC that will be pointing to the latest GNRMC data
+ * @return void
+ */
+void getlatest_GNRMC(GNRMC *dest)
+{
+	if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
+	{
+		*dest = *frontendBuffer;
+		xSemaphoreGive(hGPS_Mutex); // Release the mutex
+	}
+	else
+	{
+		error_HaltOS("Err:GPS_mutex");
+	}
+}
 
 /**
 * @brief De chars van de binnengekomen GNRMC-string worden in data omgezet, dwz in een
@@ -42,33 +60,36 @@ void fill_GNRMC(char *message)
 	char *tok = ",";
 	char *s;
 
-	memset(&gnrmc, 0, sizeof(GNRMC)); // clear the struct
+	GNRMC *localBuffer = backendBuffer;
+
+	/* clear the struct pointed to by localBuffer (not the pointer variable itself) */
+	memset(localBuffer, 0, sizeof(GNRMC)); // clear the struct
 
 	s = strtok(message, tok); // 0. header;
-	strcpy(gnrmc.head, s);
+	strcpy(localBuffer->head, s);
 
 	s = strtok(NULL, tok);    // 1. time; not used
 
 	s = strtok(NULL, tok);    // 2. valid;
-	gnrmc.status = s[0];
+	localBuffer->status = s[0];
 
 	s = strtok(NULL, tok);    // 3. latitude;
-	strcpy(gnrmc.latitude, s);
+	strcpy(localBuffer->latitude, s);
 
 	s = strtok(NULL, tok);    // 4. N/S; not used
 
 	s = strtok(NULL, tok);    // 5. longitude;
 	if (s[0] == '0') // if leading '0' is present, remove it
 		memmove(s, s + 1, strlen(s)); // remove leading '0' if present
-	strcpy(gnrmc.longitude, s);
+	strcpy(localBuffer->longitude, s);
 
 	s = strtok(NULL, tok);    // 6. E/W; not used
 
 	s = strtok(NULL, tok);    // 7. speed;
-	strcpy(gnrmc.speed, s);
+	strcpy(localBuffer->speed, s);
 
 	s = strtok(NULL, tok);    // 8. course;
-	strcpy(gnrmc.course, s);
+	strcpy(localBuffer->course, s);
 
 	if (Uart_debug_out & GPS_DEBUG_OUT)
 	{
@@ -80,18 +101,17 @@ void fill_GNRMC(char *message)
 		UART_puts("\r\n\t course:   \t");  UART_puts(gnrmc.course);
 	}
 
-	// Filling, and swapping the GNRMC buffers, using a mutex so that the reader task does not read half filled buffers
-	if (xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
+	if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
 	{
-		memcpy((void*)writerBuffer, &gnrmc, sizeof(GNRMC)); // copy data to writerBuffer
-
-		GNRMC *temp = writerBuffer; // swap buffers
-		writerBuffer = readerBuffer; // swap writer and reader buffers
-		readerBuffer = temp;
-
-		xSemaphoreGive(hGPS_Mutex); // release mutex
+		GNRMC *tempbuf = backendBuffer;
+		backendBuffer = frontendBuffer;
+		frontendBuffer = tempbuf;
+		xSemaphoreGive(hGPS_Mutex); // release the mutex after swapping buffers
 	}
-
+	else
+	{
+		error_HaltOS("Err:GPS_mutex");
+	}
 }
 
 
