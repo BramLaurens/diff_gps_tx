@@ -28,7 +28,7 @@ static GNRMC *volatile backendBuffer  = &bufferB;
  * @param dest pointer of type GNRMC that will be pointing to the latest GNRMC data
  * @return void
  */
-void getlatest_GNRMC(GNRMC *dest)
+void GPS_getLatestGNRMC(GNRMC *dest)
 {
 	if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
 	{
