@@ -22,6 +22,11 @@ uint8_t ack[PLD_SIZE]; // Acknowledgment buffer
 
 extern SPI_HandleTypeDef hspiX;
 
+/**
+ * @brief Main driver function for NRF24L01+ module, sets up right config and starts transmission loop
+ * 
+ * @param argument 
+ */
 void NRF_Driver(void *argument)
 {
     osDelay(100);
@@ -45,12 +50,22 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
-        HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
-        nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
-        osDelay(50);
-        HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
-        osDelay(1000); // Placeholder delay
+        NRF_transmit();
+        osDelay(1);
     }
+}
+
+/**
+ * @brief Transmit function for NRF24L01+ module from txBuffer
+ * 
+ */
+void NRF_transmit()
+{
+    HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
+    nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
+    osDelay(50);
+    HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
+    osDelay(1000); // Placeholder delay
 }
 
 uint8_t nrf24_SPI_commscheck(void) {
