@@ -96,7 +96,7 @@ TASKDATA tasks[] =
 
   // GPS parsing
 { GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
-{ NRF_Driver,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
+{ NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
 
 
   // deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops

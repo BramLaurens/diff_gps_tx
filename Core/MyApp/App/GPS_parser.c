@@ -15,14 +15,7 @@
 
 #define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
-/**
-* @brief GPS parser task
-* @param argument, kan evt vanuit tasks gebruikt worden
-* @return void
-*/
-
 GNRMC gnrmc_localcopy; // local copy of struct for GNRMC-messages
-GNRMC *localBuffer;
 GPS_decimal_degrees_t GPS_samples[samples_size]; // Struct array to hold converted GPS coordinates
 GPS_decimal_degrees_t GPS_average_pos = {0.0, 0.0}; // Struct to hold the average GPS position
 int samplecount = 0; // Counter for the number of samples taken
@@ -33,25 +26,6 @@ char savedLongitude[20]; // Buffer to save longitude
 double convert_decimal_degrees(char *nmea_coordinate, char* ns);
 double calc_average(GPS_decimal_degrees_t *samples, int count, char coord);
 
-void GPS_parser(void *argument)
-{
-	osDelay(100);
-
-	UART_puts((char *)__func__); UART_puts(" started\r\n");
-
-	while (TRUE)
-	{
-		// Check if GPSdata mutex is available
-		if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
-		{
-			add_GPS_sample();
-			xSemaphoreGive(hGPS_Mutex); // Release the mutex
-		}
-
- 		osDelay(1000); //Function runs every second, as GPS data is updated every second
-	}
-}
-
 /**
  * @brief Adds a sample to the GPS_samples array and calculates the average position when enough samples are collected.
  * @note This function checks validity of the GPS data before adding a sample.The sample size is defined by samples_size.
@@ -59,12 +33,21 @@ void GPS_parser(void *argument)
  */
 void add_GPS_sample()
 {
-	//Get adress of the latest complete GNRMC data, and put it in the local pointer
-	GPS_getLatestGNRMC(localBuffer);
-	// Copy the data from the local pointer to a local struct
-	memcpy(&gnrmc_localcopy, (const void*)localBuffer, sizeof(GNRMC)); 
+	/*
+	 * Take a safe snapshot of the latest GNRMC data. GPS_getLatestGNRMC
+	 * copies under the GPS mutex into the provided destination, so we
+	 * first copy into a local temporary and then memcpy that snapshot
+	 * into our module-local `gnrmc_localcopy`. This ensures the data we
+	 * use remains valid even if frontendBuffer changes later.
+	 */
+	GNRMC tmp;
+	GPS_getLatestGNRMC(&tmp);
+	memcpy(&gnrmc_localcopy, &tmp, sizeof(GNRMC));
 
-	if(samplecount < samples_size && gnrmc_localcopy.status == 'A') // Check if we have space for more samples
+	UART_puts("GNRMC status: ");
+	UART_putchar(gnrmc_localcopy.status);
+	UART_puts("\r\n");
+	if(samplecount < samples_size && gnrmc_localcopy.status == 'A') // Check if we have space for more samples and if data is valid
 	{
 		GPS_samples[samplecount].latitude = convert_decimal_degrees(gnrmc_localcopy.latitude, &gnrmc_localcopy.NS_ind);
 		GPS_samples[samplecount].longitude = convert_decimal_degrees(gnrmc_localcopy.longitude, &gnrmc_localcopy.EW_ind);
@@ -103,22 +86,47 @@ void add_GPS_sample()
 	}
 }
 
+void GPS_parser(void *argument)
+{
+	osDelay(100);
+
+	UART_puts((char *)__func__); UART_puts(" started\r\n");
+
+	while (TRUE)
+	{
+
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Wait for notification from fill_gnrmc that new data is available
+
+		UART_puts("\r\nGPS parser notifed\r\n");
+		// Check if GPSdata mutex is available
+		
+		add_GPS_sample();
+		
+ 		osDelay(1); //Function runs every second, as GPS data is updated every second
+	}
+}
+
 double convert_decimal_degrees(char *nmea_coordinate, char* ns)
 {
-	double raw = atof(nmea_coordinate); // Convert string to double
+    double raw = atof(nmea_coordinate);
 
-	int degrees = (int)(raw / 100); // Get the degrees part
-	double minutes = raw - (degrees * 100); // Get the minutes part
+    int degrees;
+    if (ns[0] == 'N' || ns[0] == 'S') {
+        // Latitude has 2-degree digits
+        degrees = (int)(raw / 100);
+    } else {
+        // Longitude has 3-degree digits
+        degrees = (int)(raw / 1000);
+    }
 
-	double decimal_degrees = degrees + (minutes / 60.0); // Convert to decimal degrees
+    double minutes = raw - (degrees * (ns[0] == 'N' || ns[0] == 'S' ? 100 : 1000));
+    double decimal_degrees = degrees + (minutes / 60.0);
 
-	if (ns[0] == 'S' || ns[0] == 'W') // Check if the coordinate is South or West
-	{
-		decimal_degrees = -decimal_degrees; // Make it negative
-	}
+    if (ns[0] == 'S' || ns[0] == 'W') {
+        decimal_degrees = -decimal_degrees;
+    }
 
-	return decimal_degrees; // Return the converted value
-
+    return decimal_degrees;
 }
 
 double calc_average(GPS_decimal_degrees_t *samples, int count, char coord)

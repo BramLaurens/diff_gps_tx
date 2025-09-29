@@ -54,6 +54,8 @@ void fill_GNRMC(char *message)
 
 	osThreadId_t hTask;
 
+	// UART_puts("filling GNRMC\r\n");
+
 	if (!(hTask = xTaskGetHandle("GPS_parser")))
 				error_HaltOS("Err:ARM_hndle");
 
@@ -93,12 +95,12 @@ void fill_GNRMC(char *message)
 
 	if (Uart_debug_out & GPS_DEBUG_OUT)
 	{
-		UART_puts("\r\n\t GPS type: \t");  UART_puts(gnrmc.head);
-		UART_puts("\r\n\t status: \t\t");  UART_putchar(gnrmc.status);
-		UART_puts("\r\n\t latitude:\t\t"); UART_puts(gnrmc.latitude);
-		UART_puts("\r\n\t longitude:\t");  UART_puts(gnrmc.longitude);
-		UART_puts("\r\n\t speed:    \t");  UART_puts(gnrmc.speed);
-		UART_puts("\r\n\t course:   \t");  UART_puts(gnrmc.course);
+		UART_puts("\r\n\t GPS type: \t");  UART_puts(localBuffer->head);
+		UART_puts("\r\n\t status: \t\t");  UART_putchar(localBuffer->status);
+		UART_puts("\r\n\t latitude:\t\t"); UART_puts(localBuffer->latitude);
+		UART_puts("\r\n\t longitude:\t");  UART_puts(localBuffer->longitude);
+		UART_puts("\r\n\t speed:    \t");  UART_puts(localBuffer->speed);
+		UART_puts("\r\n\t course:   \t");  UART_puts(localBuffer->course);
 	}
 
 	if(xSemaphoreTake(hGPS_Mutex, portMAX_DELAY) == pdTRUE)
@@ -112,6 +114,9 @@ void fill_GNRMC(char *message)
 	{
 		error_HaltOS("Err:GPS_mutex");
 	}
+
+	// Notify the GPS_parser task that new data is available
+	xTaskNotifyGive(hTask);
 }
 
 
