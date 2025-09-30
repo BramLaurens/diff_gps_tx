@@ -23,7 +23,7 @@ static GNRMC *volatile frontendBuffer = &bufferA;
 static GNRMC *volatile backendBuffer  = &bufferB; 
 
 /**
- * @brief Function that gets a pointer to the latest complete GNRMC data
+ * @brief Function that copies the latest GNRMC data into the provided destination struct.
  * 
  * @param dest pointer of type GNRMC that will be pointing to the latest GNRMC data
  * @return void
@@ -38,6 +38,22 @@ void GPS_getLatestGNRMC(GNRMC *dest)
 	else
 	{
 		error_HaltOS("Err:GPS_mutex");
+	}
+}
+
+/**
+ * @brief Checks the GPS fix status and updates the green LED accordingly.
+ * If the GPS status is 'A' (valid), the green LED is turned on, otherwise it is turned off.
+ */
+void check_gpsfix()
+{
+	if(gnrmc.status == 'A') // If status is 'A' (valid)
+	{
+		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_SET); // Turn on green LED for GPS LOCK
+	}
+	else
+	{
+		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_RESET); // Turn off green LED if no GPS lock
 	}
 }
 
@@ -115,6 +131,8 @@ void fill_GNRMC(char *message)
 		error_HaltOS("Err:GPS_mutex");
 	}
 
+	// Check and update GPS fix status
+	check_gpsfix();
 	// Notify the GPS_parser task that new data is available
 	xTaskNotifyGive(hTask);
 }

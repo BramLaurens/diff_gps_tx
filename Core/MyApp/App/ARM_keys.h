@@ -9,5 +9,6 @@
 #define MYAPP_APP_ARM_KEYS_H_
 
 extern char enable_gpsaveraging; // Flag to enable/disable GPS averaging
+extern char enable_errorcalc; // Flag to enable/disable GPS error calculation
 
 #endif /* MYAPP_APP_GPS_PARSER_H_ */

@@ -14,7 +14,7 @@
 #include "GPS_parser.h"
 #include "ARM_keys.h"
 
-#define debug_GPS_parser 
+// #define debug_GPS_parser 
 
 #define samples_size 200 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
@@ -43,25 +43,13 @@ void add_GPS_sample()
 	 * into `gnrmc_localcopy`. This ensures the data we
 	 * use remains valid even if frontendBuffer changes later.
 	 */
-	GNRMC tmp;
-	GPS_getLatestGNRMC(&tmp);
-	memcpy(&gnrmc_localcopy, &tmp, sizeof(GNRMC));
-
+	GPS_getLatestGNRMC(&gnrmc_localcopy);
 
 	if(gnrmc_localcopy.status == 'V') // If status is 'N' (not valid), skip processing
 	{
 		#ifdef debug_GPS_parser 
 			UART_puts("\r\nInvalid GPS data received (status N). Skipping sample.\r\n");
 		#endif
-	}
-
-	if(gnrmc_localcopy.status == 'A')
-	{
-		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_SET); // Turn on green LED for GPS LOCK
-	}
-	else
-	{
-		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_RESET); // Turn off green LED if no GPS LOCK
 	}
 
 	if(samplecount < samples_size && gnrmc_localcopy.status == 'A') // Check if we have space for more samples and if data is valid

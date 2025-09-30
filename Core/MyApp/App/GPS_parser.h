@@ -16,4 +16,6 @@ typedef struct {
 	double longitude;   // Longitude in decimal degrees
 } GPS_decimal_degrees_t;
 
+extern double convert_decimal_degrees(char *nmea_coordinate, char* ns);
+
 #endif /* MYAPP_APP_GPS_PARSER_H_ */

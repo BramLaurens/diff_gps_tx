@@ -15,16 +15,31 @@
 #include "cmsis_os.h"
 
 char enable_gpsaveraging = 0; // Flag to enable/disable GPS averaging
+char enable_errorcalc = 0; // Flag to enable/disable GPS error calculation
 
+/**
+ * @brief Function to handle shortcuts based on ARM key presses
+ * 
+ * @param key 
+ */
 void arm_keysshortcuts(uint32_t key){
 	switch(key){
-	case 13: //Linksonder
+	case 13: //Onder 1
 		enable_gpsaveraging = 1; // Enable GPS averaging
 		UART_puts("GPS averaging enabled\r\n");
 		break;
-	case 14: //Rechtsonder
+	case 14: //Onder 2
 		enable_gpsaveraging = 0; // Disable GPS averaging
 		UART_puts("GPS averaging disabled\r\n");
+		break;
+	case 15: //Onder 3
+		enable_errorcalc = 1; // Enable GPS error calculation
+		UART_puts("GPS error calculation enabled\r\n");
+		break;
+	case 16: //Onder 4
+		enable_errorcalc = 0; // Disable GPS error calculation
+		UART_puts("GPS error calculation disabled\r\n");
+		break;
 	default:
 		break;
 	}
