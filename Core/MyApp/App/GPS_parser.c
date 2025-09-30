@@ -37,16 +37,20 @@ void add_GPS_sample()
 	 * Take a safe snapshot of the latest GNRMC data. GPS_getLatestGNRMC
 	 * copies under the GPS mutex into the provided destination, so we
 	 * first copy into a local temporary and then memcpy that snapshot
-	 * into our module-local `gnrmc_localcopy`. This ensures the data we
+	 * into `gnrmc_localcopy`. This ensures the data we
 	 * use remains valid even if frontendBuffer changes later.
 	 */
 	GNRMC tmp;
 	GPS_getLatestGNRMC(&tmp);
 	memcpy(&gnrmc_localcopy, &tmp, sizeof(GNRMC));
 
-	UART_puts("GNRMC status: ");
-	UART_putchar(gnrmc_localcopy.status);
-	UART_puts("\r\n");
+
+	if(gnrmc_localcopy.status == 'N') // If status is 'N' (not valid), skip processing
+	{
+		UART_puts("Invalid GPS data received (status N). Skipping sample.\r\n");
+		return;
+	}
+
 	if(samplecount < samples_size && gnrmc_localcopy.status == 'A') // Check if we have space for more samples and if data is valid
 	{
 		GPS_samples[samplecount].latitude = convert_decimal_degrees(gnrmc_localcopy.latitude, &gnrmc_localcopy.NS_ind);
@@ -95,11 +99,13 @@ void GPS_parser(void *argument)
 	while (TRUE)
 	{
 
-		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Wait for notification from fill_gnrmc that new data is available
+		// Wait for notification from fill_gnrmc that new data is available
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
 
 		UART_puts("\r\nGPS parser notifed\r\n");
 		// Check if GPSdata mutex is available
 		
+		// Add a GPS sample to the averaging function
 		add_GPS_sample();
 		
  		osDelay(1); //Function runs every second, as GPS data is updated every second
