@@ -16,7 +16,7 @@
 
 #define debug_GPS_parser 
 
-#define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
+#define samples_size 200 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
 GNRMC gnrmc_localcopy; // local copy of struct for GNRMC-messages
 GPS_decimal_degrees_t GPS_samples[samples_size]; // Struct array to hold converted GPS coordinates
@@ -48,7 +48,7 @@ void add_GPS_sample()
 	memcpy(&gnrmc_localcopy, &tmp, sizeof(GNRMC));
 
 
-	if(gnrmc_localcopy.status == 'N') // If status is 'N' (not valid), skip processing
+	if(gnrmc_localcopy.status == 'V') // If status is 'N' (not valid), skip processing
 	{
 		#ifdef debug_GPS_parser 
 			UART_puts("\r\nInvalid GPS data received (status N). Skipping sample.\r\n");
@@ -106,26 +106,21 @@ void add_GPS_sample()
 
 double convert_decimal_degrees(char *nmea_coordinate, char* ns)
 {
-    double raw = atof(nmea_coordinate);
+    double raw = atof(nmea_coordinate); // Convert string to double
 
-    int degrees;
-    if (ns[0] == 'N' || ns[0] == 'S') {
-        // Latitude has 2-degree digits
-        degrees = (int)(raw / 100);
-    } else {
-        // Longitude has 3-degree digits
-        degrees = (int)(raw / 1000);
+    int degrees = (int)(raw / 100); // Get the degrees part
+    double minutes = raw - (degrees * 100); // Get the minutes part
+
+    double decimal_degrees = degrees + (minutes / 60.0); // Convert to decimal degrees
+
+    if (ns[0] == 'S' || ns[0] == 'W') // Check if the coordinate is South or West
+    {
+        decimal_degrees = -decimal_degrees; // Make it negative
     }
 
-    double minutes = raw - (degrees * (ns[0] == 'N' || ns[0] == 'S' ? 100 : 1000));
-    double decimal_degrees = degrees + (minutes / 60.0);
-
-    if (ns[0] == 'S' || ns[0] == 'W') {
-        decimal_degrees = -decimal_degrees;
-    }
-
-    return decimal_degrees;
+    return decimal_degrees; // Return the converted value
 }
+
 
 double calc_average(GPS_decimal_degrees_t *samples, int count, char coord)
 {
