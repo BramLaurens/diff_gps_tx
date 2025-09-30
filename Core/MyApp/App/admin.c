@@ -30,6 +30,7 @@
 #include "task.h"
 #include "admin.h"
 #include "NRF_driver.h"
+#include "GPS_Errorcalc.h"
 
 /// output strings for initialization
 char *app_name    = "\r\n=== freeRTOS_GPS 407 ===\r\n";
@@ -97,6 +98,7 @@ TASKDATA tasks[] =
   // GPS parsing
 { GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
 // { NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
+{ GPS_Errorcalc,    NULL, .attr.name ="GPS_Errorcalc",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal4 },
 
 
   // deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops

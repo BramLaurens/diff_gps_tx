@@ -104,6 +104,13 @@ void add_GPS_sample()
 	}
 }
 
+/**
+ * @brief Converts NMEA coordinate format (ddmm.mmmm) to decimal degrees. (+ for N/E, - for S/W)
+ * 
+ * @param nmea_coordinate NMEA coordinate string
+ * @param ns North south or East west indicator ('N', 'S', 'E', 'W')
+ * @return Decimal degrees as double 
+ */
 double convert_decimal_degrees(char *nmea_coordinate, char* ns)
 {
     double raw = atof(nmea_coordinate); // Convert string to double
@@ -122,6 +129,14 @@ double convert_decimal_degrees(char *nmea_coordinate, char* ns)
 }
 
 
+/**
+ * @brief Calculates the average of an array of GPS samples for either latitude or longitude.
+ * 
+ * @param samples Array of GPS samples of type GPS_decimal_degrees_t
+ * @param count Number of samples in the array
+ * @param coord 'L' for latitude, 'G' for longitude
+ * @return Average value as double
+ */
 double calc_average(GPS_decimal_degrees_t *samples, int count, char coord)
 {
 	double sum = 0.0;

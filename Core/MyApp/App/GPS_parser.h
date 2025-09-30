@@ -8,6 +8,9 @@
 #ifndef MYAPP_APP_GPS_PARSER_H_
 #define MYAPP_APP_GPS_PARSER_H_
 
+/**
+ * @brief Struct to hold GPS coordinates in decimal degrees.
+ */
 typedef struct {
 	double latitude;    // Latitude in decimal degrees
 	double longitude;   // Longitude in decimal degrees
