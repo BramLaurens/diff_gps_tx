@@ -12,6 +12,9 @@
 #include "cmsis_os.h"
 #include "gps.h"
 #include "GPS_parser.h"
+#include "ARM_keys.h"
+
+#define debug_GPS_parser 
 
 #define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
@@ -47,7 +50,9 @@ void add_GPS_sample()
 
 	if(gnrmc_localcopy.status == 'N') // If status is 'N' (not valid), skip processing
 	{
-		UART_puts("Invalid GPS data received (status N). Skipping sample.\r\n");
+		#ifdef debug_GPS_parser 
+			UART_puts("\r\nInvalid GPS data received (status N). Skipping sample.\r\n");
+		#endif
 		return;
 	}
 
@@ -87,28 +92,7 @@ void add_GPS_sample()
 
 		// Reset sample count for next averaging
 		samplecount = 0;
-	}
-}
-
-void GPS_parser(void *argument)
-{
-	osDelay(100);
-
-	UART_puts((char *)__func__); UART_puts(" started\r\n");
-
-	while (TRUE)
-	{
-
-		// Wait for notification from fill_gnrmc that new data is available
-		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
-
-		UART_puts("\r\nGPS parser notifed\r\n");
-		// Check if GPSdata mutex is available
-		
-		// Add a GPS sample to the averaging function
-		add_GPS_sample();
-		
- 		osDelay(1); //Function runs every second, as GPS data is updated every second
+		enable_gpsaveraging = 0; // Disable GPS averaging after one complete average
 	}
 }
 
@@ -154,5 +138,24 @@ double calc_average(GPS_decimal_degrees_t *samples, int count, char coord)
 	return sum / count; // Return the average
 }
 
+void GPS_parser(void *argument)
+{
+	osDelay(100);
 
+	UART_puts((char *)__func__); UART_puts(" started\r\n");
+
+	while (TRUE)
+	{
+
+		// Wait for notification from fill_gnrmc that new data is available
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
+
+		// Check if GPSdata mutex is available
+		
+		// Add a GPS sample to the averaging function
+		if(enable_gpsaveraging == 1){add_GPS_sample();}
+
+ 		osDelay(1); //Function runs every second, as GPS data is updated every second
+	}
+}
 

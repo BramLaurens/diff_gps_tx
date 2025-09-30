@@ -14,6 +14,21 @@
 #include "main.h"
 #include "cmsis_os.h"
 
+char enable_gpsaveraging = 0; // Flag to enable/disable GPS averaging
+
+void arm_keysshortcuts(uint32_t key){
+	switch(key){
+	case 13: //Linksonder
+		enable_gpsaveraging = 1; // Enable GPS averaging
+		UART_puts("GPS averaging enabled\r\n");
+		break;
+	case 14: //Rechtsonder
+		enable_gpsaveraging = 0; // Disable GPS averaging
+		UART_puts("GPS averaging disabled\r\n");
+	default:
+		break;
+	}
+}
 
 /**
 * @brief Zet een kleurenledje aan en uit.
@@ -96,7 +111,10 @@ void ARM_keys_task (void *argument)
 			led = (i==0 ? LEDRED : (i==1 ? LEDORANGE : LEDGREEN));
 			toggle_led(led);
 	  	}
+
+		arm_keysshortcuts(key); // Check for shortcuts	
      	taskYIELD(); // done, force context switch
 	}
 }
+
 
