@@ -53,7 +53,15 @@ void add_GPS_sample()
 		#ifdef debug_GPS_parser 
 			UART_puts("\r\nInvalid GPS data received (status N). Skipping sample.\r\n");
 		#endif
-		return;
+	}
+
+	if(gnrmc_localcopy.status == 'A')
+	{
+		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_SET); // Turn on green LED for GPS LOCK
+	}
+	else
+	{
+		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_RESET); // Turn off green LED if no GPS LOCK
 	}
 
 	if(samplecount < samples_size && gnrmc_localcopy.status == 'A') // Check if we have space for more samples and if data is valid
