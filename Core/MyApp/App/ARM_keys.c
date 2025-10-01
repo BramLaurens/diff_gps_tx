@@ -39,6 +39,8 @@ void arm_keysshortcuts(uint32_t key){
 	case 16: //Onder 4
 		enable_errorcalc = 0; // Disable GPS error calculation
 		UART_puts("GPS error calculation disabled\r\n");
+		LCD_clear();
+		LCD_puts("Disabled GPS err calc");
 		break;
 	default:
 		break;

@@ -24,7 +24,7 @@ GPS_decimal_degrees_t GPS_error; // Struct to hold the latest GPS error
 
 GPS_decimal_degrees_t differentialstorage[] = 
 {
-    {52.000000, 4.000000},
+    {52.084619, 5.168584},
     {52.000100, 4.000100},
     {52.000200, 4.000200},
     {52.000300, 4.000300},
@@ -33,8 +33,6 @@ GPS_decimal_degrees_t differentialstorage[] =
 
 void errorcalc()
 {
-    LCD_clear();
-    LCD_puts("Start GPS error calc");
     #ifdef debug_GPS_differential
         UART_puts("\r\nStarting GPS error calc, waiting for new data\r\n");
     #endif
@@ -61,10 +59,21 @@ void errorcalc()
     // Calculate error if valid GPS data is available
     if(gnrmc_localcopy2.status == 'A')
     {
+        UART_puts("Valid GPS, calculating error...\r\n");
         currentpos.latitude = convert_decimal_degrees(gnrmc_localcopy2.latitude, &gnrmc_localcopy2.NS_ind);
         currentpos.longitude = convert_decimal_degrees(gnrmc_localcopy2.longitude, &gnrmc_localcopy2.EW_ind);
         GPS_error.latitude = currentpos.latitude - differentialpos.latitude;
         GPS_error.longitude = currentpos.longitude - differentialpos.longitude;
+
+        char lat_lcd[20];
+        char lon_lcd[20];
+        snprintf(lat_lcd, sizeof(lat_lcd), "ltE:%.6f", GPS_error.latitude);
+        snprintf(lon_lcd, sizeof(lon_lcd), "lgE:%.6f", GPS_error.longitude);
+        LCD_clear();
+        LCD_puts(lat_lcd);
+        LCD_puts(lon_lcd);
+
+
 
         #ifdef debug_GPS_differential
             char lat_str[20];
@@ -81,6 +90,8 @@ void errorcalc()
             snprintf(lat_str, sizeof(lat_str), "%.6f", GPS_error.latitude);
             snprintf(lon_str, sizeof(lon_str), "%.6f", GPS_error.longitude);
             UART_puts("Calculated GPS Error: "); UART_puts(lat_str); UART_puts(" "); UART_puts(lon_str); UART_puts("\r\n");
+
+            DisplayTaskData();  // display all task data on UART
         #endif
     }
 

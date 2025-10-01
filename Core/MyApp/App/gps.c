@@ -130,10 +130,10 @@ void fill_GNRMC(char *message)
 
 	// Check and update GPS fix status
 	check_gpsfix();
-	// Notify the GPS_parser task that new data is available
-	if (!(hTask = xTaskGetHandle("GPS_parser")))
-				error_HaltOS("Err:ARM_hndle");
-	xTaskNotifyGive(hTask);
+	// // Notify the GPS_parser task that new data is available
+	// if (!(hTask = xTaskGetHandle("GPS_parser")))
+	// 			error_HaltOS("Err:ARM_hndle");
+	// xTaskNotifyGive(hTask);
 
 	//Notify the GPS_errorcalc task that new data is available
 	if (!(hTask = xTaskGetHandle("GPS_Errorcalc")))
