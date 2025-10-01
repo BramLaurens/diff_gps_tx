@@ -5,6 +5,7 @@
  *      Author: braml
  */
 
+ #include "GPS_parser.h"
 
 #ifndef MYAPP_APP_GPS_ERRORCALC_H_
 #define MYAPP_APP_GPS_ERRORCALC_H_

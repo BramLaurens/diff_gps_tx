@@ -1,6 +1,9 @@
 #settings
 .settings/
 
+#vscode
+.vscode/
+
 #metadata
 .metadata/
 

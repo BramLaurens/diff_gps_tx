@@ -15,12 +15,17 @@
 #include <string.h>
 #include "stm32f4xx_hal.h"
 #include "NRF24_conf.h"
+#include "GPS_parser.h"
+
+#define debug_NRF_driver
 
 #define PLD_SIZE 32 // Payload size in bytes
-uint8_t txBuffer[PLD_SIZE] = {"Hello"}; // Transmission buffer test
 uint8_t ack[PLD_SIZE]; // Acknowledgment buffer
 
 extern SPI_HandleTypeDef hspiX;
+
+osThreadId_t hTask;
+
 
 /**
  * @brief Main driver function for NRF24L01+ module, sets up right config and starts transmission loop
@@ -50,22 +55,32 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
-        NRF_transmit();
-        osDelay(1);
+        // Wait for notification from GPS task
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
+        HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
+        osDelay(50);
+        HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off
     }
 }
 
 /**
  * @brief Transmit function for NRF24L01+ module from txBuffer
+ * @param txBuffer Pointer to GPS_decimal_degrees_t struct containing GPS data to transmit
  * 
  */
-void NRF_transmit()
+void NRF_transmit(PGPS_decimal_degrees_t txBuffer)
 {
-    HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
-    nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
-    osDelay(50);
-    HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
-    osDelay(1000); // Placeholder delay
+    // Transmit data
+    nrf24_transmit(txBuffer, sizeof(txBuffer)); 
+
+    //Notify the NRF_driver that we sent data, so it can toggle the LED
+	if (!(hTask = xTaskGetHandle("NRF_driver")))
+				error_HaltOS("Err:ARM_hndle");
+	xTaskNotifyGive(hTask);
+
+    #ifdef debug_NRF_driver
+        UART_puts("Transmitted GPS Error via NRF24L01+\r\n");
+    #endif
 }
 
 uint8_t nrf24_SPI_commscheck(void) {

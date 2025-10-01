@@ -13,6 +13,7 @@
 #include "gps.h"
 #include "GPS_parser.h"
 #include "ARM_keys.h"
+#include "NRF_driver.h"
 
 #define debug_GPS_differential
 
@@ -24,7 +25,7 @@ GPS_decimal_degrees_t GPS_error; // Struct to hold the latest GPS error
 
 GPS_decimal_degrees_t differentialstorage[] = 
 {
-    {52.084619, 5.168584},
+    {52.084619172, 5.168584982},
     {52.000100, 4.000100},
     {52.000200, 4.000200},
     {52.000300, 4.000300},
@@ -67,13 +68,13 @@ void errorcalc()
 
         char lat_lcd[20];
         char lon_lcd[20];
-        snprintf(lat_lcd, sizeof(lat_lcd), "ltE:%.6f", GPS_error.latitude);
-        snprintf(lon_lcd, sizeof(lon_lcd), "lgE:%.6f", GPS_error.longitude);
+        snprintf(lat_lcd, sizeof(lat_lcd), "ltE:%.9f", GPS_error.latitude);
+        snprintf(lon_lcd, sizeof(lon_lcd), "lgE:%.9f", GPS_error.longitude);
         LCD_clear();
         LCD_puts(lat_lcd);
         LCD_puts(lon_lcd);
 
-
+        NRF_transmit(&GPS_error); // Transmit the calculated GPS error via NRF24L01+
 
         #ifdef debug_GPS_differential
             char lat_str[20];
