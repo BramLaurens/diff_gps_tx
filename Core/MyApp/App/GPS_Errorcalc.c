@@ -74,8 +74,6 @@ void errorcalc()
         LCD_puts(lat_lcd);
         LCD_puts(lon_lcd);
 
-        NRF_transmit(&GPS_error); // Transmit the calculated GPS error via NRF24L01+
-
         #ifdef debug_GPS_differential
             char lat_str[20];
             char lon_str[20];

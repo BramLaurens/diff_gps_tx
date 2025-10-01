@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "arm_keys.h": "c"
+        "arm_keys.h": "c",
+        "gps.h": "c"
     }
 }

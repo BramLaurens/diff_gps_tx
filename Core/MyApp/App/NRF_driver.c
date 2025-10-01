@@ -21,10 +21,13 @@
 
 #define PLD_SIZE 32 // Payload size in bytes
 uint8_t ack[PLD_SIZE]; // Acknowledgment buffer
+uint8_t tx[] = {"Hello"}; // Transmission buffer
 
 extern SPI_HandleTypeDef hspiX;
 
 osThreadId_t hTask;
+
+GPS_decimal_degrees_t testTXbuffer = {52.084619172, 5.168584982}; // Test data to transmit
 
 
 /**
@@ -55,12 +58,28 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
-        // Wait for notification from GPS task
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
+        // // Wait for notification from GPS task
+        // ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
+
         HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
         osDelay(50);
         HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off
+
+        NRF_testtransmission(); // Transmit test message
+
+        osDelay(1);
     }
+}
+
+/**
+ * @brief Test transmission function for NRF24L01+ module, sends a test message
+ * 
+ */
+void NRF_testtransmission()
+{
+    nrf24_transmit(tx, sizeof(tx)); // Transmit test message
+    UART_puts("Transmitted test message via NRF24L01+\r\n");
+    osDelay(1000); 
 }
 
 /**
@@ -68,15 +87,15 @@ void NRF_Driver(void *argument)
  * @param txBuffer Pointer to GPS_decimal_degrees_t struct containing GPS data to transmit
  * 
  */
-void NRF_transmit(PGPS_decimal_degrees_t txBuffer)
+void NRF_transmit(uint8_t *txBuffer)
 {
     // Transmit data
     nrf24_transmit(txBuffer, sizeof(txBuffer)); 
 
     //Notify the NRF_driver that we sent data, so it can toggle the LED
-	if (!(hTask = xTaskGetHandle("NRF_driver")))
-				error_HaltOS("Err:ARM_hndle");
-	xTaskNotifyGive(hTask);
+	// if (!(hTask = xTaskGetHandle("NRF_driver")))
+	// 			error_HaltOS("Err:ARM_hndle");
+	// xTaskNotifyGive(hTask);
 
     #ifdef debug_NRF_driver
         UART_puts("Transmitted GPS Error via NRF24L01+\r\n");

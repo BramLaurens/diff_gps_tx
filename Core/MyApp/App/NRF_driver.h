@@ -11,6 +11,5 @@
 
 extern void NRF_Driver(void *);
 extern uint8_t nrf24_SPI_commscheck(void);
-extern void NRF_transmit(PGPS_decimal_degrees_t txBuffer);
 
 #endif
