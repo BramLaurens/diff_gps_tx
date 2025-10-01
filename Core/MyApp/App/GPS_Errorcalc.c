@@ -14,39 +14,55 @@
 #include "GPS_parser.h"
 #include "ARM_keys.h"
 
-// #define debug_GPS_differential
+#define debug_GPS_differential
 
-GNRMC gnrmc_localcopy; // local copy of struct for GNRMC-messages
+GNRMC gnrmc_localcopy2; // local copy of struct for GNRMC-messages
 
 GPS_decimal_degrees_t currentpos;
-extern GPS_decimal_degrees_t differentialpos; // Struct to hold the working differential GPS position
-extern GPS_decimal_degrees_t GPS_error; // Struct to hold the latest GPS error
+GPS_decimal_degrees_t differentialpos; // Struct to hold the working differential GPS position
+GPS_decimal_degrees_t GPS_error; // Struct to hold the latest GPS error
+
+GPS_decimal_degrees_t differentialstorage[] = 
+{
+    {52.000000, 4.000000},
+    {52.000100, 4.000100},
+    {52.000200, 4.000200},
+    {52.000300, 4.000300},
+    {0, 0}
+};
 
 void errorcalc()
 {
+    LCD_clear();
+    LCD_puts("Start GPS error calc");
+    #ifdef debug_GPS_differential
+        UART_puts("\r\nStarting GPS error calc, waiting for new data\r\n");
+    #endif
     // Wait for notification from GPS.c that new data is available
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
 
     #ifdef debug_GPS_differential
-        UART_puts("New coordinate received. Performing new GPS error calculation...\r\n");
+        UART_puts("New data received. Checking data validity...\r\n");
     #endif
 
     // Take a safe snapshot of the latest GNRMC data.
-	GPS_getLatestGNRMC(&gnrmc_localcopy);
+	GPS_getLatestGNRMC(&gnrmc_localcopy2);
 
-	if(gnrmc_localcopy.status == 'V') // If status is 'N' (not valid), skip processing
+	if(gnrmc_localcopy2.status != 'A') // If status is not valid, skip processing
 	{
+        LCD_clear();
+        LCD_puts("No GPS Fix");
 		#ifdef debug_GPS_differential
-			UART_puts("\r\nInvalid GPS data received (status N). Skipping error calculation.\r\n");
+			UART_puts("Invalid GPS data received (status N). Skipping error calculation.\r\n");
 		#endif
         return;
 	}
 
     // Calculate error if valid GPS data is available
-    if(gnrmc_localcopy.status == 'A')
+    if(gnrmc_localcopy2.status == 'A')
     {
-        currentpos.latitude = convert_decimal_degrees(gnrmc_localcopy.latitude, &gnrmc_localcopy.NS_ind);
-        currentpos.longitude = convert_decimal_degrees(gnrmc_localcopy.longitude, &gnrmc_localcopy.EW_ind);
+        currentpos.latitude = convert_decimal_degrees(gnrmc_localcopy2.latitude, &gnrmc_localcopy2.NS_ind);
+        currentpos.longitude = convert_decimal_degrees(gnrmc_localcopy2.longitude, &gnrmc_localcopy2.EW_ind);
         GPS_error.latitude = currentpos.latitude - differentialpos.latitude;
         GPS_error.longitude = currentpos.longitude - differentialpos.longitude;
 
@@ -77,8 +93,11 @@ void GPS_Errorcalc(void *argument)
 
 	UART_puts((char *)__func__); UART_puts(" started\r\n");
 
-    differentialpos.latitude = 52.084683;
-    differentialpos.longitude = 5.168671;
+    // Pointer to move through the differential storage array, start pointing to the first element
+    PGPS_decimal_degrees_t ptd = differentialstorage; 
+
+    differentialpos.latitude = ptd->latitude;
+    differentialpos.longitude = ptd->longitude;
 
     while (1)
     {

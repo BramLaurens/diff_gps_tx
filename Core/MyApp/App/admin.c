@@ -71,38 +71,38 @@ SemaphoreHandle_t     hGPS_Mutex; /// mutex voor GPS-parsing
  */
 TASKDATA tasks[] =
 {
-// function      arg   name                        stacksize (* 4 = 32bit)     priority
-// ----------------------------------------------------------------------------------------------------------------------------
-  // in ARM_keys.c
-{ ARM_keys_IRQ, NULL, .attr.name = "ARM_keys_IRQ", .attr.stack_size = 600, .attr.priority = osPriorityNormal1 },
-{ ARM_keys_task,NULL, .attr.name = "ARM_keys_task",.attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
+	// function      arg   name                        stacksize (* 4 = 32bit)     priority
+	// ----------------------------------------------------------------------------------------------------------------------------
+	// in ARM_keys.c
+	{ ARM_keys_IRQ, NULL, .attr.name = "ARM_keys_IRQ", .attr.stack_size = 600, .attr.priority = osPriorityNormal1 },
+	{ ARM_keys_task,NULL, .attr.name = "ARM_keys_task",.attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
 
-  // UART_keys.c
-{ UART_keys_IRQ,NULL, .attr.name = "UART_keys_IRQ",.attr.stack_size = 600, .attr.priority = osPriorityBelowNormal5 },
-{ UART_menu,    NULL, .attr.name = "UART_menu",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal6 },
+	// UART_keys.c
+	{ UART_keys_IRQ,NULL, .attr.name = "UART_keys_IRQ",.attr.stack_size = 600, .attr.priority = osPriorityBelowNormal5 },
+	{ UART_menu,    NULL, .attr.name = "UART_menu",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal6 },
 
-  // gps.c
-{ GPS_getNMEA,  NULL, .attr.name = "GPS_getNMEA",  .attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
+	// gps.c
+	{ GPS_getNMEA,  NULL, .attr.name = "GPS_getNMEA",  .attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
 
-  // student.c
-{ Student_task1,NULL, .attr.name = "Student_task1",.attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
+	// student.c
+	{ Student_task1,NULL, .attr.name = "Student_task1",.attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
 
-  // ledjes.c
-  // NOTE: ledtasks 1 & 2 moeten dezelfde priority hebben, anders 'sterft' de taak met de laagste priority
-  //       wat wel kan: afdwingen dat taken aan de beurt komen door notifications, zie ledasks 3 & 4
-{ LED_Task1,    NULL, .attr.name = "LED_Task1",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
-{ LED_Task2,    NULL, .attr.name = "LED_Task2",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
-{ LED_Task3,    NULL, .attr.name = "LED_Task3",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal5 },
-{ LED_Task4,    NULL, .attr.name = "LED_Task4",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
+	// ledjes.c
+	// NOTE: ledtasks 1 & 2 moeten dezelfde priority hebben, anders 'sterft' de taak met de laagste priority
+	//       wat wel kan: afdwingen dat taken aan de beurt komen door notifications, zie ledasks 3 & 4
+	{ LED_Task1,    NULL, .attr.name = "LED_Task1",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
+	{ LED_Task2,    NULL, .attr.name = "LED_Task2",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
+	{ LED_Task3,    NULL, .attr.name = "LED_Task3",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal5 },
+	{ LED_Task4,    NULL, .attr.name = "LED_Task4",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
 
-  // GPS parsing
-{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
-// { NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
-{ GPS_Errorcalc,    NULL, .attr.name ="GPS_Errorcalc",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal4 },
+	// GPS parsing
+	{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
+	// { NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
+	{ GPS_Errorcalc,    NULL, .attr.name ="GPS_Errorcalc",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal4 },
 
 
-  // deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops
-{ NULL,         NULL, .attr.name = NULL,           .attr.stack_size = 0,       .attr.priority = 0 }
+	// deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops
+	{ NULL,         NULL, .attr.name = NULL,           .attr.stack_size = 0,       .attr.priority = 0 }
 };
 
 

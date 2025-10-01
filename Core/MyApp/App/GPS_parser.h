@@ -14,7 +14,7 @@
 typedef struct {
 	double latitude;    // Latitude in decimal degrees
 	double longitude;   // Longitude in decimal degrees
-} GPS_decimal_degrees_t;
+} GPS_decimal_degrees_t, *PGPS_decimal_degrees_t;
 
 extern double convert_decimal_degrees(char *nmea_coordinate, char* ns);
 
