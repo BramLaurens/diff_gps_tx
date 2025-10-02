@@ -97,7 +97,7 @@ TASKDATA tasks[] =
 
 	// GPS parsing
 	{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
-	{ NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
+	{ NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 1000, .attr.priority = osPriorityNormal3 },
 	{ GPS_Errorcalc,    NULL, .attr.name ="GPS_Errorcalc",    .attr.stack_size = 1200, .attr.priority = osPriorityBelowNormal4 },
 
 
