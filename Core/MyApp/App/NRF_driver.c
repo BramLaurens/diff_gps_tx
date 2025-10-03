@@ -22,11 +22,11 @@ uint8_t txBuffer[PLD_SIZE] = {"Hello"}; // Transmission buffer test
 uint8_t ack[PLD_SIZE]; // Acknowledgment buffer
 uint8_t status = 1;
 
-GPS_decimal_degrees_t errorBuffer = {51.123456, 4.987654}; // Example GPS data to send
-
 extern SPI_HandleTypeDef hspiX;
 
-void NRF_transmitGPS(void){
+GPS_decimal_degrees_t errorBuffer = {0, 0}; // Struct to hold the GPS error to be transmitted
+
+void NRF_transmitGPS(){
     memset(txBuffer, 0, PLD_SIZE);
     memcpy(txBuffer, &errorBuffer, sizeof(errorBuffer));
 
@@ -39,7 +39,10 @@ void NRF_transmitGPS(void){
     LCD_puts(status ? fail : ok);
     osDelay(50);
     HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
-    osDelay(1000); // Placeholder delay
+}
+
+void NRF_setErrorBuffer(GPS_decimal_degrees_t error) {
+    errorBuffer = error;
 }
 
 uint8_t nrf24_SPI_commscheck(void) {
@@ -81,6 +84,7 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         NRF_transmitGPS();
         osDelay(1);
     }

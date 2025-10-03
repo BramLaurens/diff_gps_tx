@@ -17,6 +17,10 @@
 
 #define debug_GPS_differential
 
+/*Define one of these statements, depending on testing situation*/
+//#define live_GPS_differential
+#define dummy_GPS_differential
+
 GNRMC gnrmc_localcopy2; // local copy of struct for GNRMC-messages
 
 GPS_decimal_degrees_t currentpos;
@@ -34,18 +38,32 @@ GPS_decimal_degrees_t differentialstorage[] =
 
 void errorcalc()
 {
+    osThreadId_t hTask;
+
     #ifdef debug_GPS_differential
         UART_puts("\r\nStarting GPS error calc, waiting for new data\r\n");
     #endif
+
+    #ifdef live_GPS_differential
     // Wait for notification from GPS.c that new data is available
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
+    // Take a safe snapshot of the latest GNRMC data.
+	GPS_getLatestGNRMC(&gnrmc_localcopy2);
+    #endif
 
     #ifdef debug_GPS_differential
         UART_puts("New data received. Checking data validity...\r\n");
     #endif
 
-    // Take a safe snapshot of the latest GNRMC data.
-	GPS_getLatestGNRMC(&gnrmc_localcopy2);
+    #ifdef dummy_GPS_differential
+        // For testing without real GPS data, cycle through the differential storage array
+        osDelay(1000); // Simulate delay for new data every second
+        strcpy(gnrmc_localcopy2.longitude, "5214.1873");
+        gnrmc_localcopy2.NS_ind = 'N';
+        strcpy(gnrmc_localcopy2.latitude, "0510.1150");
+        gnrmc_localcopy2.EW_ind = 'E';
+        gnrmc_localcopy2.status = 'A'; // Valid data
+    #endif
 
 	if(gnrmc_localcopy2.status != 'A') // If status is not valid, skip processing
 	{
@@ -60,7 +78,7 @@ void errorcalc()
     // Calculate error if valid GPS data is available
     if(gnrmc_localcopy2.status == 'A')
     {
-        UART_puts("Valid GPS, calculating error...\r\n");
+        UART_puts("Valid GPS data, calculating error...\r\n");
         currentpos.latitude = convert_decimal_degrees(gnrmc_localcopy2.latitude, &gnrmc_localcopy2.NS_ind);
         currentpos.longitude = convert_decimal_degrees(gnrmc_localcopy2.longitude, &gnrmc_localcopy2.EW_ind);
         GPS_error.latitude = currentpos.latitude - differentialpos.latitude;
@@ -73,6 +91,14 @@ void errorcalc()
         LCD_clear();
         LCD_puts(lat_lcd);
         LCD_puts(lon_lcd);
+
+        // Update the error buffer for NRF transmission
+        NRF_setErrorBuffer(GPS_error);
+
+        // Notify the NRF task that new error data is available
+        if (!(hTask = xTaskGetHandle("NRF_driver")))
+                    error_HaltOS("Err:NRF_hndle");
+        xTaskNotifyGive(hTask);
 
         #ifdef debug_GPS_differential
             char lat_str[20];

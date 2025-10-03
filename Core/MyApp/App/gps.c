@@ -137,7 +137,7 @@ void fill_GNRMC(char *message)
 
 	//Notify the GPS_errorcalc task that new data is available
 	if (!(hTask = xTaskGetHandle("GPS_Errorcalc")))
-				error_HaltOS("Err:ARM_hndle");
+				error_HaltOS("Err:GPSError_hndle");
 	xTaskNotifyGive(hTask);
 }
 

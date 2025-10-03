@@ -11,5 +11,6 @@
 
 extern void NRF_Driver(void *);
 extern uint8_t nrf24_SPI_commscheck(void);
+void NRF_setErrorBuffer(GPS_decimal_degrees_t error);
 
 #endif
