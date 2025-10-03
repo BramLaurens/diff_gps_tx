@@ -15,10 +15,14 @@
 #include <string.h>
 #include "stm32f4xx_hal.h"
 #include "NRF24_conf.h"
+#include "GPS_parser.h"
 
 #define PLD_SIZE 32 // Payload size in bytes
 uint8_t txBuffer[PLD_SIZE] = {"Hello"}; // Transmission buffer test
 uint8_t ack[PLD_SIZE]; // Acknowledgment buffer
+uint8_t status = 1;
+
+GPS_decimal_degrees_t errorBuffer = {51.123456, 4.987654}; // Example GPS data to send
 
 extern SPI_HandleTypeDef hspiX;
 
@@ -45,8 +49,14 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
+        memset(txBuffer, 0, PLD_SIZE);
+        memcpy(txBuffer, &errorBuffer, sizeof(errorBuffer));
+
         HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
-        nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
+        status = nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
+        LCD_clear();
+        LCD_puts("Sent packet. TX status: ");
+        LCD_putint(status);
         osDelay(50);
         HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
         osDelay(1000); // Placeholder delay
