@@ -26,6 +26,38 @@ GPS_decimal_degrees_t errorBuffer = {51.123456, 4.987654}; // Example GPS data t
 
 extern SPI_HandleTypeDef hspiX;
 
+void NRF_transmitGPS(void){
+    memset(txBuffer, 0, PLD_SIZE);
+    memcpy(txBuffer, &errorBuffer, sizeof(errorBuffer));
+
+    HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
+    status = nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
+    LCD_clear();
+    LCD_puts("Sent packet. TX status: ");
+    char fail[] = "Failed";
+    char ok[] = "OK";
+    LCD_puts(status ? fail : ok);
+    osDelay(50);
+    HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
+    osDelay(1000); // Placeholder delay
+}
+
+uint8_t nrf24_SPI_commscheck(void) {
+    uint8_t tx[2] = {0x00, 0xFF};   // R_REGISTER + CONFIG(0x00), then dummy 0xFF
+    uint8_t rx[2] = {0};
+
+    HAL_GPIO_WritePin(csn_gpio_port, csn_gpio_pin, GPIO_PIN_RESET);
+    for (volatile int i = 0; i < 50; i++) __NOP();
+
+    HAL_SPI_TransmitReceive(&hspi1, tx, rx, 2, HAL_MAX_DELAY);
+
+    for (volatile int i = 0; i < 50; i++) __NOP();
+    HAL_GPIO_WritePin(csn_gpio_port, csn_gpio_pin, GPIO_PIN_SET);
+
+    // rx[0] = STATUS, rx[1] = CONFIG
+    return rx[1];
+}
+
 void NRF_Driver(void *argument)
 {
     osDelay(100);
@@ -49,32 +81,7 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
-        memset(txBuffer, 0, PLD_SIZE);
-        memcpy(txBuffer, &errorBuffer, sizeof(errorBuffer));
-
-        HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
-        status = nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
-        LCD_clear();
-        LCD_puts("Sent packet. TX status: ");
-        LCD_putint(status);
-        osDelay(50);
-        HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
-        osDelay(1000); // Placeholder delay
+        NRF_transmitGPS();
+        osDelay(1);
     }
-}
-
-uint8_t nrf24_SPI_commscheck(void) {
-    uint8_t tx[2] = {0x00, 0xFF};   // R_REGISTER + CONFIG(0x00), then dummy 0xFF
-    uint8_t rx[2] = {0};
-
-    HAL_GPIO_WritePin(csn_gpio_port, csn_gpio_pin, GPIO_PIN_RESET);
-    for (volatile int i = 0; i < 50; i++) __NOP();
-
-    HAL_SPI_TransmitReceive(&hspi1, tx, rx, 2, HAL_MAX_DELAY);
-
-    for (volatile int i = 0; i < 50; i++) __NOP();
-    HAL_GPIO_WritePin(csn_gpio_port, csn_gpio_pin, GPIO_PIN_SET);
-
-    // rx[0] = STATUS, rx[1] = CONFIG
-    return rx[1];
 }
