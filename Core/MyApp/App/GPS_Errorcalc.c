@@ -15,11 +15,12 @@
 #include "ARM_keys.h"
 #include "NRF_driver.h"
 
+// Debug statements
 #define debug_GPS_differential
 
-/*Define one of these statements, depending on testing situation*/
-//#define live_GPS_differential
-#define dummy_GPS_differential
+/*Define ONLY one of these statements, depending on testing situation*/
+#define live_GPS_differential
+// #define dummy_GPS_differential
 
 GNRMC gnrmc_localcopy2; // local copy of struct for GNRMC-messages
 
@@ -29,7 +30,7 @@ GPS_decimal_degrees_t GPS_error; // Struct to hold the latest GPS error
 
 GPS_decimal_degrees_t differentialstorage[] = 
 {
-    {52.084619172, 5.168584982},
+    {52.084639327, 5.168215991},
     {52.000100, 4.000100},
     {52.000200, 4.000200},
     {52.000300, 4.000300},

@@ -16,7 +16,7 @@
 
 // #define debug_GPS_parser 
 
-#define samples_size 200 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
+#define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
 GNRMC gnrmc_localcopy; // local copy of struct for GNRMC-messages
 GPS_decimal_degrees_t GPS_samples[samples_size]; // Struct array to hold converted GPS coordinates
