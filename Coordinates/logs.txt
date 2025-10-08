@@ -1,0 +1,753 @@
+Node in linked list:15
+Working Error - Lat: 0.000013840, Lon: -0.000007491
+Before correction - Lat: 52.084628167, Lon: 5.168256500
+After correction - Lat: 52.084614, Lon: 5.168264
+Working Error - Lat: 0.000013840, Lon: -0.000007491
+Before correction - Lat: 52.084628167, Lon: 5.168256500
+After correction - Lat: 52.084614, Lon: 5.168264
+Working Error - Lat: 0.000013840, Lon: -0.000007491
+Before correction - Lat: 52.084628167, Lon: 5.168256500
+After correction - Lat: 52.084614, Lon: 5.168264
+Working Error - Lat: 0.000013840, Lon: -0.000007491
+Before correction - Lat: 52.084628167, Lon: 5.168256500
+After correction - Lat: 52.084614, Lon: 5.168264
+Working Error - Lat: 0.000013840, Lon: -0.000007491
+Before correction - Lat: 52.084628167, Lon: 5.168256500
+After correction - Lat: 52.084614, Lon: 5.168264
+Calculated Average - Lat: 52.084614327, Lon: 5.168263991
+	Waypoint number: 15
+	Long:5.168263991
+	Lat:52.084614327
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:16
+Working Error - Lat: -0.000021160, Lon: 0.000006342
+Before correction - Lat: 52.084619833, Lon: 5.168254000
+After correction - Lat: 52.084641, Lon: 5.168248
+Working Error - Lat: -0.000021160, Lon: 0.000006342
+Before correction - Lat: 52.084619833, Lon: 5.168254000
+After correction - Lat: 52.084641, Lon: 5.168248
+Working Error - Lat: -0.000021160, Lon: 0.000006342
+Before correction - Lat: 52.084619333, Lon: 5.168254167
+After correction - Lat: 52.084640, Lon: 5.168248
+Working Error - Lat: -0.000021160, Lon: 0.000006342
+Before correction - Lat: 52.084619333, Lon: 5.168254167
+After correction - Lat: 52.084640, Lon: 5.168248
+Working Error - Lat: -0.000021160, Lon: 0.000006342
+Before correction - Lat: 52.084619333, Lon: 5.168254167
+After correction - Lat: 52.084640, Lon: 5.168248
+Calculated Average - Lat: 52.084640694, Lon: 5.168247758
+	Waypoint number: 16
+	Long:5.168247758
+	Lat:52.084640694
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:17
+Working Error - Lat: -0.000047160, Lon: 0.000026342
+Before correction - Lat: 52.084599500, Lon: 5.168255167
+After correction - Lat: 52.084647, Lon: 5.168229
+Working Error - Lat: -0.000047160, Lon: 0.000026342
+Before correction - Lat: 52.084599500, Lon: 5.168255167
+After correction - Lat: 52.084647, Lon: 5.168229
+Working Error - Lat: -0.000047160, Lon: 0.000026342
+Before correction - Lat: 52.084599500, Lon: 5.168255167
+After correction - Lat: 52.084647, Lon: 5.168229
+Working Error - Lat: -0.000047160, Lon: 0.000026342
+Before correction - Lat: 52.084599500, Lon: 5.168255167
+After correction - Lat: 52.084647, Lon: 5.168229
+Working Error - Lat: -0.000047160, Lon: 0.000026342
+Before correction - Lat: 52.084599500, Lon: 5.168255167
+After correction - Lat: 52.084647, Lon: 5.168229
+Calculated Average - Lat: 52.084646660, Lon: 5.168228824
+	Waypoint number: 17
+	Long:5.168228824
+	Lat:52.084646660
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:18
+Working Error - Lat: -0.000035827, Lon: -0.000010824
+Before correction - Lat: 52.084588000, Lon: 5.168260333
+After correction - Lat: 52.084624, Lon: 5.168271
+Working Error - Lat: -0.000035827, Lon: -0.000010824
+Before correction - Lat: 52.084588000, Lon: 5.168260333
+After correction - Lat: 52.084624, Lon: 5.168271
+Working Error - Lat: -0.000035827, Lon: -0.000010824
+Before correction - Lat: 52.084588000, Lon: 5.168260333
+After correction - Lat: 52.084624, Lon: 5.168271
+Working Error - Lat: -0.000035827, Lon: -0.000010824
+Before correction - Lat: 52.084588000, Lon: 5.168260333
+After correction - Lat: 52.084624, Lon: 5.168271
+Working Error - Lat: -0.000035827, Lon: -0.000010824
+Before correction - Lat: 52.084588000, Lon: 5.168260333
+After correction - Lat: 52.084624, Lon: 5.168271
+Calculated Average - Lat: 52.084623827, Lon: 5.168271158
+	Waypoint number: 18
+	Long:5.168271158
+	Lat:52.084623827
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:19
+Working Error - Lat: -0.000054994, Lon: -0.000018658
+Before correction - Lat: 52.084587000, Lon: 5.168263500
+After correction - Lat: 52.084642, Lon: 5.168282
+Working Error - Lat: -0.000054994, Lon: -0.000018658
+Before correction - Lat: 52.084587000, Lon: 5.168263500
+After correction - Lat: 52.084642, Lon: 5.168282
+Working Error - Lat: -0.000054994, Lon: -0.000018658
+Before correction - Lat: 52.084587000, Lon: 5.168263500
+After correction - Lat: 52.084642, Lon: 5.168282
+Working Error - Lat: -0.000054994, Lon: -0.000018658
+Before correction - Lat: 52.084587000, Lon: 5.168263500
+After correction - Lat: 52.084642, Lon: 5.168282
+Working Error - Lat: -0.000054994, Lon: -0.000018658
+Before correction - Lat: 52.084587000, Lon: 5.168263500
+After correction - Lat: 52.084642, Lon: 5.168282
+Calculated Average - Lat: 52.084641994, Lon: 5.168282158
+	Waypoint number: 19
+	Long:5.168282158
+	Lat:52.084641994
+New node created succesfully
+
+Node in linked list:16
+Working Error - Lat: -0.000073660, Lon: 0.000068509
+Before correction - Lat: 52.084613833, Lon: 5.168251333
+After correction - Lat: 52.084687, Lon: 5.168183
+Working Error - Lat: -0.000073660, Lon: 0.000068509
+Before correction - Lat: 52.084614000, Lon: 5.168251500
+After correction - Lat: 52.084688, Lon: 5.168183
+Working Error - Lat: -0.000072994, Lon: 0.000069176
+Before correction - Lat: 52.084613833, Lon: 5.168251333
+After correction - Lat: 52.084687, Lon: 5.168182
+Working Error - Lat: -0.000072994, Lon: 0.000069176
+Before correction - Lat: 52.084613833, Lon: 5.168251333
+After correction - Lat: 52.084687, Lon: 5.168182
+Working Error - Lat: -0.000072994, Lon: 0.000069176
+Before correction - Lat: 52.084613667, Lon: 5.168251333
+After correction - Lat: 52.084687, Lon: 5.168182
+Calculated Average - Lat: 52.084687094, Lon: 5.168182458
+	Waypoint number: 16
+	Long:5.168182458
+	Lat:52.084687094
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:17
+Working Error - Lat: -0.000044494, Lon: 0.000040842
+Before correction - Lat: 52.084607500, Lon: 5.168248167
+After correction - Lat: 52.084652, Lon: 5.168207
+Working Error - Lat: -0.000044494, Lon: 0.000040842
+Before correction - Lat: 52.084607500, Lon: 5.168248167
+After correction - Lat: 52.084652, Lon: 5.168207
+Working Error - Lat: -0.000044494, Lon: 0.000040842
+Before correction - Lat: 52.084607500, Lon: 5.168248333
+After correction - Lat: 52.084652, Lon: 5.168207
+Working Error - Lat: -0.000041160, Lon: 0.000040676
+Before correction - Lat: 52.084607500, Lon: 5.168248333
+After correction - Lat: 52.084649, Lon: 5.168208
+Working Error - Lat: -0.000041160, Lon: 0.000040676
+Before correction - Lat: 52.084607500, Lon: 5.168248333
+After correction - Lat: 52.084649, Lon: 5.168208
+Calculated Average - Lat: 52.084650660, Lon: 5.168207491
+	Waypoint number: 17
+	Long:5.168207491
+	Lat:52.084650660
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:18
+Working Error - Lat: -0.000038827, Lon: 0.000040509
+Before correction - Lat: 52.084607000, Lon: 5.168248000
+After correction - Lat: 52.084646, Lon: 5.168207
+Working Error - Lat: -0.000038827, Lon: 0.000040509
+Before correction - Lat: 52.084606833, Lon: 5.168248000
+After correction - Lat: 52.084646, Lon: 5.168207
+Working Error - Lat: -0.000036660, Lon: 0.000039842
+Before correction - Lat: 52.084606667, Lon: 5.168248000
+After correction - Lat: 52.084643, Lon: 5.168208
+Working Error - Lat: -0.000036660, Lon: 0.000039842
+Before correction - Lat: 52.084606667, Lon: 5.168248000
+After correction - Lat: 52.084643, Lon: 5.168208
+Working Error - Lat: -0.000036660, Lon: 0.000039842
+Before correction - Lat: 52.084606500, Lon: 5.168248167
+After correction - Lat: 52.084643, Lon: 5.168208
+Calculated Average - Lat: 52.084644260, Lon: 5.168207924
+	Waypoint number: 18
+	Long:5.168207924
+	Lat:52.084644260
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:19
+Working Error - Lat: -0.000035660, Lon: 0.000039009
+Before correction - Lat: 52.084605333, Lon: 5.168247333
+After correction - Lat: 52.084641, Lon: 5.168208
+Working Error - Lat: -0.000031827, Lon: 0.000037009
+Before correction - Lat: 52.084605167, Lon: 5.168247333
+After correction - Lat: 52.084637, Lon: 5.168210
+Working Error - Lat: -0.000031827, Lon: 0.000037009
+Before correction - Lat: 52.084605000, Lon: 5.168247167
+After correction - Lat: 52.084637, Lon: 5.168210
+Working Error - Lat: -0.000031827, Lon: 0.000037009
+Before correction - Lat: 52.084604833, Lon: 5.168247000
+After correction - Lat: 52.084637, Lon: 5.168210
+Working Error - Lat: -0.000031827, Lon: 0.000037009
+Before correction - Lat: 52.084604500, Lon: 5.168246833
+After correction - Lat: 52.084636, Lon: 5.168210
+Calculated Average - Lat: 52.084637560, Lon: 5.168209724
+	Waypoint number: 19
+	Long:5.168209724
+	Lat:52.084637560
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:20
+Working Error - Lat: -0.000029327, Lon: 0.000034342
+Before correction - Lat: 52.084603833, Lon: 5.168246167
+After correction - Lat: 52.084633, Lon: 5.168212
+Working Error - Lat: -0.000029327, Lon: 0.000034342
+Before correction - Lat: 52.084603833, Lon: 5.168246167
+After correction - Lat: 52.084633, Lon: 5.168212
+Working Error - Lat: -0.000028660, Lon: 0.000032509
+Before correction - Lat: 52.084603667, Lon: 5.168246167
+After correction - Lat: 52.084632, Lon: 5.168214
+Working Error - Lat: -0.000028660, Lon: 0.000032509
+Before correction - Lat: 52.084603667, Lon: 5.168246167
+After correction - Lat: 52.084632, Lon: 5.168214
+Working Error - Lat: -0.000028660, Lon: 0.000032509
+Before correction - Lat: 52.084603667, Lon: 5.168246167
+After correction - Lat: 52.084632, Lon: 5.168214
+Calculated Average - Lat: 52.084632660, Lon: 5.168212924
+	Waypoint number: 20
+	Long:5.168212924
+	Lat:52.084632660
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:21
+Working Error - Lat: -0.000011827, Lon: -0.000006658
+Before correction - Lat: 52.084600167, Lon: 5.168245667
+After correction - Lat: 52.084612, Lon: 5.168252
+Working Error - Lat: -0.000011827, Lon: -0.000006658
+Before correction - Lat: 52.084600333, Lon: 5.168245500
+After correction - Lat: 52.084612, Lon: 5.168252
+Working Error - Lat: -0.000011827, Lon: -0.000006658
+Before correction - Lat: 52.084600167, Lon: 5.168245667
+After correction - Lat: 52.084612, Lon: 5.168252
+Working Error - Lat: -0.000011994, Lon: -0.000006824
+Before correction - Lat: 52.084600333, Lon: 5.168245500
+After correction - Lat: 52.084612, Lon: 5.168252
+Working Error - Lat: -0.000011994, Lon: -0.000006824
+Before correction - Lat: 52.084600333, Lon: 5.168245833
+After correction - Lat: 52.084612, Lon: 5.168253
+Calculated Average - Lat: 52.084612160, Lon: 5.168252358
+	Waypoint number: 21
+	Long:5.168252358
+	Lat:52.084612160
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:22
+Working Error - Lat: -0.000010160, Lon: -0.000001824
+Before correction - Lat: 52.084596167, Lon: 5.168249500
+After correction - Lat: 52.084606, Lon: 5.168251
+Working Error - Lat: -0.000010160, Lon: -0.000001824
+Before correction - Lat: 52.084596167, Lon: 5.168249500
+After correction - Lat: 52.084606, Lon: 5.168251
+Working Error - Lat: -0.000010160, Lon: -0.000001824
+Before correction - Lat: 52.084596500, Lon: 5.168249333
+After correction - Lat: 52.084607, Lon: 5.168251
+Working Error - Lat: -0.000009827, Lon: -0.000002491
+Before correction - Lat: 52.084596333, Lon: 5.168249333
+After correction - Lat: 52.084606, Lon: 5.168252
+Working Error - Lat: -0.000009827, Lon: -0.000002491
+Before correction - Lat: 52.084596000, Lon: 5.168249333
+After correction - Lat: 52.084606, Lon: 5.168252
+Calculated Average - Lat: 52.084606260, Lon: 5.168251491
+	Waypoint number: 22
+	Long:5.168251491
+	Lat:52.084606260
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:23
+Working Error - Lat: -0.000020327, Lon: -0.000010991
+Before correction - Lat: 52.084588833, Lon: 5.168250000
+After correction - Lat: 52.084609, Lon: 5.168261
+Working Error - Lat: -0.000020327, Lon: -0.000010991
+Before correction - Lat: 52.084588667, Lon: 5.168250000
+After correction - Lat: 52.084609, Lon: 5.168261
+Working Error - Lat: -0.000020327, Lon: -0.000010991
+Before correction - Lat: 52.084588500, Lon: 5.168249667
+After correction - Lat: 52.084609, Lon: 5.168261
+Working Error - Lat: -0.000022160, Lon: -0.000010491
+Before correction - Lat: 52.084588333, Lon: 5.168249833
+After correction - Lat: 52.084610, Lon: 5.168260
+Working Error - Lat: -0.000022160, Lon: -0.000010491
+Before correction - Lat: 52.084588333, Lon: 5.168249667
+After correction - Lat: 52.084610, Lon: 5.168260
+Calculated Average - Lat: 52.084609594, Lon: 5.168260624
+	Waypoint number: 23
+	Long:5.168260624
+	Lat:52.084609594
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:24
+Working Error - Lat: -0.000045660, Lon: -0.000004824
+Before correction - Lat: 52.084590500, Lon: 5.168252167
+After correction - Lat: 52.084636, Lon: 5.168257
+Working Error - Lat: -0.000045160, Lon: -0.000004658
+Before correction - Lat: 52.084591000, Lon: 5.168252000
+After correction - Lat: 52.084636, Lon: 5.168257
+Working Error - Lat: -0.000045160, Lon: -0.000004658
+Before correction - Lat: 52.084591000, Lon: 5.168252000
+After correction - Lat: 52.084636, Lon: 5.168257
+Working Error - Lat: -0.000045160, Lon: -0.000004658
+Before correction - Lat: 52.084591500, Lon: 5.168252167
+After correction - Lat: 52.084637, Lon: 5.168257
+Working Error - Lat: -0.000045160, Lon: -0.000004658
+Before correction - Lat: 52.084591667, Lon: 5.168252000
+After correction - Lat: 52.084637, Lon: 5.168257
+Calculated Average - Lat: 52.084636394, Lon: 5.168256758
+	Waypoint number: 24
+	Long:5.168256758
+	Lat:52.084636394
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:25
+Working Error - Lat: -0.000021160, Lon: 0.000003509
+Before correction - Lat: 52.084609000, Lon: 5.168251500
+After correction - Lat: 52.084630, Lon: 5.168248
+Working Error - Lat: -0.000022160, Lon: 0.000003009
+Before correction - Lat: 52.084608833, Lon: 5.168251500
+After correction - Lat: 52.084631, Lon: 5.168248
+Working Error - Lat: -0.000022160, Lon: 0.000003009
+Before correction - Lat: 52.084608667, Lon: 5.168251667
+After correction - Lat: 52.084631, Lon: 5.168249
+Working Error - Lat: -0.000022160, Lon: 0.000003009
+Before correction - Lat: 52.084608833, Lon: 5.168251667
+After correction - Lat: 52.084631, Lon: 5.168249
+Working Error - Lat: -0.000021827, Lon: 0.000003342
+Before correction - Lat: 52.084608833, Lon: 5.168251833
+After correction - Lat: 52.084631, Lon: 5.168248
+Calculated Average - Lat: 52.084630727, Lon: 5.168248458
+	Waypoint number: 25
+	Long:5.168248458
+	Lat:52.084630727
+New node created succesfully
+
+
+Node in linked list:26
+Starting averaging operation
+Correcting error
+Working Error - Lat: -0.000036827, Lon: -0.000013158
+Before correction - Lat: 52.084647667, Lon: 5.168225667
+After correction - Lat: 52.084684, Lon: 5.168239
+Correcting error
+Working Error - Lat: -0.000037160, Lon: -0.000011824
+Before correction - Lat: 52.084647333, Lon: 5.168225833
+After correction - Lat: 52.084684, Lon: 5.168238
+Correcting error
+Working Error - Lat: -0.000037160, Lon: -0.000011824
+Before correction - Lat: 52.084647333, Lon: 5.168226000
+After correction - Lat: 52.084684, Lon: 5.168238
+Correcting error
+Working Error - Lat: -0.000037160, Lon: -0.000011824
+Before correction - Lat: 52.084647000, Lon: 5.168226000
+After correction - Lat: 52.084684, Lon: 5.168238
+Correcting error
+Working Error - Lat: -0.000037160, Lon: -0.000011824
+Before correction - Lat: 52.084646667, Lon: 5.168225833
+After correction - Lat: 52.084684, Lon: 5.168238
+Calculated Average - Lat: 52.084684294, Lon: 5.168237958
+	Waypoint number: 26
+	Long:5.168237958
+	Lat:52.084684294
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:27
+Starting averaging operation
+Correcting error
+Working Error - Lat: -0.000038994, Lon: -0.000010491
+Before correction - Lat: 52.084644500, Lon: 5.168225833
+After correction - Lat: 52.084683, Lon: 5.168236
+Correcting error
+Working Error - Lat: -0.000038660, Lon: -0.000009491
+Before correction - Lat: 52.084644667, Lon: 5.168225833
+After correction - Lat: 52.084683, Lon: 5.168235
+Correcting error
+Working Error - Lat: -0.000038660, Lon: -0.000009491
+Before correction - Lat: 52.084644500, Lon: 5.168226000
+After correction - Lat: 52.084683, Lon: 5.168235
+Correcting error
+Working Error - Lat: -0.000038660, Lon: -0.000009491
+Before correction - Lat: 52.084644167, Lon: 5.168225833
+After correction - Lat: 52.084683, Lon: 5.168235
+Correcting error
+Working Error - Lat: -0.000038160, Lon: -0.000007991
+Before correction - Lat: 52.084644167, Lon: 5.168225833
+After correction - Lat: 52.084682, Lon: 5.168234
+Calculated Average - Lat: 52.084683027, Lon: 5.168235258
+	Waypoint number: 27
+	Long:5.168235258
+	Lat:52.084683027
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:28
+Starting averaging operation
+Correcting error
+Working Error - Lat: -0.000036494, Lon: -0.000006658
+Before correction - Lat: 52.084643833, Lon: 5.168226333
+After correction - Lat: 52.084680, Lon: 5.168233
+Correcting error
+Working Error - Lat: -0.000036494, Lon: -0.000006658
+Before correction - Lat: 52.084643667, Lon: 5.168226500
+After correction - Lat: 52.084680, Lon: 5.168233
+Correcting error
+Working Error - Lat: -0.000035160, Lon: -0.000004658
+Before correction - Lat: 52.084643833, Lon: 5.168226667
+After correction - Lat: 52.084679, Lon: 5.168231
+Correcting error
+Working Error - Lat: -0.000035160, Lon: -0.000004658
+Before correction - Lat: 52.084643833, Lon: 5.168226667
+After correction - Lat: 52.084679, Lon: 5.168231
+Correcting error
+Working Error - Lat: -0.000035160, Lon: -0.000004658
+Before correction - Lat: 52.084643833, Lon: 5.168226500
+After correction - Lat: 52.084679, Lon: 5.168231
+Calculated Average - Lat: 52.084679494, Lon: 5.168231991
+	Waypoint number: 28
+	Long:5.168231991
+	Lat:52.084679494
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:29
+Starting averaging operation
+Correcting error
+Working Error - Lat: -0.000034494, Lon: -0.000002824
+Before correction - Lat: 52.084643333, Lon: 5.168226667
+After correction - Lat: 52.084678, Lon: 5.168229
+Correcting error
+Working Error - Lat: -0.000034494, Lon: -0.000002824
+Before correction - Lat: 52.084643333, Lon: 5.168226500
+After correction - Lat: 52.084678, Lon: 5.168229
+Correcting error
+Working Error - Lat: -0.000034494, Lon: -0.000002824
+Before correction - Lat: 52.084643333, Lon: 5.168226667
+After correction - Lat: 52.084678, Lon: 5.168229
+Correcting error
+Working Error - Lat: -0.000034160, Lon: -0.000001824
+Before correction - Lat: 52.084643167, Lon: 5.168226833
+After correction - Lat: 52.084677, Lon: 5.168229
+Correcting error
+Working Error - Lat: -0.000034160, Lon: -0.000001824
+Before correction - Lat: 52.084643000, Lon: 5.168226833
+After correction - Lat: 52.084677, Lon: 5.168229
+Calculated Average - Lat: 52.084677594, Lon: 5.168229124
+	Waypoint number: 29
+	Long:5.168229124
+	Lat:52.084677594
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:30
+Starting averaging operation
+Correcting error
+Working Error - Lat: -0.000033994, Lon: 0.000000176
+Before correction - Lat: 52.084643333, Lon: 5.168227000
+After correction - Lat: 52.084677, Lon: 5.168227
+Correcting error
+Working Error - Lat: -0.000033994, Lon: 0.000000176
+Before correction - Lat: 52.084643167, Lon: 5.168226833
+After correction - Lat: 52.084677, Lon: 5.168227
+Correcting error
+Working Error - Lat: -0.000033994, Lon: 0.000000176
+Before correction - Lat: 52.084643167, Lon: 5.168226833
+After correction - Lat: 52.084677, Lon: 5.168227
+Correcting error
+Working Error - Lat: -0.000033994, Lon: 0.000000176
+Before correction - Lat: 52.084643167, Lon: 5.168226833
+After correction - Lat: 52.084677, Lon: 5.168227
+Correcting error
+Working Error - Lat: -0.000032494, Lon: 0.000000842
+Before correction - Lat: 52.084643167, Lon: 5.168226667
+After correction - Lat: 52.084676, Lon: 5.168226
+Calculated Average - Lat: 52.084676894, Lon: 5.168226524
+	Waypoint number: 30
+	Long:5.168226524
+	Lat:52.084676894
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:31
+Starting averaging operation
+Correcting error
+Working Error - Lat: -0.000024494, Lon: 0.000002342
+Before correction - Lat: 52.084643333, Lon: 5.168226500
+After correction - Lat: 52.084668, Lon: 5.168224
+Correcting error
+Working Error - Lat: 0.000004673, Lon: 0.000005842
+Before correction - Lat: 52.084643667, Lon: 5.168226500
+After correction - Lat: 52.084639, Lon: 5.168221
+Correcting error
+Working Error - Lat: 0.000004673, Lon: 0.000005842
+Before correction - Lat: 52.084643833, Lon: 5.168226333
+After correction - Lat: 52.084639, Lon: 5.168220
+Correcting error
+Working Error - Lat: 0.000004673, Lon: 0.000005842
+Before correction - Lat: 52.084644167, Lon: 5.168226667
+After correction - Lat: 52.084639, Lon: 5.168221
+Correcting error
+Working Error - Lat: 0.000004673, Lon: 0.000005842
+Before correction - Lat: 52.084644333, Lon: 5.168226500
+After correction - Lat: 52.084640, Lon: 5.168221
+Calculated Average - Lat: 52.084645027, Lon: 5.168221358
+	Waypoint number: 31
+	Long:5.168221358
+	Lat:52.084645027
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:32
+Starting averaging operation
+Correcting error
+Working Error - Lat: 0.000011840, Lon: 0.000007342
+Before correction - Lat: 52.084645167, Lon: 5.168226500
+After correction - Lat: 52.084633, Lon: 5.168219
+Correcting error
+Working Error - Lat: 0.000011840, Lon: 0.000007342
+Before correction - Lat: 52.084645500, Lon: 5.168226333
+After correction - Lat: 52.084634, Lon: 5.168219
+Correcting error
+Working Error - Lat: 0.000011006, Lon: 0.000006676
+Before correction - Lat: 52.084645833, Lon: 5.168226500
+After correction - Lat: 52.084635, Lon: 5.168220
+Correcting error
+Working Error - Lat: 0.000011006, Lon: 0.000006676
+Before correction - Lat: 52.084646000, Lon: 5.168226333
+After correction - Lat: 52.084635, Lon: 5.168220
+Correcting error
+Working Error - Lat: 0.000011006, Lon: 0.000006676
+Before correction - Lat: 52.084646000, Lon: 5.168226500
+After correction - Lat: 52.084635, Lon: 5.168220
+Calculated Average - Lat: 52.084634360, Lon: 5.168219491
+	Waypoint number: 32
+	Long:5.168219491
+	Lat:52.084634360
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:33
+Starting averaging operation
+Correcting error
+Working Error - Lat: 0.000012840, Lon: 0.000007842
+Before correction - Lat: 52.084646000, Lon: 5.168226333
+After correction - Lat: 52.084633, Lon: 5.168218
+Correcting error
+Working Error - Lat: 0.000012840, Lon: 0.000007842
+Before correction - Lat: 52.084646167, Lon: 5.168226333
+After correction - Lat: 52.084633, Lon: 5.168218
+Correcting error
+Working Error - Lat: 0.000012840, Lon: 0.000007842
+Before correction - Lat: 52.084646000, Lon: 5.168226500
+After correction - Lat: 52.084633, Lon: 5.168219
+Correcting error
+Working Error - Lat: 0.000012673, Lon: 0.000008009
+Before correction - Lat: 52.084646000, Lon: 5.168226500
+After correction - Lat: 52.084633, Lon: 5.168218
+Correcting error
+Working Error - Lat: 0.000012673, Lon: 0.000008009
+Before correction - Lat: 52.084646000, Lon: 5.168226667
+After correction - Lat: 52.084633, Lon: 5.168219
+Calculated Average - Lat: 52.084633260, Lon: 5.168218558
+	Waypoint number: 33
+	Long:5.168218558
+	Lat:52.084633260
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:34
+Starting averaging operation
+Correcting error
+Working Error - Lat: 0.000013506, Lon: 0.000010509
+Before correction - Lat: 52.084645000, Lon: 5.168226000
+After correction - Lat: 52.084631, Lon: 5.168215
+Correcting error
+Working Error - Lat: 0.000013506, Lon: 0.000010509
+Before correction - Lat: 52.084645500, Lon: 5.168226500
+After correction - Lat: 52.084632, Lon: 5.168216
+Correcting error
+Working Error - Lat: 0.000013506, Lon: 0.000010509
+Before correction - Lat: 52.084645333, Lon: 5.168226500
+After correction - Lat: 52.084632, Lon: 5.168216
+Correcting error
+Working Error - Lat: 0.000013506, Lon: 0.000010509
+Before correction - Lat: 52.084645167, Lon: 5.168226333
+After correction - Lat: 52.084632, Lon: 5.168216
+Correcting error
+Working Error - Lat: 0.000013173, Lon: 0.000011009
+Before correction - Lat: 52.084645167, Lon: 5.168226500
+After correction - Lat: 52.084632, Lon: 5.168215
+Calculated Average - Lat: 52.084631794, Lon: 5.168215758
+	Waypoint number: 34
+	Long:5.168215758
+	Lat:52.084631794
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:35
+Starting averaging operation
+Correcting error
+Working Error - Lat: 0.000039173, Lon: 0.000010342
+Before correction - Lat: 52.084651833, Lon: 5.168222333
+After correction - Lat: 52.084613, Lon: 5.168212
+Correcting error
+Working Error - Lat: 0.000039173, Lon: 0.000010342
+Before correction - Lat: 52.084652167, Lon: 5.168222167
+After correction - Lat: 52.084613, Lon: 5.168212
+Correcting error
+Working Error - Lat: 0.000039173, Lon: 0.000010342
+Before correction - Lat: 52.084652333, Lon: 5.168222333
+After correction - Lat: 52.084613, Lon: 5.168212
+Correcting error
+Working Error - Lat: 0.000039173, Lon: 0.000010342
+Before correction - Lat: 52.084652667, Lon: 5.168222167
+After correction - Lat: 52.084613, Lon: 5.168212
+Correcting error
+Working Error - Lat: 0.000040506, Lon: 0.000010342
+Before correction - Lat: 52.084653333, Lon: 5.168222167
+After correction - Lat: 52.084613, Lon: 5.168212
+Calculated Average - Lat: 52.084613027, Lon: 5.168211891
+	Waypoint number: 35
+	Long:5.168211891
+	Lat:52.084613027
+New node created succesfully
+
+	ARM_key pressed to leds: 1
+
+Trying to set a waypoint...
+begin search for next point. 
+
+Node in linked list:36
+Starting averaging operation
+Correcting error
+Working Error - Lat: 0.000042840, Lon: 0.000011676
+Before correction - Lat: 52.084655833, Lon: 5.168222833
+After correction - Lat: 52.084613, Lon: 5.168211
+Correcting error
+Working Error - Lat: 0.000042840, Lon: 0.000011676
+Before correction - Lat: 52.084656000, Lon: 5.168222833
+After correction - Lat: 52.084613, Lon: 5.168211
+Correcting error
+Working Error - Lat: 0.000042840, Lon: 0.000011676
+Before correction - Lat: 52.084656167, Lon: 5.168223000
+After correction - Lat: 52.084613, Lon: 5.168211
+Correcting error
+Working Error - Lat: 0.000045006, Lon: 0.000012509
+Before correction - Lat: 52.084656333, Lon: 5.168223000
+After correction - Lat: 52.084611, Lon: 5.168210
+Correcting error
+Working Error - Lat: 0.000045006, Lon: 0.000012509
+Before correction - Lat: 52.084656333, Lon: 5.168223167
+After correction - Lat: 52.084611, Lon: 5.168211
+Calculated Average - Lat: 52.084612427, Lon: 5.168210958
+	Waypoint number: 36
+	Long:5.168210958
+	Lat:52.084612427
+New node created succesfully
