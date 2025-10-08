@@ -52,6 +52,10 @@ typedef struct TaskData
 extern QueueHandle_t 	  hUART_Queue;
 /// handle voor GPS-queue
 extern QueueHandle_t 	  hGPS_Queue;
+/// queue carrying raw GNRMC messages from GPS input to the dGPS task
+extern QueueHandle_t 	  hGNRMC_Queue;
+/// handle voor NRF transmit queue (holds dGPS_errorData_t items)
+extern QueueHandle_t 	  hNRF_Queue;
 /// handle voor LED-mutex
 extern SemaphoreHandle_t  hLED_Sem;
 /// handle voor ARM-keys-event
@@ -137,5 +141,8 @@ extern void GPS_parser(void *);
 
 // NRF_driver.c
 extern void NRF_Driver(void *);
+
+//dGPS.c
+extern void dGPS(void *);
 
 

@@ -94,7 +94,7 @@ void errorcalc()
         LCD_puts(lon_lcd);
 
         // Update the error buffer for NRF transmission
-        NRF_setErrorBuffer(GPS_error);
+        // NRF_setErrorBuffer(GPS_error);
 
         // Notify the NRF task that new error data is available
         if (!(hTask = xTaskGetHandle("NRF_driver")))
@@ -138,7 +138,7 @@ void GPS_Errorcalc(void *argument)
 
     while (1)
     {
-		if(enable_errorcalc == 1){errorcalc();}
+		// if(enable_errorcalc == 1){errorcalc();}
         osDelay(1);
     }
 }

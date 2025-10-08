@@ -84,6 +84,7 @@ void fill_GNRMC(char *message)
 	strcpy(localBuffer->head, s);
 
 	s = strtok(NULL, tok);    // 1. time; not used
+	strcpy(localBuffer->time, s);
 
 	s = strtok(NULL, tok);    // 2. valid;
 	localBuffer->status = s[0];
@@ -109,6 +110,7 @@ void fill_GNRMC(char *message)
 	if (Uart_debug_out & GPS_DEBUG_OUT)
 	{
 		UART_puts("\r\n\t GPS type: \t");  UART_puts(localBuffer->head);
+		UART_puts("\r\n\t GPS time: \t\t");  UART_puts(localBuffer->time);
 		UART_puts("\r\n\t status: \t\t");  UART_putchar(localBuffer->status);
 		UART_puts("\r\n\t latitude:\t\t"); UART_puts(localBuffer->latitude);
 		UART_puts("\r\n\t longitude:\t");  UART_puts(localBuffer->longitude);
@@ -130,15 +132,17 @@ void fill_GNRMC(char *message)
 
 	// Check and update GPS fix status
 	check_gpsfix();
-	// // Notify the GPS_parser task that new data is available
-	// if (!(hTask = xTaskGetHandle("GPS_parser")))
-	// 			error_HaltOS("Err:ARM_hndle");
-	// xTaskNotifyGive(hTask);
 
-	//Notify the GPS_errorcalc task that new data is available
-	if (!(hTask = xTaskGetHandle("GPS_Errorcalc")))
-				error_HaltOS("Err:GPSError_hndle");
-	xTaskNotifyGive(hTask);
+	// Send a copy of the latest GNRMC data to the dGPS task via a queue so the
+	// dGPS task can process every incoming data point even if it is briefly
+	// preempted by other tasks.
+	if (xQueueSend(hGNRMC_Queue, frontendBuffer, 0) != pdPASS)
+	{
+		// Queue full: drop oldest item then enqueue
+		GNRMC tmp;
+		xQueueReceive(hGNRMC_Queue, &tmp, 0);
+		xQueueSend(hGNRMC_Queue, frontendBuffer, 0);
+	}
 }
 
 

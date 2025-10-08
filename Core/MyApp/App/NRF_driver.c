@@ -16,6 +16,7 @@
 #include "stm32f4xx_hal.h"
 #include "NRF24_conf.h"
 #include "GPS_parser.h"
+#include "dGPS.h"
 
 #define PLD_SIZE 32 // Payload size in bytes
 uint8_t txBuffer[PLD_SIZE] = {"Hello"}; // Transmission buffer test
@@ -24,24 +25,28 @@ uint8_t status = 1;
 
 extern SPI_HandleTypeDef hspiX;
 
-GPS_decimal_degrees_t errorBuffer = {0, 0}; // Struct to hold the GPS error to be transmitted
+dGPS_errorData_t errorBuffer;
 
 void NRF_transmitGPS(){
+    
+    char uart_buf[100];
+    snprintf(uart_buf, sizeof(uart_buf), "Transmitting GPS Error: %ld", errorBuffer.timestamp);
+    UART_puts(uart_buf);
+
     memset(txBuffer, 0, PLD_SIZE);
     memcpy(txBuffer, &errorBuffer, sizeof(errorBuffer));
 
     HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_SET); // Turn on LED
     status = nrf24_transmit(txBuffer, sizeof(txBuffer)); // Transmit data
+    char lcd_buf[32];
+    snprintf(lcd_buf, sizeof(lcd_buf), "Sent: %ld TX: %s", errorBuffer.timestamp, (status ? "Failed" : "OK"));
     LCD_clear();
-    LCD_puts("Sent packet. TX status: ");
-    char fail[] = "Failed";
-    char ok[] = "OK";
-    LCD_puts(status ? fail : ok);
-    osDelay(50);
+    LCD_puts(lcd_buf);
+    osDelay(25);
     HAL_GPIO_WritePin(GPIOD, LEDBLUE, GPIO_PIN_RESET); // Turn off LED
 }
 
-void NRF_setErrorBuffer(GPS_decimal_degrees_t error) {
+void NRF_setErrorBuffer(dGPS_errorData_t error) {
     errorBuffer = error;
 }
 
@@ -84,8 +89,13 @@ void NRF_Driver(void *argument)
     
     while (TRUE)
     {
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        NRF_transmitGPS();
+        dGPS_errorData_t item;
+        if (xQueueReceive(hNRF_Queue, &item, portMAX_DELAY) == pdTRUE)
+        {
+            // copy into local buffer and transmit
+            errorBuffer = item;
+            NRF_transmitGPS();
+        }
         osDelay(1);
     }
 }

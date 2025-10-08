@@ -1,0 +1,53 @@
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172945 with latError 0.000006006 and lonError -0.000016324 
+Added datapoint number 2 for time 172945 with latError 0.000005840 and lonError -0.000016491 
+Added datapoint number 3 for time 172945 with latError 0.000005840 and lonError -0.000016491 
+Added datapoint number 4 for time 172945 with latError 0.000005840 and lonError -0.000016658 
+Added datapoint number 5 for time 172945 with latError 0.000005673 and lonError -0.000016824 
+Transmitting GPS Error: 172945Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 172945 0.000005840 -0.000016558
+
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172946 with latError 0.000005173 and lonError -0.000017158 
+Added datapoint number 2 for time 172946 with latError 0.000004840 and lonError -0.000017491 
+Added datapoint number 3 for time 172946 with latError 0.000004673 and lonError -0.000017824 
+Added datapoint number 4 for time 172946 with latError 0.000004506 and lonError -0.000017991 
+
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172947 with latError 0.000004506 and lonError -0.000018324 
+Added datapoint number 2 for time 172947 with latError 0.000004340 and lonError -0.000018491 
+Added datapoint number 3 for time 172947 with latError 0.000004006 and lonError -0.000018658 
+Added datapoint number 4 for time 172947 with latError 0.000003673 and lonError -0.000018824 
+Added datapoint number 5 for time 172947 with latError 0.000003673 and lonError -0.000018991 
+Transmitting GPS Error: 172947Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 172947 0.000004040 -0.000018658
+
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172948 with latError 0.000003340 and lonError -0.000019324 
+Added datapoint number 2 for time 172948 with latError 0.000003006 and lonError -0.000019324 
+Added datapoint number 3 for time 172948 with latError 0.000003006 and lonError -0.000019658 
+Added datapoint number 4 for time 172948 with latError 0.000003006 and lonError -0.000019658 
+
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172949 with latError 0.000002840 and lonError -0.000019658 
+Added datapoint number 2 for time 172949 with latError 0.000002673 and lonError -0.000019824 
+Added datapoint number 3 for time 172949 with latError 0.000002673 and lonError -0.000019824 
+Added datapoint number 4 for time 172949 with latError 0.000002506 and lonError -0.000019991 
+Added datapoint number 5 for time 172949 with latError 0.000002506 and lonError -0.000019991 
+Transmitting GPS Error: 172949Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 172949 0.000002640 -0.000019858
+
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172950 with latError 0.000002340 and lonError -0.000019991 
+Added datapoint number 2 for time 172950 with latError 0.000002173 and lonError -0.000020158 
+Added datapoint number 3 for time 172950 with latError 0.000002173 and lonError -0.000020158 
+Added datapoint number 4 for time 172950 with latError 0.000002006 and lonError -0.000020324 
+
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 172951 with latError 0.000002006 and lonError -0.000020491 
+Added datapoint number 2 for time 172951 with latError 0.000001840 and lonError -0.000020491 
+Added datapoint number 3 for time 172951 with latError 0.000001840 and lonError -0.000020658 
+Added datapoint number 4 for time 172951 with latError 0.000001840 and lonError -0.000020658 
+Added datapoint number 5 for time 172951 with latError 0.000001840 and lonError -0.000020824 
+Transmitting GPS Error: 172951Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 172951 0.000001873 -0.000020624

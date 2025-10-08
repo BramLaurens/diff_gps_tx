@@ -29,6 +29,7 @@
 #include "cmsis_os.h"
 #include "task.h"
 #include "admin.h"
+#include "gps.h"
 #include "NRF_driver.h"
 #include "GPS_Errorcalc.h"
 
@@ -44,6 +45,8 @@ int Uart_debug_out = DEBUG_OUT_NONE;
 QueueHandle_t 	      hKey_Queue;
 QueueHandle_t 	      hUART_Queue; /// uses UART2
 QueueHandle_t 	      hGPS_Queue;  /// uses UART1
+QueueHandle_t 	      hGNRMC_Queue; /// carries GNRMC structs to dGPS task
+QueueHandle_t 	      hNRF_Queue;  /// holds averaged dGPS_errorData_t items for NRF driver
 SemaphoreHandle_t     hLED_Sem;
 EventGroupHandle_t 	  hKEY_Event;
 TimerHandle_t         hTimer1;
@@ -82,7 +85,7 @@ TASKDATA tasks[] =
 	{ UART_menu,    NULL, .attr.name = "UART_menu",    .attr.stack_size = 600, .attr.priority = osPriorityBelowNormal6 },
 
 	// gps.c
-	{ GPS_getNMEA,  NULL, .attr.name = "GPS_getNMEA",  .attr.stack_size = 600, .attr.priority = osPriorityNormal2 },
+	{ GPS_getNMEA,  NULL, .attr.name = "GPS_getNMEA",  .attr.stack_size = 600, .attr.priority = osPriorityNormal3 },
 
 	// student.c
 	{ Student_task1,NULL, .attr.name = "Student_task1",.attr.stack_size = 600, .attr.priority = osPriorityBelowNormal7 },
@@ -97,8 +100,8 @@ TASKDATA tasks[] =
 
 	// GPS parsing
 	{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
-	{ NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 1000, .attr.priority = osPriorityNormal3 },
-	{ GPS_Errorcalc,    NULL, .attr.name ="GPS_Errorcalc",    .attr.stack_size = 1200, .attr.priority = osPriorityBelowNormal4 },
+	{ NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 1000, .attr.priority = osPriorityNormal2 },
+	{ dGPS,    NULL, .attr.name ="dGPS",    .attr.stack_size = 1200, .attr.priority = osPriorityNormal4 },
 
 
 	// deze laatste niet wissen, wordt gebruik als 'terminator' in for-loops
@@ -225,6 +228,16 @@ void CreateHandles(void)
 
 	if (!(hGPS_Queue = xQueueCreate(GPS_MAXLEN, sizeof(unsigned char))))
 		error_HaltOS("Error hGPS_Q");
+
+	// Queue to pass full GNRMC structs from the GPS parser to the dGPS task
+	// Increased depth to handle bursts of incoming GPS messages.
+	if (!(hGNRMC_Queue = xQueueCreate(32, sizeof(GNRMC))))
+		error_HaltOS("Error hGNRMC_Q");
+
+	// Queue used to hand averaged dGPS error data to the NRF driver for transmission
+	// Increased depth to buffer multiple averaged results while the radio transmits.
+	if (!(hNRF_Queue = xQueueCreate(16, sizeof(dGPS_errorData_t))))
+		error_HaltOS("Error hNRF_Q");
 
 	if (!(hKEY_Event = xEventGroupCreate()))
 		error_HaltOS("Error hLCD_Event");

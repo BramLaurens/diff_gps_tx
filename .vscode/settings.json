@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "arm_keys.h": "c",
-        "gps.h": "c"
+        "gps.h": "c",
+        "gps_parser.h": "c",
+        "admin.h": "c",
+        "cmsis_os.h": "c"
     }
 }
