@@ -12,6 +12,9 @@
 #ifndef MYAPP_APP_dGPS_H_
 #define MYAPP_APP_dGPS_H_
 
+// DEFINE THIS TO ENABLE AVERAGING MODE TO DETERMINE BASE LOCATION
+#define GPS_averagingmode
+
 typedef struct {
     double latitude;
     double longitude;

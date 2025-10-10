@@ -13,8 +13,9 @@
 #include "gps.h"
 #include "GPS_parser.h"
 #include "ARM_keys.h"
+#include "dGPS.h"
 
-// #define debug_GPS_parser 
+#define debug_GPS_parser 
 
 #define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
@@ -56,7 +57,6 @@ void add_GPS_sample()
 	{
 		GPS_samples[samplecount].latitude = convert_decimal_degrees(gnrmc_localcopy.latitude, &gnrmc_localcopy.NS_ind);
 		GPS_samples[samplecount].longitude = convert_decimal_degrees(gnrmc_localcopy.longitude, &gnrmc_localcopy.EW_ind);
-
 
 		// Print the saved GPS sample to UART
 		UART_puts("\r\nGPS sample added: ");
@@ -155,11 +155,11 @@ void GPS_parser(void *argument)
 
 		// Wait for notification from fill_gnrmc that new data is available
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY); 
-
-		// Check if GPSdata mutex is available
 		
-		// Add a GPS sample to the averaging function
-		if(enable_gpsaveraging == 1){add_GPS_sample();}
+		#ifdef GPS_averagingmode
+			// Add a GPS sample to the averaging function
+			if(enable_gpsaveraging == 1){add_GPS_sample();}
+		#endif
 
  		osDelay(1); //Function runs every second, as GPS data is updated every second
 	}

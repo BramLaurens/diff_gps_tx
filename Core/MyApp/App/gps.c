@@ -12,6 +12,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "gps.h"
+#include "dGPS.h"
 
 
 GNRMC gnrmc; // global struct for GNRMC-messages
@@ -45,9 +46,9 @@ void GPS_getLatestGNRMC(GNRMC *dest)
  * @brief Checks the GPS fix status and updates the green LED accordingly.
  * If the GPS status is 'A' (valid), the green LED is turned on, otherwise it is turned off.
  */
-void check_gpsfix()
+void check_gpsfix(GNRMC *gnrmc)
 {
-	if(gnrmc.status == 'A') // If status is 'A' (valid)
+	if(gnrmc->status == 'A') // If status is 'A' (valid)
 	{
 		HAL_GPIO_WritePin(GPIOD, LEDGREEN, GPIO_PIN_SET); // Turn on green LED for GPS LOCK
 	}
@@ -131,18 +132,26 @@ void fill_GNRMC(char *message)
 	}
 
 	// Check and update GPS fix status
-	check_gpsfix();
+	check_gpsfix(frontendBuffer);
 
-	// Send a copy of the latest GNRMC data to the dGPS task via a queue so the
-	// dGPS task can process every incoming data point even if it is briefly
-	// preempted by other tasks.
-	if (xQueueSend(hGNRMC_Queue, frontendBuffer, 0) != pdPASS)
-	{
-		// Queue full: drop oldest item then enqueue
-		GNRMC tmp;
-		xQueueReceive(hGNRMC_Queue, &tmp, 0);
-		xQueueSend(hGNRMC_Queue, frontendBuffer, 0);
-	}
+	#ifdef GPS_averagingmode
+		// Notify the GPS_parser task that new data is available for averaging
+		if (!(hTask = xTaskGetHandle("GPS_parser")))
+            error_HaltOS("Err:GPS_parser");
+		xTaskNotifyGive(hTask);
+	#endif
+
+	#ifndef GPS_averagingmode
+		// Send a copy of the latest GNRMC data to the dGPS task via a queue so the
+		// dGPS task can process every incoming data point 
+		if (xQueueSend(hGNRMC_Queue, frontendBuffer, 0) != pdPASS)
+		{
+			// Queue full: drop oldest item then enqueue
+			GNRMC tmp;
+			xQueueReceive(hGNRMC_Queue, &tmp, 0);
+			xQueueSend(hGNRMC_Queue, frontendBuffer, 0);
+		}
+	#endif
 }
 
 

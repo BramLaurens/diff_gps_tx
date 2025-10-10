@@ -97,6 +97,7 @@ void parse_GPSdata()
         return;
     }
 
+    // Extract time and convert to integer seconds in HHMMSS format
     GNRMC *ptd = &gnrmc_localbuffer;
     char *s;
 
@@ -124,7 +125,7 @@ void parse_GPSdata()
         i++;
     }
 
-    if(i>=5) // After collecting 5 data points, calculate the average error
+    if(i>=5) // After collecting 5 data points, calculate the average error, and notify the NRF driver
     {
         AVG_errorcalc(u_working_GPS_time);
         NotifyNRF();

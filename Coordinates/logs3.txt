@@ -1,0 +1,63 @@
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182131 with latError -0.000107660 and lonError 0.000488009 
+Added datapoint number 2 for time 182131 with latError -0.000107827 and lonError 0.000488009 
+Added datapoint number 3 for time 182131 with latError -0.000107827 and lonError 0.000488009 
+Added datapoint number 4 for time 182131 with latError -0.000108160 and lonError 0.000488176 
+Added datapoint number 5 for time 182131 with latError -0.000108327 and lonError 0.000488176 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182131 -0.000107960 0.000488076
+Transmitting GPS Error: 182131
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182132 with latError -0.000108494 and lonError 0.000488342 
+Added datapoint number 2 for time 182132 with latError -0.000108660 and lonError 0.000488342 
+Added datapoint number 3 for time 182132 with latError -0.000108660 and lonError 0.000488342 
+Added datapoint number 4 for time 182132 with latError -0.000108827 and lonError 0.000488509 
+Added datapoint number 5 for time 182132 with latError -0.000108827 and lonError 0.000488509 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182132 -0.000108694 0.000488409
+Transmitting GPS Error: 182132
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182133 with latError -0.000108994 and lonError 0.000488509 
+Added datapoint number 2 for time 182133 with latError -0.000108827 and lonError 0.000488509 
+Added datapoint number 3 for time 182133 with latError -0.000108994 and lonError 0.000488509 
+Added datapoint number 4 for time 182133 with latError -0.000108827 and lonError 0.000488509 
+Added datapoint number 5 for time 182133 with latError -0.000108827 and lonError 0.000488509 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182133 -0.000108894 0.000488509
+Transmitting GPS Error: 182133
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182134 with latError -0.000108827 and lonError 0.000488342 
+Added datapoint number 2 for time 182134 with latError -0.000109160 and lonError 0.000488509 
+Added datapoint number 3 for time 182134 with latError -0.000109494 and lonError 0.000488676 
+Added datapoint number 4 for time 182134 with latError -0.000109660 and lonError 0.000488676 
+Added datapoint number 5 for time 182134 with latError -0.000109827 and lonError 0.000488676 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182134 -0.000109394 0.000488576
+Transmitting GPS Error: 182134
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182135 with latError -0.000109827 and lonError 0.000488676 
+Added datapoint number 2 for time 182135 with latError -0.000109660 and lonError 0.000488676 
+Added datapoint number 3 for time 182135 with latError -0.000109660 and lonError 0.000488842 
+Added datapoint number 4 for time 182135 with latError -0.000109827 and lonError 0.000489009 
+Added datapoint number 5 for time 182135 with latError -0.000109660 and lonError 0.000489176 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182135 -0.000109727 0.000488876
+Transmitting GPS Error: 182135
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182136 with latError -0.000109327 and lonError 0.000489342 
+Added datapoint number 2 for time 182136 with latError -0.000109327 and lonError 0.000489176 
+Added datapoint number 3 for time 182136 with latError -0.000109327 and lonError 0.000489342 
+Added datapoint number 4 for time 182136 with latError -0.000109327 and lonError 0.000489509 
+Added datapoint number 5 for time 182136 with latError -0.000109494 and lonError 0.000489509 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182136 -0.000109360 0.000489376
+Transmitting GPS Error: 182136
+New second detected. Resetting averaging buffer.
+Added datapoint number 1 for time 182137 with latError -0.000109494 and lonError 0.000489676 
+Added datapoint number 2 for time 182137 with latError -0.000109494 and lonError 0.000489676 
+Added datapoint number 3 for time 182137 with latError -0.000109660 and lonError 0.000489842 
+Added datapoint number 4 for time 182137 with latError -0.000109494 and lonError 0.000490009 
+Added datapoint number 5 for time 182137 with latError -0.000109494 and lonError 0.000490009 
+Averaged GPS Error calculated.
+Calculated GPS Error for timestamp: 182137 -0.000109527 0.000489842
+Transmitting GPS Error: 182137
