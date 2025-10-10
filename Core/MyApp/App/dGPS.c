@@ -56,14 +56,14 @@ void AVG_errorinit()
 void AVG_erroradddata(int i, uint32_t time)
 {
     // Convert NMEA coordinates to decimal degrees, subtract known coordinates to get error, and accumulate
-    double latError = convert_decimal_degrees(gnrmc_localbuffer.latitude, &gnrmc_localbuffer.NS_ind) - GPS_knowncoordinates.latitude;
-    double lonError = convert_decimal_degrees(gnrmc_localbuffer.longitude, &gnrmc_localbuffer.EW_ind) - GPS_knowncoordinates.longitude;
-    GPS_working_errorbuffer.latitude += latError;
-    GPS_working_errorbuffer.longitude += lonError;
+    double lat = convert_decimal_degrees(gnrmc_localbuffer.latitude, &gnrmc_localbuffer.NS_ind);
+    double lon = convert_decimal_degrees(gnrmc_localbuffer.longitude, &gnrmc_localbuffer.EW_ind);
+    GPS_working_errorbuffer.latitude += lat;
+    GPS_working_errorbuffer.longitude += lon;
 
     #ifdef dGPS_debug
         char msg[100];
-        snprintf(msg, sizeof(msg), "Added datapoint number %d for time %ld with latError %.9f and lonError %.9f \r\n", i, time, latError, lonError);
+        snprintf(msg, sizeof(msg), "Added datapoint number %d for time %ld with lat %.9f and lon %.9f \r\n", i, time, lat, lon);
         UART_puts(msg);
     #endif
 }
@@ -131,7 +131,7 @@ void parse_GPSdata()
         NotifyNRF();
 
         #ifdef dGPS_debug
-            UART_puts("Averaged GPS Error calculated.\r\n");
+            UART_puts("Averaged GPS calculated.\r\n");
             char time[10];
             char lat_str[20];
             char lon_str[20];
@@ -139,7 +139,7 @@ void parse_GPSdata()
             snprintf(time, sizeof(time), "%ld", GPS_final_errorbuffer.timestamp);
             snprintf(lat_str, sizeof(lat_str), "%.9f", GPS_final_errorbuffer.latitude);
             snprintf(lon_str, sizeof(lon_str), "%.9f", GPS_final_errorbuffer.longitude);
-            UART_puts("Calculated GPS Error for timestamp: "); UART_puts(time); UART_puts(" "); UART_puts(lat_str); UART_puts(" "); UART_puts(lon_str); UART_puts("\r\n");
+            UART_puts("Calculated average GPS for timestamp: "); UART_puts(time); UART_puts(" "); UART_puts(lat_str); UART_puts(" "); UART_puts(lon_str); UART_puts("\r\n");
         #endif
     }
 }
