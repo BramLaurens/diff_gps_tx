@@ -17,7 +17,7 @@
 
 #define debug_GPS_parser 
 
-#define samples_size 500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
+#define samples_size 2500 // Number of samples to average for GPS data. Keep in mind sample frequency of 1Hz, so this is 15 minutes of data.
 
 GNRMC gnrmc_localcopy; // local copy of struct for GNRMC-messages
 GPS_decimal_degrees_t GPS_samples[samples_size]; // Struct array to hold converted GPS coordinates
@@ -62,11 +62,11 @@ void add_GPS_sample()
 		UART_puts("\r\nGPS sample added: ");
 		UART_putint(samplecount);
 		UART_puts("	Lat: ");
-		snprintf(savedLatitude, sizeof(savedLatitude),"%.6f", GPS_samples[samplecount].latitude);
+		snprintf(savedLatitude, sizeof(savedLatitude),"%.10f", GPS_samples[samplecount].latitude);
 		UART_puts(savedLatitude);
 
 		UART_puts(" Long: ");
-		snprintf(savedLongitude, sizeof(savedLongitude),"%.6f", GPS_samples[samplecount].longitude);
+		snprintf(savedLongitude, sizeof(savedLongitude),"%.10f", GPS_samples[samplecount].longitude);
 		UART_puts(savedLongitude);
 
 		samplecount++;
@@ -79,11 +79,11 @@ void add_GPS_sample()
 		// Print the average GPS position to UART
 		UART_puts("\r\nAverage GPS position: ");
 		UART_puts("Lat: ");
-		snprintf(savedLatitude, sizeof(savedLatitude),"%.6f", GPS_average_pos.latitude);
+		snprintf(savedLatitude, sizeof(savedLatitude),"%.10f", GPS_average_pos.latitude);
 		UART_puts(savedLatitude);
 
 		UART_puts(" Long: ");
-		snprintf(savedLongitude, sizeof(savedLongitude),"%.6f", GPS_average_pos.longitude);
+		snprintf(savedLongitude, sizeof(savedLongitude),"%.10f", GPS_average_pos.longitude);
 		UART_puts(savedLongitude);
 
 		// Reset sample count for next averaging

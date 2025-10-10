@@ -17,7 +17,7 @@ uint32_t u_working_GPS_time = 0;
 
 GPS_decimal_degrees_t GPS_working_decimalbuffer;
 GPS_decimal_degrees_t GPS_working_errorbuffer;
-GPS_decimal_degrees_t GPS_knowncoordinates = {52.084639327, 5.168215991}; // Known coordinates for error calculation
+GPS_decimal_degrees_t GPS_knowncoordinates = {52.0846255748, 5.1682501789}; // Known coordinates for error calculation
 dGPS_errorData_t GPS_final_errorbuffer; // Final averaged error to be sent
 
 int i=0; // Counter for number of data points in the current second

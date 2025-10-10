@@ -99,7 +99,7 @@ TASKDATA tasks[] =
 	{ LED_Task4,    NULL, .attr.name = "LED_Task4",    .attr.stack_size = 450, .attr.priority = osPriorityBelowNormal4 },
 
 	// GPS parsing
-	{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 1024, .attr.priority = osPriorityBelowNormal4 },
+	{ GPS_parser,    NULL, .attr.name ="GPS_parser",    .attr.stack_size = 5000, .attr.priority = osPriorityBelowNormal4 },
 	{ NRF_Driver,    NULL, .attr.name ="NRF_driver",    .attr.stack_size = 1000, .attr.priority = osPriorityNormal2 },
 	{ dGPS,    NULL, .attr.name ="dGPS",    .attr.stack_size = 1200, .attr.priority = osPriorityNormal4 },
 
